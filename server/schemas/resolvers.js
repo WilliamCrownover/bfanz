@@ -1,9 +1,9 @@
-const Movie = require("../models/Movie")
+const { User } = require("../models")
 
 const resolvers = {
     Query: {
-        starter: async () => {
-            return Movie.find({})
+        me: async () => {
+            return User.find({})
         }
     }
 }
