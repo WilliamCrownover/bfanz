@@ -1,3 +1,4 @@
+const { AuthenticationError } = require("apollo-server-errors");
 const { User } = require("../models")
 const {signToken} = require("../utils/auth")
 
@@ -23,6 +24,25 @@ const resolvers = {
 
             return {token: '', success: false};
 
+        },
+
+        login: async (parent, {username, password}) => {
+            
+            const user = await User.findOne( {username} );
+
+            if (!user) {
+                throw new AuthenticationError('Username or password is incorrect.');
+            }
+
+            const isCorrectPassword = await user.isCorrectPassword(password);
+
+            if (!isCorrectPassword) {
+                throw new AuthenticationError('Username or password is incorrect.');
+            }
+
+            const token = signToken(user);
+
+            return {token, success: true}
         }
     }
 }
