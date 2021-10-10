@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ClippedDrawer from './components/ClippedDrawer'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <ClippedDrawer />
   </React.StrictMode>,
   document.getElementById('root')
 );
