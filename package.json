@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Where B Movies get discovered. A MERN stack web application.",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
     "concurrently": "^6.3.0"
   },
