@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Where B Movies get discovered. A MERN stack web application.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@apollo/client": "^3.4.16"
+  },
   "devDependencies": {
     "concurrently": "^6.3.0"
   },
