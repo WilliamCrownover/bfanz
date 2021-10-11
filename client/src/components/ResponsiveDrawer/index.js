@@ -17,6 +17,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 import Home from '../../pages/Home';
+import About from '../../pages/About';
+
 
 const drawerWidth = 240;
 
@@ -120,7 +122,8 @@ function ResponsiveDrawer(props) {
         <Toolbar />
 
         {/* PUT PAGE ROUTES HERE */}
-        <Home />
+        {/* <Home /> */}
+        <About />
 
 
 
