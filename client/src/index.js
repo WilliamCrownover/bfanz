@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ResponsiveDrawer from './components/ResponsiveDrawer'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <ResponsiveDrawer />
   </React.StrictMode>,
   document.getElementById('root')
 );
