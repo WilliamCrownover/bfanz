@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 
 import Home from '../../pages/Home';
 import About from '../../pages/About';
+import Dashboard from '../../pages/Dashboard';
 
 
 const drawerWidth = 240;
@@ -123,7 +124,8 @@ function ResponsiveDrawer(props) {
 
         {/* PUT PAGE ROUTES HERE */}
         {/* <Home /> */}
-        <About />
+        {/* <About /> */}
+        <Dashboard />
 
 
 
