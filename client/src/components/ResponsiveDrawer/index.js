@@ -16,7 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import HookQuestions from '../HookQuestions';
+import Home from '../../pages/Home';
 
 const drawerWidth = 240;
 
@@ -119,7 +119,10 @@ function ResponsiveDrawer(props) {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
 
-        <HookQuestions />
+        {/* PUT PAGE ROUTES HERE */}
+        <Home />
+
+
 
       </Box>
     </Box>
