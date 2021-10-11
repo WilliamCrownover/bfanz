@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function HookQuestions() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} justifyContent="center">
         <Grid item xs="auto">
           <Item>variable width conteasdfasdfasdfasdfnt</Item>
         </Grid>
