@@ -13,14 +13,14 @@ const userSchema = new Schema({
         required: true,
         minlength: 6,
     },
-    moviesAdded: {
+    moviesAdded: [{
         type: Schema.Types.ObjectId,
         ref: 'Movie',
-    },
-    moviesSeen: {
+    }],
+    moviesSeen: [{
         type: Schema.Types.ObjectId,
         ref: 'Movie',
-    }
+    }]
 });
 
 userSchema.pre('save', async function (next) {
