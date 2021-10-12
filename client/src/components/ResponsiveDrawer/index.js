@@ -16,6 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Dashboard from '../../pages/Dashboard';
@@ -124,14 +126,23 @@ function ResponsiveDrawer(props) {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
 
+        <Router>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/collection' component={Dashboard} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+          </Switch>
+
         {/* PUT PAGE ROUTES HERE */}
         {/* <Home /> */}
         {/* <About /> */}
         {/* <Dashboard /> */}
-        <Login/>
+        {/* <Login/> */}
         {/* <Signup/> */}
 
-
+        </Router>
 
       </Box>
     </Box>
