@@ -17,10 +17,10 @@ const typeDefs = gql`
         _id: ID
         title: String!
         description: String
-        seenItCount: int
-        notSeenItCount: int 
-        lovedItCount: int 
-        hatedItCount: int
+        seenItCount: Int
+        notSeenItCount: Int 
+        lovedItCount: Int 
+        hatedItCount: Int
         hookQuestions: [HookQuestion]
     }
 
