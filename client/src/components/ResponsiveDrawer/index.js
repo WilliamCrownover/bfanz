@@ -48,7 +48,22 @@ function ResponsiveDrawer(props) {
       text: 'Surprise',
       link: '/'
     }
-  ]
+  ];
+
+  const buttonSet2 = [
+    {
+      text: 'About',
+      link: '/about'
+    },
+    {
+      text: 'Login/Sign Up',
+      link: '/login'
+    },
+    {
+      text: 'Logout',
+      link: '/'
+    }
+  ];
 
   const drawer = (
     <div>
@@ -69,14 +84,16 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
-        {['About', 'Login/Sign Up', 'Logout'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+        {buttonSet2.map((navButton, index) => (
+          <Link to={navButton.link}>
+            <ListItem button key={navButton.text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+            <ListItemText primary={navButton.text} />
           </ListItem>
-        ))}
+        </Link>
+      ))}
       </List>
     </div>
   );
