@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 
-const HookQuestionSchema = new Schema({
+const hookQuestionSchema = new Schema({
     questionText: {
         type: String,
         required: true,
@@ -15,6 +15,5 @@ const HookQuestionSchema = new Schema({
     },
 });
 
-const HookQuestion = model('HookQuestion', HookQuestionSchema);
 
-module.exports = HookQuestion;
+module.exports = hookQuestionSchema;

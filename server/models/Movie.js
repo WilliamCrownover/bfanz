@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 
+const hookQuestionSchema = require('./HookQuestion')
+
 const MovieSchema = new Schema({
     title: {
         type: String,
@@ -12,24 +14,26 @@ const MovieSchema = new Schema({
         trim: true,
     },
     seenItCount: {
-        type: int,
+        type: Number,
         required: true,
+        default: 0,
     },
     notSeenItCount: {
-        type: int,
+        type: Number,
         required: true,
+        default: 0,
     },
     lovedItCount: {
-        type: int,
+        type: Number,
         required: true,
+        default: 0,
     },
     hatedItCount: {
-        type: int,
+        type: Number,
         required: true,
+        default: 0,
     },
-    hookQuestions: {
-        type: [HookQuestion],
-    },
+    hookQuestions: [hookQuestionSchema],
 });
 
 const Movie = model('Movie', MovieSchema);
