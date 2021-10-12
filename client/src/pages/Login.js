@@ -4,23 +4,38 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../utils/mutations';
 
 const Login = () => {
-	const handleSubmit = (event) => {
+	const [loginUser] = useMutation( LOGIN );
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
-		// eslint-disable-next-line no-console
-		console.log({
-			email: data.get('email'),
-			password: data.get('password'),
-		});
+		const formData = new FormData(event.currentTarget);
+
+		try {
+			const { data } = await loginUser( {
+				variables: {
+					username: formData.get('username'),
+					password: formData.get('password')
+				}
+			});
+
+			if ( !data ) {
+				throw new Error( 'something went wrong!' );
+			}
+
+			console.log(data);
+
+		} catch ( err ) {
+			console.error( err );
+		}
 	};
 
 	const theme = createTheme();
@@ -54,10 +69,10 @@ const Login = () => {
 								margin="normal"
 								required
 								fullWidth
-								id="email"
-								label="Email Address"
-								name="email"
-								autoComplete="email"
+								id="username"
+								label="Username"
+								name="username"
+								autoComplete="username"
 								autoFocus
 							/>
 							<TextField
@@ -70,17 +85,13 @@ const Login = () => {
 								id="password"
 								autoComplete="current-password"
 							/>
-							<FormControlLabel
-								control={<Checkbox value="remember" color="primary" />}
-								label="Remember me"
-							/>
 							<Button
 								type="submit"
 								fullWidth
 								variant="contained"
 								sx={{ mt: 3, mb: 2 }}
 							>
-								Sign In
+								Login
 							</Button>
 							<Grid container>
 								<Grid item xs>
