@@ -123,9 +123,9 @@ function ResponsiveDrawer(props) {
         <Toolbar />
 
         {/* PUT PAGE ROUTES HERE */}
-        <Home />
+        {/* <Home /> */}
         {/* <About /> */}
-        {/* <Dashboard /> */}
+        <Dashboard />
 
 
 
