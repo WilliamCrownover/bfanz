@@ -1,79 +1,79 @@
 [
     {
-    "title": "Repo the Genetic Opera",
-    "image": "URL or API image",
-    "realesed": "Nov 7, 2008",
-    "length": "1h 38min"
-    "dierctor": "Darren Lynn Bousman",
-    "actors": "Alexa Vega, Anthony Head, Paris Hilton, Sarah Brightman",
-    "genre": "Horror, Musical, Sci-Fi",
-    "mpaa": "R"
+        "title": "Repo the Genetic Opera",
+        "image": "URL or API image",
+        "realesed": "Nov 7, 2008",
+        "length": "1h 38min"
+        "director": "Darren Lynn Bousman",
+        "actors": "Alexa Vega, Anthony Head, Paris Hilton, Sarah Brightman",
+        "genre": "Horror, Musical, Sci-Fi",
+        "mpaa": "R"
 
-    
-},
 
-{
-    "title": "Flight of the Navigator",
-    "image": "URL or API image",
-    "realesed": "July 30, 1986",
-    "length": "1h 30min"
-    "dierctor": "Randal Kleiser",
-    "actors": "Joey Cramer, Paul Reubens, Sarah Jessica Parker, Howard Hesseman",
-    "genre": "Sci-Fi, Adventrue",
-    "mpaa": "PG"
+    },
 
-    
-},
+    {
+        "title": "Flight of the Navigator",
+        "image": "URL or API image",
+        "released": "July 30, 1986",
+        "length": "1h 30min"
+        "director": "Randal Kleiser",
+        "actors": "Joey Cramer, Paul Reubens, Sarah Jessica Parker, Howard Hesseman",
+        "genre": "Sci-Fi, Adventrue",
+        "mpaa": "PG"
 
-{
-    "title": "The Last Dragon",
-    "image": "URL or API image",
-    "realesed": "March 22, 1985",
-    "length": "1h 49min"
-    "dierctor": "Michael Schultz",
-    "actors": "Taimak, Vanity, Julius Carry",
-    "genre": "Martial Arts, Musical, Drama",
-    "mpaa": "PG-13"
 
-    
-},
+    },
 
-{
-    "title": "The Wiz",
-    "image": "URL or API image",
-    "realesed": "October 24, 1978",
-    "length": "2h 16min"
-    "dierctor": "Sidney Lumet",
-    "actors": "Diana Ross, Michael Jackson, Ted Ross, Richard Pryor, Nipsey Russell, Lena Horne",
-    "genre": "Musical",
-    "mpaa": "G"
+    {
+        "title": "The Last Dragon",
+        "image": "URL or API image",
+        "released": "March 22, 1985",
+        "length": "1h 49min"
+        "director": "Michael Schultz",
+        "actors": "Taimak, Vanity, Julius Carry",
+        "genre": "Martial Arts, Musical, Drama",
+        "mpaa": "PG-13"
 
-    
-},
 
-{
-    "title": "Repo the Genetic Opera",
-    "image": "URL or API image",
-    "realesed": "2008",
-    "length": "1h 38min"
-    "dierctor": "Darren Lynn Bousman",
-    "actors": "Alexa Vega, Anthony Head, Paris Hilton, Sarah Brightman",
-    "genre": "Horror, Musical, Sci-Fi",
-    "mpaa": "R"
+    },
 
-    
-},
+    {
+        "title": "The Wiz",
+        "image": "URL or API image",
+        "released": "October 24, 1978",
+        "length": "2h 16min"
+        "director": "Sidney Lumet",
+        "actors": "Diana Ross, Michael Jackson, Ted Ross, Richard Pryor, Nipsey Russell, Lena Horne",
+        "genre": "Musical",
+        "mpaa": "G"
 
-{
-    "title": "One Hour Photo",
-    "image": "URL or API image",
-    "realesed": "August 21, 2002",
-    "length": "1h 36min"
-    "dierctor": "Mark Romanek",
-    "actors": "Robin Williams, Connie Nielsen, Michael Vartan,Dylan Smith",
-    "genre": "Horror, Thriller, Drama",
-    "mpaa": "R"
 
-    
-},
+    },
+
+    {
+        "title": "Repo the Genetic Opera",
+        "image": "URL or API image",
+        "released": "2008",
+        "length": "1h 38min"
+        "director": "Darren Lynn Bousman",
+        "actors": "Alexa Vega, Anthony Head, Paris Hilton, Sarah Brightman",
+        "genre": "Horror, Musical, Sci-Fi",
+        "mpaa": "R"
+
+
+    },
+
+    {
+        "title": "One Hour Photo",
+        "image": "URL or API image",
+        "released": "August 21, 2002",
+        "length": "1h 36min"
+        "director": "Mark Romanek",
+        "actors": "Robin Williams, Connie Nielsen, Michael Vartan,Dylan Smith",
+        "genre": "Horror, Thriller, Drama",
+        "mpaa": "R"
+
+
+    },
 ]
