@@ -11,6 +11,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const Login = () => {
 	const [loginUser] = useMutation( LOGIN );
@@ -32,6 +33,7 @@ const Login = () => {
 			}
 
 			console.log(data);
+			Auth.login(data.login.token);
 
 		} catch ( err ) {
 			console.error( err );
