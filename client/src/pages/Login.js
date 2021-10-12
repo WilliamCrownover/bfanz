@@ -13,6 +13,8 @@ import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
+import { Link as RouterLink } from 'react-router-dom';
+
 const Login = () => {
 	const [loginUser] = useMutation( LOGIN );
 
@@ -102,9 +104,9 @@ const Login = () => {
 									</Link>
 								</Grid>
 								<Grid item>
-									<Link href="/signup" variant="body2">
+									<RouterLink to="/signup" variant="body2">
 										{"Don't have an account? Sign Up"}
-									</Link>
+									</RouterLink>
 								</Grid>
 							</Grid>
 						</Box>

@@ -72,8 +72,8 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {buttonSet1.map((navButton, index) => (
-          <Link to={navButton.link}>
-            <ListItem button key={navButton.text}>
+          <Link to={navButton.link} key={navButton.text}>
+            <ListItem button >
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
@@ -85,8 +85,8 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {buttonSet2.map((navButton, index) => (
-          <Link to={navButton.link}>
-            <ListItem button key={navButton.text}>
+          <Link to={navButton.link} key={navButton.text}>
+            <ListItem button >
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
