@@ -17,3 +17,17 @@ export const LOGIN = gql`
         }
     }
 `
+//   USERS
+//CHANGE_PASSWORD
+//EDIT_SEENIT
+//EDIT_RATEIT
+
+//    HOOKS
+//ADD_HOOK
+//EDIT_HOOK
+//DELETE_HOOK
+
+//    MOVIES
+//ADD_MOVIE
+//EDIT_MOVIE
+//DELETE_MOVIE
