@@ -10,18 +10,18 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useMutation } from '@apollo/client';
-import { LOGIN } from '../utils/mutations';
+import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-const Login = () => {
-	const [loginUser] = useMutation( LOGIN );
+const Signup = () => {
+	const [addUser] = useMutation( ADD_USER );
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const formData = new FormData(event.currentTarget);
 
 		try {
-			const { data } = await loginUser( {
+			const { data } = await addUser( {
 				variables: {
 					username: formData.get('username'),
 					password: formData.get('password')
@@ -33,7 +33,7 @@ const Login = () => {
 			}
 
 			console.log(data);
-			Auth.login(data.login.token);
+			Auth.login(data.signup.token);
 
 		} catch ( err ) {
 			console.error( err );
@@ -64,7 +64,7 @@ const Login = () => {
 							<LockOutlinedIcon />
 						</Avatar>
 						<Typography component="h1" variant="h5">
-							Login
+							Signup
 						</Typography>
 						<Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
 							<TextField
@@ -93,17 +93,12 @@ const Login = () => {
 								variant="contained"
 								sx={{ mt: 3, mb: 2 }}
 							>
-								Login
+								Signup
 							</Button>
 							<Grid container>
-								<Grid item xs>
-									<Link href="#" variant="body2">
-										Forgot password?
-									</Link>
-								</Grid>
 								<Grid item>
-									<Link href="/signup" variant="body2">
-										{"Don't have an account? Sign Up"}
+									<Link href="/login" variant="body2">
+										{"Already have an account? Login"}
 									</Link>
 								</Grid>
 							</Grid>
@@ -115,4 +110,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Signup;

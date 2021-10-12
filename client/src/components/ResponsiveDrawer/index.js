@@ -20,6 +20,7 @@ import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
+import Signup from '../../pages/Signup';
 
 
 const drawerWidth = 240;
@@ -128,6 +129,7 @@ function ResponsiveDrawer(props) {
         {/* <About /> */}
         {/* <Dashboard /> */}
         <Login/>
+        {/* <Signup/> */}
 
 
 
