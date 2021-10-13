@@ -6,11 +6,11 @@ const Dashboard = () => {
 
     return (
 
-        <Grid container spacing={4}>
-            <Grid item xs={12} md={4} lg={3}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid item>
                 <AddMovieButton />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item>
                 <DashCard />
             </Grid>
         </Grid>
