@@ -24,6 +24,7 @@ import About from '../../pages/About';
 import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
+import AddMovie from '../../pages/AddMovie';
 
 
 const drawerWidth = 240;
@@ -172,6 +173,7 @@ function ResponsiveDrawer(props) {
             <Route exact path='/collection' component={Dashboard} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
+            <Route exact path='/AddMovie' component={AddMovie} />
           </Switch>
 
         </Box>
