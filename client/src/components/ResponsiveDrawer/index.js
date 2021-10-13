@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -42,7 +43,8 @@ function ResponsiveDrawer(props) {
     },
     {
       text: 'View Collection',
-      link: '/collection'
+      link: '/collection',
+      icon: <LocalMoviesSharpIcon/>
     },
     {
       text: 'Surprise',
@@ -75,7 +77,8 @@ function ResponsiveDrawer(props) {
           <Link to={navButton.link} key={navButton.text}>
             <ListItem button >
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {navButton.icon}
+                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
               </ListItemIcon>
               <ListItemText primary={navButton.text} />
             </ListItem>
