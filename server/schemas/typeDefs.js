@@ -7,7 +7,28 @@ const typeDefs = gql`
     }
 
     type User {
-        username: String
+        _id: ID
+        username: String!
+        moviesAdded: [ID]
+        moviesSeen: [ID]
+    }
+
+    type Movie {
+        _id: ID
+        title: String!
+        description: String
+        seenItCount: Int
+        notSeenItCount: Int 
+        lovedItCount: Int 
+        hatedItCount: Int
+        hookQuestions: [HookQuestion]
+    }
+
+    type HookQuestion {
+        _id: ID 
+        questionText: String 
+        movieId: ID 
+        userId: ID
     }
 
     type Query {
@@ -19,5 +40,4 @@ const typeDefs = gql`
         login(username: String, password: String): Auth
     }
 `
-
 module.exports = typeDefs;
