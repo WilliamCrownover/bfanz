@@ -9,12 +9,12 @@ export default function BasicCard() {
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardActionArea href="/AddMovie">
-                <CardContent>
+                <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Typography variant="h5" component="div">
                         Add New Movie
                     </Typography>
                 </CardContent>
-                <CardContent>
+                <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
                     <AddIcon />
                 </CardContent>
             </CardActionArea>
