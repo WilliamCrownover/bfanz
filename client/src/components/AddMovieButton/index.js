@@ -5,13 +5,10 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import CardActionArea from '@mui/material/CardActionArea';
 
-
-
-
 export default function BasicCard() {
     return (
         <Card sx={{ minWidth: 275 }}>
-            <CardActionArea href="#AddMovie">
+            <CardActionArea href="/AddMovie">
                 <CardContent>
                     <Typography variant="h5" component="div">
                         Add New Movie
