@@ -11,16 +11,22 @@ const Dashboard = () => {
         <Container>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item xs={12}>
-                    <Box maxWidth="sm" >
+                    <Box maxWidth="md" >
                         <SearchBar />
                     </Box>
                 </Grid>
                 <Grid item>
                     <AddMovieButton />
                 </Grid>
-                <Grid item>
+                {/* Testing larger collections */}
+                {Array.from(Array(8)).map((_, index) => (
+                    <Grid item>
+                        <DashCard />
+                    </Grid>
+                ))}
+                {/* <Grid item>
                     <DashCard />
-                </Grid>
+                </Grid> */}
             </Grid>
         </Container>
     );
