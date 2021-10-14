@@ -1,17 +1,16 @@
 import HookQuestions from '../components/HookQuestions';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import HeroBox from '../components/HeroBox/index';
 
 const Home = () => {
 
     return (
         <Grid container >
-            <Grid sx={{ border: 1 }} item xs={12}>
-                <Typography variant="h1">
-                    HERO BAR AREA
-                </Typography>
+            <Grid item xs={12}>
+                <HeroBox />
             </Grid>
-            <Grid sx={{ border: 1 }} item xs={12}>
+            <Grid item xs={12}>
                 <Typography variant="h2">
                     Marquee Area
                 </Typography>

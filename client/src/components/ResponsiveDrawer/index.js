@@ -12,8 +12,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -60,7 +60,7 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
 
-      <Toolbar />
+
       <Divider />
       <List>
         {buttonSet1.map((navButton, index) => (
@@ -114,7 +114,7 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -124,10 +124,8 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            BFANZ
-          </Typography>
-        </Toolbar>
+
+
       </AppBar>
 
       <Router>
@@ -164,8 +162,7 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Box>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <Toolbar />
+        <Box component="main" sx={{ flexGrow: 1, p: 0 }}>  
 
           <Switch>
             <Route exact path='/' component={Home} />
