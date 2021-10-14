@@ -172,6 +172,7 @@ function ResponsiveDrawer(props) {
             <Route exact path='/collection' component={Dashboard} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
+            <Route path='/' component={Home} />
           </Switch>
 
         </Box>
