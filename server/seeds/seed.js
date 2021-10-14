@@ -1,1 +1,13 @@
-console.log('This is the seed file, it still needs to be built.')
+const db = require('../config/connection');
+const { Movie } = require('../models');
+
+const techData = require('./movieData.json');
+
+db.once('open', async () => {
+  await Movie.deleteMany({});
+
+  const movies = await Movie.insertMany(techData);
+
+  console.log('Movies seeded!');
+  process.exit(0);
+});
