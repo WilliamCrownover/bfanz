@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ import About from '../../pages/About';
 import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
+import AddMovie from '../../pages/AddMovie';
 
 
 const drawerWidth = 240;
@@ -42,7 +44,8 @@ function ResponsiveDrawer(props) {
     },
     {
       text: 'View Collection',
-      link: '/collection'
+      link: '/collection',
+      icon: <LocalMoviesSharpIcon/>
     },
     {
       text: 'Surprise',
@@ -75,7 +78,8 @@ function ResponsiveDrawer(props) {
           <Link to={navButton.link} key={navButton.text}>
             <ListItem button >
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {navButton.icon}
+                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
               </ListItemIcon>
               <ListItemText primary={navButton.text} />
             </ListItem>
@@ -90,10 +94,10 @@ function ResponsiveDrawer(props) {
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
-            <ListItemText primary={navButton.text} />
-          </ListItem>
-        </Link>
-      ))}
+              <ListItemText primary={navButton.text} />
+            </ListItem>
+          </Link>
+        ))}
       </List>
     </div>
   );
@@ -163,13 +167,15 @@ function ResponsiveDrawer(props) {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
 
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/collection' component={Dashboard} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={Signup} />
-            </Switch>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/collection' component={Dashboard} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/AddMovie' component={AddMovie} />
+            <Route path='/' component={Home} />
+          </Switch>
 
         </Box>
       </Router>
