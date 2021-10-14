@@ -4,11 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import CardActionArea from '@mui/material/CardActionArea';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function BasicCard() {
     return (
-        <Link to="/AddMovie">
+        <RouterLink to="/AddMovie">
             <Card sx={{ minWidth: 275 }}>
                 <CardActionArea>
                     <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -21,6 +21,6 @@ export default function BasicCard() {
                     </CardContent>
                 </CardActionArea>
             </Card>
-        </Link>
+        </RouterLink>
     );
 }
