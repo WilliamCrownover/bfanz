@@ -15,7 +15,7 @@ const AddMovie = () => {
                 spacing={{ xs: 2, md: 3 }}
             >
                 <Grid item xs={9}>
-                    <SearchBar />
+                    <SearchBar label="Check Movies"/>
                 </Grid>
                 <Grid item xs='auto'>
                     <Button variant='contained'> Check </Button>
