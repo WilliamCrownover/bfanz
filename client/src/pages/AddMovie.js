@@ -15,10 +15,16 @@ const AddMovie = () => {
                 spacing={{ xs: 2, md: 3 }}
             >
                 <Grid item xs={9}>
-                    <SearchBar label="Check Movies"/>
+                    <SearchBar label="Check Movies" />
                 </Grid>
-                <Grid item xs='auto'>
-                    <Button variant='outlined'> Check </Button>
+                <Grid item xs={3}>
+                    <Button size="large" variant='outlined'> Check </Button>
+                </Grid>
+                <Grid item xs={12}>
+                    <SearchBar label="Title" />
+                </Grid>
+                <Grid item xs={12}>
+                    <SearchBar label="Hook Questions" />
                 </Grid>
             </Grid>
         </Container>
