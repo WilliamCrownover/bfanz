@@ -1,13 +1,24 @@
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import SearchBar from '../components/SearchBar';
+import Button from '@mui/material/Button';
 
 const AddMovie = () => {
     return (
 
         <Container>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                <Grid item>
-                    THIS WILL BE THE ADD MOVIE FORM
+            <Grid
+                container
+                direction='row'
+                justifyContent='center'
+                alignItems='center'
+                spacing={{ xs: 2, md: 3 }}
+            >
+                <Grid item xs={9}>
+                    <SearchBar />
+                </Grid>
+                <Grid item xs='auto'>
+                    <Button variant='contained'> Check </Button>
                 </Grid>
             </Grid>
         </Container>
