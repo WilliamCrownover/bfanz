@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import DashCard from '../components/DashCard';
 import AddMovieButton from '../components/AddMovieButton';
 import Container from '@mui/material/Container';
-import SearchBar from '../components/SearchBar/SearchBar';
+import SearchBar from '../components/SearchBar';
 import Box from '@mui/material/Box';
 
 const Dashboard = () => {
