@@ -18,7 +18,7 @@ const AddMovie = () => {
                     <SearchBar label="Check Movies"/>
                 </Grid>
                 <Grid item xs='auto'>
-                    <Button variant='contained'> Check </Button>
+                    <Button variant='outlined'> Check </Button>
                 </Grid>
             </Grid>
         </Container>
