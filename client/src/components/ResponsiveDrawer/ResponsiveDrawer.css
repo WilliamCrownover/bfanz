@@ -1,0 +1,16 @@
+.MuiListItemText-primary {
+    color: #f5c300;
+  }
+  .MuiListItemText-primary:hover {
+    color: #eceff1;
+  }
+  
+  /* .MuiTypography-root {
+      font-family: 'Khand';
+      font-size: 2rem;
+  }
+
+  span {
+    font-family: 'Khand';
+    font-size: 2rem;
+  } */

@@ -13,8 +13,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 // import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
+import './ResponsiveDrawer.css';
+
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -62,7 +64,7 @@ function ResponsiveDrawer(props) {
 
 
       <Divider />
-      <List>
+      <List sx={{ mt: 6}}>
         {buttonSet1.map((navButton, index) => (
           <Link to={navButton.link} key={navButton.text}>
             <ListItem button >
@@ -70,7 +72,7 @@ function ResponsiveDrawer(props) {
                 {navButton.icon}
                 {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
               </ListItemIcon>
-              <ListItemText primary={navButton.text} />
+              <ListItemText sx={{ fontSize: 32}} primary={navButton.text} />
             </ListItem>
           </Link>
         ))}
@@ -145,6 +147,7 @@ function ResponsiveDrawer(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
+              fontSize: 32,
               display: { xs: 'block', sm: 'none' },
               '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
             }}
