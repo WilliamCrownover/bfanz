@@ -7,3 +7,6 @@ export const GET_ME = gql`
         }
     }
 `
+
+//GET_MOVIES
+//GET_HOOKQUESTIONS

@@ -11,15 +11,21 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
+
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Dashboard from '../../pages/Dashboard';
+import Login from '../../pages/Login';
+import Signup from '../../pages/Signup';
+import AddMovie from '../../pages/AddMovie';
 
+import Auth from '../../utils/auth';
 
 const drawerWidth = 240;
 
@@ -31,32 +37,68 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const buttonSet1 = [
+    {
+      text: 'Home',
+      link: '/'
+    },
+    {
+      text: 'View Collection',
+      link: '/collection',
+      icon: <LocalMoviesSharpIcon/>
+    },
+    {
+      text: 'Surprise',
+      link: '/'
+    },
+    {
+      text: 'About',
+      link: '/about'
+    }
+  ];
+
   const drawer = (
     <div>
 
       <Toolbar />
       <Divider />
       <List>
-        {['Home', 'View Collection', 'Surprise'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {buttonSet1.map((navButton, index) => (
+          <Link to={navButton.link} key={navButton.text}>
+            <ListItem button >
+              <ListItemIcon>
+                {navButton.icon}
+                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+              </ListItemIcon>
+              <ListItemText primary={navButton.text} />
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
-      <List>
-        {['About', 'Login/Sign Up', 'Logout'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      {Auth.loggedIn() ? (
+        <>
+          <Link to='/' key='Logout' onClick={Auth.logout}>
+            <ListItem button >
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary='Logout' />
+            </ListItem>
+          </Link>
+        </>
+      ) : (
+        <>
+          <Link to='/login' key='Login/Sign Up'>
+            <ListItem button >
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary='Login/Sign Up' />
+            </ListItem>
+          </Link>
+        </>
+      )}
     </div>
   );
 
@@ -87,49 +129,56 @@ function ResponsiveDrawer(props) {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
+
+      <Router>
+
+        <Box
+          component="nav"
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          aria-label="mailbox folders"
         >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar />
+          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+          >
+            {drawer}
+          </Drawer>
+          <Drawer
+            variant="permanent"
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+            open
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Toolbar />
 
-        {/* PUT PAGE ROUTES HERE */}
-        <Home />
-        {/* <About /> */}
-        {/* <Dashboard /> */}
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/collection' component={Dashboard} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/AddMovie' component={AddMovie} />
+            <Route path='/' component={Home} />
+          </Switch>
 
-
-
-      </Box>
+        </Box>
+      </Router>
     </Box>
   );
 }
