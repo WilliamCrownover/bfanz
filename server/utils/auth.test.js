@@ -1,8 +1,8 @@
 require('dotenv').config();
-const {signToken} = require('./auth');
+const {signToken, getContext} = require('./auth');
 const jwt = require('jsonwebtoken');
 
-describe('Sign Token Function', () => {
+describe('signToken Function', () => {
 
     test('it should return a string.', () => {
         
@@ -36,4 +36,79 @@ describe('Sign Token Function', () => {
 
         expect(data).toEqual(input);
     })
+});
+
+describe('getContext Function', () => {
+
+    test('it should return the req object.', ()=> {
+
+        const input = { 
+            res: {},
+            req: {
+                body: {},
+                query: {},
+                headers: {}
+            }, 
+            next: () => {} 
+        };
+
+        expect( getContext(input) ).toEqual(input.req)
+    });
+
+    test('it should add a user attribute with the jwt payload if valid token provided via authorization header.' , () => {
+
+        const expiration = '12h'
+        const payload = {username: "Fred"}
+        const inputToken = jwt.sign( {data: payload}, process.env.JWT_SECRET, {expiresIn: expiration} )
+        
+        const input = { 
+            res: {},
+            req: {
+                body: {},
+                query: {},
+                headers: {authorization: `Bearer ${inputToken}`}
+            }, 
+            next: () => {} 
+        };
+
+        expect( getContext(input) ).toHaveProperty('user', payload)
+    });
+
+    test('it should add a user attribute with the jwt payload if valid token provided via request body.' , () => {
+
+        const expiration = '12h'
+        const payload = {username: "Fred"}
+        const inputToken = jwt.sign( {data: payload}, process.env.JWT_SECRET, {expiresIn: expiration} )
+        
+        const input = { 
+            res: {},
+            req: {
+                body: {token: inputToken},
+                query: {},
+                headers: {}
+            }, 
+            next: () => {} 
+        };
+
+        expect( getContext(input) ).toHaveProperty('user', payload)
+    });
+
+    test('it should add a user attribute with the jwt payload if valid token provided via query attribute of the request.' , () => {
+
+        const expiration = '12h'
+        const payload = {username: "Fred"}
+        const inputToken = jwt.sign( {data: payload}, process.env.JWT_SECRET, {expiresIn: expiration} )
+        
+        const input = { 
+            res: {},
+            req: {
+                body: {},
+                query: {token: inputToken},
+                headers: {}
+            }, 
+            next: () => {} 
+        };
+
+        expect( getContext(input) ).toHaveProperty('user', payload)
+    });
 });
