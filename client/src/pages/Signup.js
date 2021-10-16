@@ -20,6 +20,12 @@ const Signup = () => {
 		event.preventDefault();
 		const formData = new FormData(event.currentTarget);
 
+		// if ( formData.get('username') === '' || formData.get('password') === '' ) {
+		// 	event.preventDefault();
+		// 	event.stopPropagation();
+		// 	return;
+		// }
+
 		try {
 			const { data } = await addUser( {
 				variables: {
@@ -33,7 +39,13 @@ const Signup = () => {
 			}
 
 			console.log(data);
-			Auth.login(data.signup.token);
+
+			if ( data.signup.success === true ) {
+				Auth.login(data.signup.token);
+			}
+
+
+			
 
 		} catch ( err ) {
 			console.error( err );
