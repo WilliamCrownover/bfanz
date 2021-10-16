@@ -5,6 +5,10 @@ const expiration = '12h';
 module.exports = {
     signToken: function ( {username, _id} ) {
 
+        if (!username || !_id) {
+            throw new Error('input parameter must have username and _id properties');
+        }
+
         const payload = {username, _id};
 
         return jwt.sign( {data: payload}, `${process.env.JWT_SECRET}`, {expiresIn: expiration} );

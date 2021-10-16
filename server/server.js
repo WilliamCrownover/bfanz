@@ -6,37 +6,43 @@ const db = require('./config/connection');
 const {typeDefs, resolvers} = require('./schemas/index');
 const { getContext } = require('./utils/auth');
 
-try {
-    const app = express();
-    const PORT = process.env.PORT || 3001;
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-    const server = new ApolloServer({
-        typeDefs,
-        resolvers,
-        context: getContext
-    });
+async function createServer(PORT) {
+    try {
+        const server = new ApolloServer({
+            typeDefs,
+            resolvers,
+            context: getContext
+        });
 
-    server.applyMiddleware({ app });
+        await server.start();
 
-    app.use(express.urlencoded({ extended: true }));
-    app.use(express.json());
+        server.applyMiddleware({ app });
 
-    if (process.env.NODE_ENV === 'production') {
-        app.use(express.static(path.join(__dirname, '../client/build')));
-    }
-    
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
-    });
+        app.use(express.urlencoded({ extended: true }));
+        app.use(express.json());
 
-    db.once('open', () => {
-        app.listen(PORT, () => {
-            console.log(`API server running on port ${PORT}`);
+        if (process.env.NODE_ENV === 'production') {
+            app.use(express.static(path.join(__dirname, '../client/build')));
+        }
+        
+        app.get('*', (req, res) => {
+            res.sendFile(path.join(__dirname, '../client/build/index.html'));
+        });
 
-            console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`)
+        db.once('open', () => {
+            app.listen(PORT, () => {
+                console.log(`API server running on port ${PORT}`);
+
+                console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`)
+            })
         })
-    })
+    }
+    catch (err) {
+        console.error(err)
+    }
 }
-catch (err) {
-    console.error(err)
-}
+
+createServer(PORT);
