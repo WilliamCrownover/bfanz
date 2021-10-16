@@ -4,14 +4,14 @@ const bcrypt = require('bcrypt');
 const userSchema = new Schema({
     username: {
         type: String,
-        required: true,
+        required: [true, 'You need to provide a Username.'],
         unique: true,
         trim: true,
     },
     password: {
         type: String,
-        required: true,
-        minlength: 6,
+        required: [true, 'You need to provide a Password.'],
+        minlength: [6, 'Password must be at least 6 characters'],
     },
     moviesAdded: [{
         type: Schema.Types.ObjectId,

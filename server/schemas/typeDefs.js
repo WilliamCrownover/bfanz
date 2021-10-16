@@ -4,6 +4,7 @@ const typeDefs = gql`
     type Auth {
         token: String
         success: Boolean
+        message: String
     }
 
     type User {

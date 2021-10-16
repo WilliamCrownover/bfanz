@@ -40,32 +40,61 @@ const resolvers = {
                 const newUser = await User.create( {username, password} );
                 const token = signToken(newUser);
 
-                return {token, success: true};
-            } catch (err) {
-                console.error(err)
-            }
+                return {token, success: true, message:'Account Creation Successful'};
+            } catch ( err ) {
 
-            return {token: '', success: false};
+                console.error(err)
+
+                if (err.name === 'MongoError' && err.code === 11000) {
+                    return {token: '', success: false, message: 'Sorry this username is already taken.'}
+                }
+
+                const { errors } = err;
+
+                if (errors.password) {
+                    return {token: '', success: false, message: errors.password.message}
+                }
+
+                if (errors.username) {
+                    return {token: '', success: false, message: errors.username.message}
+                }
+            }
 
         },
 
         login: async (parent, {username, password}) => {
             
-            const user = await User.findOne( {username} );
+            try{
+                const user = await User.findOne( {username} );
 
-            if (!user) {
-                throw new AuthenticationError('Username or password is incorrect.');
+                if (!user) {
+                    return {token: '', success: false, message:'Username or password is incorrect.'}
+                }
+    
+                const isCorrectPassword = await user.isCorrectPassword(password);
+    
+                if (!isCorrectPassword) {
+                    return {token: '', success: false, message:'Username or password is incorrect.'}
+                }
+    
+                const token = signToken(user);
+    
+                return {token, success: true, message: 'Login successful'}
+
+            } catch (err) {
+                console.error(err)
+
+                const { errors } = err;
+
+                if (errors.password) {
+                    return {token: '', success: false, message: errors.password.message}
+                }
+
+                if (errors.username) {
+                    return {token: '', success: false, message: errors.username.message}
+                }
             }
 
-            const isCorrectPassword = await user.isCorrectPassword(password);
-
-            if (!isCorrectPassword) {
-                throw new AuthenticationError('Username or password is incorrect.');
-            }
-
-            const token = signToken(user);
-
-            return {token, success: true}
         }
     }
 }
