@@ -27,14 +27,19 @@ const AddMovie = () => {
                 <Grid item xs={3}>
                     <Button size="large" variant='outlined'> Check </Button>
                 </Grid>
+
+                {/* everything below here should be disabled until a check has been completed */}
                 <Grid item xs={12}>
                     <TextField fullWidth id="title" label="Movie Title" variant="standard" />
+                    {/* <TextField disabled fullWidth id="title" label="Movie Title" variant="standard" /> */}
                 </Grid>
                 <Grid item xs={12}>
                     <TextField fullWidth id="hook-questions" label="Hook" variant="standard" />
+                    {/* <TextField disabled fullWidth id="hook-questions" label="Hook" variant="standard" /> */}
                 </Grid>
                 <Grid item xs={12}>
                     <TextField fullWidth id="description" label="Description" variant="filled" />
+                    {/* <TextField disabled fullWidth id="description" label="Description" variant="filled" /> */}
                 </Grid>
 
                 <Grid item xs={12}>
@@ -119,6 +124,7 @@ const AddMovie = () => {
                 </Grid>
                 <Grid item>
                     <Button size="large" variant='outlined'> Add </Button>
+                    {/* <Button disabled size="large" variant='outlined'> Add </Button> */}
                 </Grid>
             </Grid>
         </Container>
