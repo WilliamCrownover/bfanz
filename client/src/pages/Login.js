@@ -13,9 +13,12 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 import { Link as RouterLink } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
 	const [loginUser] = useMutation( LOGIN );
+
+	const [showAlert, setShowAlert] = useState( null );
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -34,7 +37,17 @@ const Login = () => {
 			}
 
 			console.log(data);
-			Auth.login(data.login.token);
+			
+			if ( data.login.success === true ) {
+				Auth.login(data.login.token);
+				return;
+			}
+
+			setShowAlert("That was an invalid input");
+
+			setTimeout(() => {
+				setShowAlert(null);
+			}, 2000);
 
 		} catch ( err ) {
 			console.error( err );
@@ -103,6 +116,11 @@ const Login = () => {
 								<RouterLink to="/signup" variant="body2">
 									{"Don't have an account? Sign Up"}
 								</RouterLink>
+							</Grid>
+							<Grid container sx={{mt: 1 }}>
+								<Grid item>
+									<p>{showAlert}</p>
+								</Grid>
 							</Grid>
 						</Grid>
 					</Box>
