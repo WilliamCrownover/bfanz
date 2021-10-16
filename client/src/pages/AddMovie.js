@@ -7,7 +7,8 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import MoodIcon from '@mui/icons-material/Mood';
 import MoodBadIcon from '@mui/icons-material/MoodBad';
 import Paper from '@mui/material/Paper';
-
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 
 const AddMovie = () => {
@@ -51,71 +52,86 @@ const AddMovie = () => {
                             justifyContent='center'
                             alignItems="stretch"
                         >
-                            {/* Left column */}
-                            <Grid item xs={12} md={6} sx={{ color: 'black', border: 1, borderColor: 'white' }}>
-                                {/* <Container> */}
-                                <Grid
-                                    container
-                                    direction="column"
-                                    justifyContent="center"
-                                    alignItems="stretch"
-                                >
-                                    {/* Top box */}
-                                    <Grid item xs={6} >
-                                        <Container >
-                                            {/* top row */}
+                            {/* Left column , border: 1, borderColor: 'white'*/}
+                            <Grid item xs={12} md={6} sx={{ color: 'black' }}>
+                                <Container>
+                                    <Card sx={{ minWidth: 275, minHeight: 200 }}>
+                                        <CardContent>
                                             <Grid
                                                 container
-                                                direction="row"
-                                                justifyContent="center"
-                                                alignItems="center"
-                                                sx={{ bgcolor: 'red' }}
-                                            >
-                                                {/* top left box */}
-                                                <Grid item sx={{ border: 1 }} xs={6}>
-                                                    Rating 1
-                                                </Grid>
-                                                {/* top right box */}
-                                                <Grid item sx={{ border: 1 }} xs={6}>
-                                                    Rating 2
-                                                </Grid>
-                                            </Grid>
-                                            <Grid
-                                                container
-                                                direction="row"
+                                                direction="column"
                                                 justifyContent="center"
                                                 alignItems="stretch"
-                                                sx={{ bgcolor: 'red' }}
                                             >
-                                                {/* bottom left box */}
-                                                <Grid item sx={{ border: 1 }} xs={6}>
-                                                    <RemoveRedEyeIcon />
-                                                    <VisibilityOffIcon />
+                                                {/* Top box */}
+                                                <Grid item xs={6} >
+                                                    <Container >
+                                                        {/* top row */}
+                                                        <Grid
+                                                            container
+                                                            direction="row"
+                                                            justifyContent="center"
+                                                            alignItems="center"
+                                                            sx={{ bgcolor: 'red' }}
+                                                        >
+                                                            {/* look into percentage/rating bar */}
+                                                            {/* top left box */}
+                                                            <Grid item sx={{ border: 1 }} xs={6}>
+                                                                Seen it 1
+                                                            </Grid>
+                                                            <Grid item sx={{ border: 1 }} xs={6}>
+                                                                Not seen it
+                                                            </Grid>
+                                                            {/* top right box */}
+                                                            <Grid item sx={{ border: 1 }} xs={6}>
+                                                                Loved It
+                                                            </Grid>
+                                                            <Grid item sx={{ border: 1 }} xs={6}>
+                                                                Hated It
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid
+                                                            container
+                                                            direction="row"
+                                                            justifyContent="center"
+                                                            alignItems="stretch"
+                                                            sx={{ bgcolor: 'red' }}
+                                                        >
+                                                            {/* bottom left box */}
+                                                            <Grid item sx={{ border: 1 }} xs={6}>
+                                                                <RemoveRedEyeIcon />
+                                                                <VisibilityOffIcon />
+                                                            </Grid>
+                                                            <Grid item sx={{ border: 1 }} xs={6}>
+                                                                <MoodIcon />
+                                                                <MoodBadIcon />
+                                                            </Grid>
+                                                        </Grid>
+                                                    </Container>
                                                 </Grid>
-                                                <Grid item sx={{ border: 1 }} xs={6}>
-                                                    <MoodIcon />
-                                                    <MoodBadIcon />
-                                                </Grid>
-                                            </Grid>
-                                        </Container>
-                                    </Grid>
 
-                                    {/* Bottom box */}
-                                    <Container>
-                                        <Grid item sx={{ border: 1, mt: 3, bgcolor: 'red' }} xs={12}>
-                                            Stuff
-                                        </Grid>
-                                    </Container>
-                                </Grid>
-                                {/* </Container> */}
+                                                {/* Directors/Actors box */}
+                                                <Container>
+                                                    <Grid item sx={{ border: 1, mt: 3, bgcolor: 'red' }} xs={12}>
+                                                        Stuff
+                                                    </Grid>
+                                                </Container>
+                                            </Grid>
+                                        </CardContent>
+                                    </Card>
+                                </Container>
                             </Grid>
 
-                            {/* Rigth column */}
-                            <Grid item xs={12} md={6} sx={{ color: 'black', border: 1, borderColor: 'white' }}>
+                            {/* Rigth column , border: 1, borderColor: 'white' }*/}
+                            <Grid item xs={12} md={6} sx={{ color: 'black' }}>
                                 <Container>
-                                    <Paper elevation={3} sx={{ backgroundColor: 'red', height: 200 }}>
-                                        Directors Actors Etc...
-                                    </Paper>
+                                    <Card sx={{ minWidth: 275, minHeight: 200 }}>
+                                        <CardContent>
+                                            {/* <Paper elevation={3} sx={{ backgroundColor: 'red', height: 200 }}> */}
+                                            Directors Actors Etc...
+                                            {/* </Paper> */}
+                                        </CardContent>
+                                    </Card>
                                 </Container>
                             </Grid>
 
