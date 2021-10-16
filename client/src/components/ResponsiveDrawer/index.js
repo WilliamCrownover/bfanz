@@ -15,6 +15,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
+import TheaterComedySharpIcon from '@mui/icons-material/TheaterComedySharp';
+import InfoSharpIcon from '@mui/icons-material/InfoSharp';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
+import './ResponsiveDrawer.css';
+
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -40,20 +45,23 @@ function ResponsiveDrawer(props) {
   const buttonSet1 = [
     {
       text: 'Home',
-      link: '/'
+      link: '/',
+      icon: <HomeSharpIcon />
     },
     {
       text: 'View Collection',
       link: '/collection',
-      icon: <LocalMoviesSharpIcon/>
+      icon: <LocalMoviesSharpIcon />
     },
     {
       text: 'Surprise',
-      link: '/'
+      link: '/',
+      icon: <TheaterComedySharpIcon />
     },
     {
       text: 'About',
-      link: '/about'
+      link: '/about',
+      icon: <InfoSharpIcon />
     }
   ];
 
@@ -62,7 +70,7 @@ function ResponsiveDrawer(props) {
 
       <Toolbar />
       <Divider />
-      <List>
+      <List sx={{ mt: 6 }}>
         {buttonSet1.map((navButton, index) => (
           <Link to={navButton.link} key={navButton.text}>
             <ListItem button >
@@ -70,12 +78,13 @@ function ResponsiveDrawer(props) {
                 {navButton.icon}
                 {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
               </ListItemIcon>
-              <ListItemText primary={navButton.text} />
+              <ListItemText sx={{ fontSize: 32 }} primary={navButton.text} />
             </ListItem>
           </Link>
         ))}
       </List>
       <Divider />
+
       {Auth.loggedIn() ? (
         <>
           <Link to='/' key='Logout' onClick={Auth.logout}>
@@ -114,19 +123,17 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ display: { sm: 'none' } }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            BFANZ
-          </Typography>
+
         </Toolbar>
       </AppBar>
 
@@ -147,6 +154,7 @@ function ResponsiveDrawer(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
+              fontSize: 32,
               display: { xs: 'block', sm: 'none' },
               '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
             }}
@@ -164,8 +172,7 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Box>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <Toolbar />
+        <Box component="main" sx={{ flexGrow: 1, p: 0, mt: { xs: "50px", sm: "0" } }}>
 
           <Switch>
             <Route exact path='/' component={Home} />

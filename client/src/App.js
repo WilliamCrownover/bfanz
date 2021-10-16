@@ -37,19 +37,41 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// *** OVERRIDE THEME *** ///
 const theme = createTheme({
   palette: {
     mode: 'dark',
     text: {
       primary: '#f5c300',
       secondary: '#eceff1',
+      disabled: '#ffffff'
     },
-  },
-
+  //   error: '#f52100',
+  //   info: '#0083f5',
+  //   success: '#83f500',
+  // }, //hold for later use
   typography: {
     fontFamily: 'Khand',
   },
-});
+  background: {
+    paper: '#000000',
+    default: '#000000'
+  },
+  // action: {
+  //   active: '#83f500',
+  //   hover: '#83f500',
+  //   selected: '#83f500'
+  // },  //hold for later use
+  // components: {
+  //   MuiBox: {
+  //     styleOverrides: {
+  //       root: { 
+  //         padding: 0,
+  //       },
+  //     },
+  //   },
+  // },  //neither styleOverrides nor defaultProps worked
+}});
 
 function App() {
   return (
@@ -57,7 +79,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <ResponsiveDrawer>
           <div className="App">
-            <header className="App-header">
+
               <img src={logo} className="App-logo" alt="logo" />
               <p>
                 Edit <code>src/App.js</code> and save to reload.
@@ -70,7 +92,7 @@ function App() {
               >
                 Learn React
               </a>
-            </header>
+
           </div>
         </ResponsiveDrawer>
       </ThemeProvider>
