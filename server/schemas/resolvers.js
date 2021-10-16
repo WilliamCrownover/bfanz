@@ -8,7 +8,7 @@ const resolvers = {
         me: async (parent, args, context) => {
 
             if (context.user) {
-                return User.findById(context.user._id)
+                return User.findById(context.user._id);
             }
 
             throw new AuthenticationError('You need to be logged in first.')
@@ -17,9 +17,18 @@ const resolvers = {
         getMovieById: async (parent, {id}) => {
 
             try {
-                return Movie.findById(id)
+                return Movie.findById(id);
             } catch (err) {
                 console.error(err)
+            }
+        },
+
+        getMovieByTitle: async (parent, {title}) => {
+
+            try {
+                return Movie.findOne( {title} );
+            } catch (err) {
+                console.error(err);
             }
         }
     },
