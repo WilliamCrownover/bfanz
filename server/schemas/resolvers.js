@@ -51,12 +51,12 @@ const resolvers = {
 
                 const { errors } = err;
 
-                if (errors.password) {
-                    return {token: '', success: false, message: errors.password.message}
-                }
-
                 if (errors.username) {
                     return {token: '', success: false, message: errors.username.message}
+                }
+
+                if (errors.password) {
+                    return {token: '', success: false, message: errors.password.message}
                 }
             }
 
