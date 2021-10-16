@@ -43,7 +43,7 @@ const Login = () => {
 				return;
 			}
 
-			setShowAlert("That was an invalid input");
+			setShowAlert(data.login.message);
 
 			setTimeout(() => {
 				setShowAlert(null);

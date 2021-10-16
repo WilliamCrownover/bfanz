@@ -42,7 +42,7 @@ const Signup = () => {
 				return;
 			}
 
-			setShowAlert("That was an invalid input");
+			setShowAlert(data.signup.message);
 
 			setTimeout(() => {
 				setShowAlert(null);
