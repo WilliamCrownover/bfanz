@@ -15,6 +15,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 // import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
+import TheaterComedySharpIcon from '@mui/icons-material/TheaterComedySharp';
+import InfoSharpIcon from '@mui/icons-material/InfoSharp';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 import './ResponsiveDrawer.css';
 
 
@@ -42,7 +45,8 @@ function ResponsiveDrawer(props) {
   const buttonSet1 = [
     {
       text: 'Home',
-      link: '/'
+      link: '/',
+      icon: <HomeSharpIcon/>
     },
     {
       text: 'View Collection',
@@ -51,11 +55,13 @@ function ResponsiveDrawer(props) {
     },
     {
       text: 'Surprise',
-      link: '/'
+      link: '/',
+      icon: <TheaterComedySharpIcon/>
     },
     {
       text: 'About',
-      link: '/about'
+      link: '/about',
+      icon: <InfoSharpIcon/>
     }
   ];
 
