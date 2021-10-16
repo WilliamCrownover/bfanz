@@ -13,7 +13,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import LocalMoviesSharpIcon from '@mui/icons-material/LocalMoviesSharp';
 import TheaterComedySharpIcon from '@mui/icons-material/TheaterComedySharp';
 import InfoSharpIcon from '@mui/icons-material/InfoSharp';
