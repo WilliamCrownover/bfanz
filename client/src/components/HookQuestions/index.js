@@ -14,16 +14,13 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function HookQuestions() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={1} justifyContent="center">
-        <Grid item xs="auto">
-          <Item>variable width conteasdfasdfasdfasdfnt</Item>
-        </Grid>
-        <Grid item xs="auto">
-          <Item>xs=asdfasdfasdfasdfasdfasdf</Item>
-        </Grid>
-        <Grid item xs="auto">
-          <Item>xsasdsfasdfasdfasdfasdfasdf</Item>
-        </Grid>
+      <Grid container spacing={1} justifyContent="space-evenly">
+        {Array.from(Array(8)).map((_, index) => (
+          <Grid item xs="auto">
+            <Item>variable width conteasdfasdfasdfasdfnt</Item>
+          </Grid>
+        ))}
+
       </Grid>
     </Box>
   );
