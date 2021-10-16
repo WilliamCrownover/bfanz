@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-errors");
-const { User } = require("../models")
+const { User, Movie } = require("../models")
 const {signToken} = require("../utils/auth")
 
 const resolvers = {
@@ -12,6 +12,15 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in first.')
+        },
+
+        getMovieById: async (parent, {id}) => {
+
+            try {
+                return Movie.findById(id)
+            } catch (err) {
+                console.error(err)
+            }
         }
     },
 

@@ -32,7 +32,10 @@ const typeDefs = gql`
     }
 
     type Query {
+
         me: User
+
+        getMovieById(id: ID): Movie
     }
 
     type Mutation {
