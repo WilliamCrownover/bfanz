@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import SearchBar from '../components/SearchBar';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 const AddMovie = () => {
@@ -15,16 +15,18 @@ const AddMovie = () => {
                 spacing={{ xs: 2, md: 3 }}
             >
                 <Grid item xs={9}>
-                    <SearchBar label="Check Movies" />
+                    <TextField fullWidth id="check-movies" label="Check Movies" variant="outlined" />
                 </Grid>
                 <Grid item xs={3}>
                     <Button size="large" variant='outlined'> Check </Button>
                 </Grid>
+            </Grid>
+            <Grid container spacing={{ xs: 2, md: 3 }}>
                 <Grid item xs={12}>
-                    <SearchBar label="Title" />
+                    <TextField fullWidth id="title" label="Movie Title" variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
-                    <SearchBar label="Hook Questions" />
+                    <TextField fullWidth id="hook-questions" label="Add Hook Question" variant="outlined" />
                 </Grid>
             </Grid>
         </Container>

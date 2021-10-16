@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import DashCard from '../components/DashCard';
 import AddMovieButton from '../components/AddMovieButton';
 import Container from '@mui/material/Container';
-import SearchBar from '../components/SearchBar';
+import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
 const Dashboard = () => {
@@ -11,7 +11,7 @@ const Dashboard = () => {
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item xs={12}>
                     <Box maxWidth="md" >
-                        <SearchBar label="Find Movies"/>
+                        <TextField fullWidth id="find-movies" label="Find Movies" variant="outlined" />
                     </Box>
                 </Grid>
                 <Grid item>
