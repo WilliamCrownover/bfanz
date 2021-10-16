@@ -12,19 +12,16 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 import { Link as RouterLink } from 'react-router-dom';
+import { useState } from 'react';
 
 const Signup = () => {
 	const [addUser] = useMutation( ADD_USER );
 
+	const [showAlert, setShowAlert] = useState( null );
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const formData = new FormData(event.currentTarget);
-
-		// if ( formData.get('username') === '' || formData.get('password') === '' ) {
-		// 	event.preventDefault();
-		// 	event.stopPropagation();
-		// 	return;
-		// }
 
 		try {
 			const { data } = await addUser( {
@@ -42,10 +39,14 @@ const Signup = () => {
 
 			if ( data.signup.success === true ) {
 				Auth.login(data.signup.token);
+				return;
 			}
 
+			setShowAlert("That was an invalid input");
 
-			
+			setTimeout(() => {
+				setShowAlert(null);
+			}, 2000);
 
 		} catch ( err ) {
 			console.error( err );
@@ -111,6 +112,12 @@ const Signup = () => {
 								</RouterLink>
 							</Grid>
 						</Grid>
+						<Grid container sx={{mt: 1 }}>
+							<Grid item>
+								<p>{showAlert}</p>
+							</Grid>
+						</Grid>
+
 					</Box>
 				</Box>
 			</Container>
