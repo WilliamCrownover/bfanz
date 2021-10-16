@@ -1,15 +1,14 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+import hero from '../../assets/hero.jpg'
 
-export default function HeroBox() {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '25vh' }} />
-      </Container>
-    </React.Fragment>
-  );
+class HeroBox extends React.Component {
+  render () {
+    return (
+      <>
+        <img src={hero} alt="Hero" />
+      </>
+    );
+  }
 }
+
+export default HeroBox;
