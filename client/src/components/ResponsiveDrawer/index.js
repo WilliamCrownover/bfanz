@@ -11,7 +11,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -26,6 +25,7 @@ import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 import AddMovie from '../../pages/AddMovie';
 
+import Auth from '../../utils/auth';
 
 const drawerWidth = 240;
 
@@ -50,21 +50,10 @@ function ResponsiveDrawer(props) {
     {
       text: 'Surprise',
       link: '/'
-    }
-  ];
-
-  const buttonSet2 = [
+    },
     {
       text: 'About',
       link: '/about'
-    },
-    {
-      text: 'Login/Sign Up',
-      link: '/login'
-    },
-    {
-      text: 'Logout',
-      link: '/'
     }
   ];
 
@@ -87,18 +76,29 @@ function ResponsiveDrawer(props) {
         ))}
       </List>
       <Divider />
-      <List>
-        {buttonSet2.map((navButton, index) => (
-          <Link to={navButton.link} key={navButton.text}>
+      {Auth.loggedIn() ? (
+        <>
+          <Link to='/' key='Logout' onClick={Auth.logout}>
             <ListItem button >
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary={navButton.text} />
+              <ListItemText primary='Logout' />
             </ListItem>
           </Link>
-        ))}
-      </List>
+        </>
+      ) : (
+        <>
+          <Link to='/login' key='Login/Sign Up'>
+            <ListItem button >
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary='Login/Sign Up' />
+            </ListItem>
+          </Link>
+        </>
+      )}
     </div>
   );
 
