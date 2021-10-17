@@ -13,7 +13,7 @@ const Home = () => {
                     <HeroBox />
                 </Grid>
                 <Grid item xs={12}>
-                    <Marquee />
+                    <Marquee display={{ md: "none" }}/>
                 </Grid>
                 <Grid item xs={12} >
                     <HookQuestions />

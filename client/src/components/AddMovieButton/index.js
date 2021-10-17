@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
+import Fab from '@mui/material/Fab';
 import CardActionArea from '@mui/material/CardActionArea';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -17,7 +18,9 @@ export default function BasicCard() {
                         </Typography>
                     </CardContent>
                     <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Fab aria-label="add" sx={{backgroundColor: '#f5c300'}}>
                         <AddIcon />
+                        </Fab>
                     </CardContent>
                 </CardActionArea>
             </Card>
