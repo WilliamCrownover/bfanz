@@ -52,7 +52,7 @@ export default function addForm() {
                 </Container>
             </Grid>
             <Grid item>
-                <Button size="large" variant='outlined'> Add </Button>
+                <Button size="large" variant='outlined'> Add Movie</Button>
                 {/* <Button disabled size="large" variant='outlined'> Add </Button> */}
             </Grid>
         </Grid>

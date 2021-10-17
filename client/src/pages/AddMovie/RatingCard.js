@@ -1,11 +1,9 @@
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import MoodIcon from '@mui/icons-material/Mood';
-import MoodBadIcon from '@mui/icons-material/MoodBad';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import SeenToggle from './SeenToggle';
+import LikedToggle from './LikedToggle';
 
 export default function RatingCard() {
     return (
@@ -48,12 +46,12 @@ export default function RatingCard() {
                                     sx={{}}
                                 >
                                     <Grid item sx={{ border: 1 }} xs={6}>
-                                        <RemoveRedEyeIcon />
-                                        <VisibilityOffIcon />
+                                        {/* Seen it toggle */}
+                                        <SeenToggle />
                                     </Grid>
                                     <Grid item sx={{ border: 1 }} xs={6}>
-                                        <MoodIcon />
-                                        <MoodBadIcon />
+                                        {/* Liked it toggle */}
+                                        <LikedToggle />
                                     </Grid>
                                 </Grid>
                             </Container>

@@ -17,8 +17,20 @@ export default function AddCrewCard() {
     return (
         <Container>
             <Card sx={{ minWidth: 275, minHeight: 200 }}>
-                <CardHeader title='Add Director(s) and Actor(s)' />
+                <CardHeader title='Director(s) and Actor(s)' />
                 <CardContent >
+                    <Typography sx={{ my: 2 }}>
+                        Cast/Crew List:
+                    </Typography>
+                    <List>
+                        {/* Function to generate full list */}
+                        <ListItem>
+                            <ListItemText
+                                primary="Placeholder Name"
+                                secondary='Placeholder Role'
+                            />
+                        </ListItem>
+                    </List>
                     <TextField fullWidth id="add-crew" label="Enter Name" variant="outlined" sx={{ py: 1 }} />
                     <FormControl fullWidth>
                         <InputLabel id="add-crew-role-label">Select Role</InputLabel>
@@ -32,20 +44,9 @@ export default function AddCrewCard() {
                             <MenuItem value={'Director'}>Director</MenuItem>
                             <MenuItem value={'Actor'}>Actor</MenuItem>
                         </Select>
-                        <Button sx={{ mt: 1 }} size="large" variant='outlined'> Add </Button>
+                        <Button sx={{ mt: 1 }} size="large" variant='outlined' color="primary"> Add Cast/Crew</Button>
                     </FormControl>
-                    <Typography sx={{ my: 2 }}>
-                        Crew List:
-                    </Typography>
-                    <List>
-                        {/* Function to generate full list */}
-                        <ListItem>
-                            <ListItemText
-                                primary="Crew Name"
-                                secondary='Role'
-                            />
-                        </ListItem>
-                    </List>
+
                 </CardContent>
             </Card>
         </Container>
