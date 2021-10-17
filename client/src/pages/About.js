@@ -20,7 +20,7 @@ const About = () => {
                     About the Developers
                 </Typography>
                 <Typography variant="body1">
-                    Michelle Antoniette Oakley: FullStack Web Developer with University of Washington bootcamp certificate.
+                    Michelle Antoinette Oakley: FullStack Web Developer with University of Washington bootcamp certificate.
 
 
                 </Typography>
