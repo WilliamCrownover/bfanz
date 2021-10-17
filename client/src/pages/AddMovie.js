@@ -14,7 +14,7 @@ import CardContent from '@mui/material/CardContent';
 const AddMovie = () => {
     return (
 
-        <Container maxWidth="md">
+        <Container sx={{mt: 3}} maxWidth="md">
             <Grid
                 container
                 direction='row'
