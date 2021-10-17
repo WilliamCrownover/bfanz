@@ -51,8 +51,9 @@ const AddMovie = () => {
                             direction="row"
                             justifyContent='center'
                             alignItems="stretch"
+                            rowSpacing={1}
                         >
-                            {/* Left column , border: 1, borderColor: 'white'*/}
+                            {/* Left column*/}
                             <Grid item xs={12} md={6} sx={{ color: 'black' }}>
                                 <Container>
                                     <Card sx={{ minWidth: 275, minHeight: 200 }}>
@@ -122,8 +123,8 @@ const AddMovie = () => {
                                 </Container>
                             </Grid>
 
-                            {/* Rigth column , border: 1, borderColor: 'white' }*/}
-                            <Grid item xs={12} md={6} sx={{ color: 'black' }}>
+                            {/* Rigth column*/}
+                            <Grid item xs={12} md={6}>
                                 <Container>
                                     <Card sx={{ minWidth: 275, minHeight: 200 }}>
                                         <CardContent>
