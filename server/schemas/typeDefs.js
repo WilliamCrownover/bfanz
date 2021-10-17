@@ -4,6 +4,7 @@ const typeDefs = gql`
     type Auth {
         token: String
         success: Boolean
+        message: String
     }
 
     type User {
@@ -32,7 +33,12 @@ const typeDefs = gql`
     }
 
     type Query {
+
         me: User
+
+        getMovieById(id: ID): Movie
+
+        getMovieByTitle(title: String): Movie
     }
 
     type Mutation {

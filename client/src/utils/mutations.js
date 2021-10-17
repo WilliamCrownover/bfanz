@@ -5,6 +5,7 @@ export const ADD_USER = gql`
         signup(username: $username, password: $password) {
             token
             success
+            message
         }
     }
 `
@@ -14,6 +15,7 @@ export const LOGIN = gql`
         login(username: $username, password: $password) {
             token
             success
+            message
         }
     }
 `
