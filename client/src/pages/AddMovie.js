@@ -21,7 +21,7 @@ import Typography from '@mui/material/Typography';
 const AddMovie = () => {
     return (
 
-        <Container sx={{ mt: 3 }} maxWidth="md">
+        <Container sx={{ my: 3 }} maxWidth="md">
             <Grid
                 container
                 direction='row'
