@@ -32,7 +32,7 @@ export default function RatingCard() {
                                         Seen it / Not seen it bar
                                     </Grid>
                                     {/* Loved It / Hated it bar */}
-                                    <Grid item sx={{ border: 1 }} xs={12}>
+                                    <Grid item sx={{ border: 1}} xs={12}>
                                         Loved It / Hated it bar
                                     </Grid>
                                 </Grid>
@@ -49,7 +49,7 @@ export default function RatingCard() {
                                         {/* Seen it toggle */}
                                         <SeenToggle />
                                     </Grid>
-                                    <Grid item sx={{ border: 1 }} xs={6}>
+                                    <Grid item sx={{ border: 1, overflow: 'hidden'}} xs={6}>
                                         {/* Liked it toggle */}
                                         <LikedToggle />
                                     </Grid>

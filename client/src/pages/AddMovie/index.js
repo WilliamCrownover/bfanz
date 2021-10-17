@@ -8,7 +8,7 @@ import AddForm from './AddForm';
 const AddMovie = () => {
     return (
 
-        <Container sx={{ my: 3 }} maxWidth="md">
+        <Container sx={{ my: 3, minWidth: 450 }} maxWidth="md">
             <Grid
                 container
                 direction='row'
