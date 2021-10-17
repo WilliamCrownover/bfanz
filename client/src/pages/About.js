@@ -11,7 +11,8 @@ const About = () => {
                     Purpose
                 </Typography>
                 <Typography variant="body1">
-                    Our purpose statement
+                    To provide a space for Cult Classic and B-Movie enthusiast
+                    to share and rate their favorite films.
                 </Typography>
             </Grid>
             <Grid sx={{ border: 1 }} item xs={12}>
@@ -19,7 +20,9 @@ const About = () => {
                     About the Developers
                 </Typography>
                 <Typography variant="body1">
-                    About the developers text and stuff
+                    Michelle Antoniette Oakley: FullStack Web Developer with University of Washington bootcamp certificate.
+
+
                 </Typography>
             </Grid>
             <Grid sx={{ border: 1 }} item xs={12}>
