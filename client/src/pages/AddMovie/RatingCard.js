@@ -16,7 +16,7 @@ export default function RatingCard() {
                         justifyContent="center"
                         alignItems="stretch"
                     >
-                        {/* Top box */}
+                        {/* Rating box */}
                         <Grid item xs={6} >
                             <Container >
                                 {/* top row */}
@@ -25,19 +25,19 @@ export default function RatingCard() {
                                     direction="row"
                                     justifyContent="center"
                                     alignItems="center"
-                                    sx={{}}
                                 >
-                                    {/* look into percentage/rating bar */}
-                                    {/* top row */}
+
+                                    {/* Seen it / Not seen it bar */}
                                     <Grid item sx={{ border: 1 }} xs={12}>
                                         Seen it / Not seen it bar
                                     </Grid>
-                                    {/* 2nd row */}
+                                    {/* Loved It / Hated it bar */}
                                     <Grid item sx={{ border: 1 }} xs={12}>
                                         Loved It / Hated it bar
                                     </Grid>
                                 </Grid>
-                                {/* Icon row */}
+                                
+                                {/* Seen it / Liked it button row */}
                                 <Grid
                                     container
                                     direction="row"
@@ -56,7 +56,9 @@ export default function RatingCard() {
                                 </Grid>
                             </Container>
                         </Grid>
+
                         {/* Post Image Area */}
+                        {/* will probably need to limit width */}
                         <Container>
                             <Grid item sx={{ border: 1, mt: 3 }} xs={12}>
                                 Poster Image

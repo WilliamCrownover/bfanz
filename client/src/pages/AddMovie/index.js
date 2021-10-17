@@ -23,8 +23,8 @@ const AddMovie = () => {
                     <Button size="large" variant='outlined'> Check </Button>
                 </Grid>
 
-                {/* The form should be disabled until a check is completed */}
                 <Grid item xs={12}>
+                {/* The form should be disabled until a check is completed */}
                     <AddForm />
                 </Grid>
             </Grid>

@@ -5,6 +5,17 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 export default function SeenToggle() {
     return (
-        'asdf'
+        <ToggleButtonGroup
+            value='placeholder value'
+            exclusive
+            onChange='placeholder function'
+        >
+            <ToggleButton value="seen it">
+                <RemoveRedEyeIcon />
+            </ToggleButton>
+            <ToggleButton value="not seen it">
+                <VisibilityOffIcon />
+            </ToggleButton>
+        </ToggleButtonGroup>
     )
 };
