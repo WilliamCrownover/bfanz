@@ -24,6 +24,10 @@ const About = () => {
 
                     Sheri Elgin: Movie lover and IT Administrator interested in learning more about web development and automation.
 
+                    Adrian Cronin: Full Stack Web Developer and movie neophyte.
+
+                    William Crownover: Full-Stack Web Developer and Digital Production Artist focused on user experience and data visualizations.
+
 
 
 
