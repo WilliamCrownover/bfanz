@@ -11,7 +11,7 @@ const About = () => {
                     Purpose
                 </Typography>
                 <Typography variant="body1">
-                    To provide a space for Cult Classic and B-Movie enthusiast
+                    To provide a fun and safe space for Cult Classic and B-Movie enthusiast
                     to share and rate their favorite films.
                 </Typography>
             </Grid>
@@ -20,7 +20,7 @@ const About = () => {
                     About the Developers
                 </Typography>
                 <Typography variant="body1">
-                    Michelle Antoinette Oakley: Cult movie lover who wants to learn more about software development and project management.
+                    Michelle Oakley: Cult movie lover who wants to learn more about software development and project management.
 
                     Sheri Elgin: Movie lover and IT Administrator interested in learning more about web development and automation.
 
