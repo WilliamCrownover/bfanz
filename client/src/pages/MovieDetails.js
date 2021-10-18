@@ -8,14 +8,12 @@ import { Container, Typography } from '@mui/material';
 
 const MovieDetails = () => {
 	const { movieId } = useParams();
-    console.log("~ movieId", movieId);
 
 	const { loading, data } = useQuery(GET_MOVIE_BY_ID, {
 		variables: {
 			id: movieId
 		}
 	});
-	console.log("~ data", data);
 
 	const movieData = data?.getMovieById || {}
 
