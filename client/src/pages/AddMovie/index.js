@@ -7,7 +7,7 @@ import AddForm from './AddForm';
 
 const AddMovie = () => {
     return (
-
+        // minWidth is to prevent buttons from being hidden
         <Container sx={{ my: 3, minWidth: 450 }} maxWidth="md">
             <Grid
                 container

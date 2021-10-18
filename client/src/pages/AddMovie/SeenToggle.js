@@ -10,10 +10,10 @@ export default function SeenToggle() {
             exclusive
             onChange='placeholder function'
         >
-            <ToggleButton value="seen it">
+            <ToggleButton value="placeholder value">
                 <RemoveRedEyeIcon />
             </ToggleButton>
-            <ToggleButton value="not seen it">
+            <ToggleButton value="placeholder value">
                 <VisibilityOffIcon />
             </ToggleButton>
         </ToggleButtonGroup>

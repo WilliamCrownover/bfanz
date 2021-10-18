@@ -37,14 +37,14 @@ export default function AddCrewCard() {
                         <Select
                             labelId="add-crew-role-label"
                             id="add-crew-role"
-                            value={'role'}
+                            value='placeholder role'
                             label="Role"
-                            onChange={'setRole function'}
+                            onChange='placeholder setRole function'
                         >
-                            <MenuItem value={'Director'}>Director</MenuItem>
-                            <MenuItem value={'Actor'}>Actor</MenuItem>
+                            <MenuItem value='placeholder value'>Director</MenuItem>
+                            <MenuItem value='placeholder value'>Actor</MenuItem>
                         </Select>
-                        <Button sx={{ mt: 1 }} size="large" variant='outlined' color="primary"> Add Cast/Crew</Button>
+                        <Button sx={{ mt: 1 }} size="large" variant='outlined'> Add Cast/Crew</Button>
                     </FormControl>
 
                 </CardContent>

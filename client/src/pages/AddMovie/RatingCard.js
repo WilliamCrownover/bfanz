@@ -43,7 +43,6 @@ export default function RatingCard() {
                                     direction="row"
                                     justifyContent="center"
                                     alignItems="center"
-                                    sx={{}}
                                 >
                                     <Grid item sx={{ border: 1 }} xs={6}>
                                         {/* Seen it toggle */}
@@ -57,7 +56,7 @@ export default function RatingCard() {
                             </Container>
                         </Grid>
 
-                        {/* Post Image Area */}
+                        {/* Poster Image Area */}
                         {/* will probably need to limit width */}
                         <Container>
                             <Grid item sx={{ border: 1, mt: 3 }} xs={12}>
