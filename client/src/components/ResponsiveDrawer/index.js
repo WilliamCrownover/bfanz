@@ -71,7 +71,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List sx={{ mt: 6 }}>
         {buttonSet1.map((navButton, index) => (
-          <Link to={navButton.link} key={navButton.text}>
+          <Link to={navButton.link} key={navButton.text} style={{ textDecoration: 'none' }}>
             <ListItem button >
               <ListItemIcon>
                 {navButton.icon}
@@ -86,7 +86,7 @@ function ResponsiveDrawer(props) {
 
       {Auth.loggedIn() ? (
         <>
-          <Link to='/' key='Logout' onClick={Auth.logout}>
+          <Link to='/' key='Logout' onClick={Auth.logout} style={{ textDecoration: 'none' }}>
             <ListItem button >
               <ListItemIcon>
                 <InboxIcon />
@@ -97,7 +97,7 @@ function ResponsiveDrawer(props) {
         </>
       ) : (
         <>
-          <Link to='/login' key='Login/Sign Up'>
+          <Link to='/login' key='Login/Sign Up' style={{ textDecoration: 'none' }}>
             <ListItem button >
               <ListItemIcon>
                 <InboxIcon />
@@ -180,6 +180,7 @@ function ResponsiveDrawer(props) {
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/AddMovie' component={AddMovie} />
+            <Route exact path='/movieDetails/:movieId' component={Home} />
             <Route path='/' component={Home} />
           </Switch>
 
