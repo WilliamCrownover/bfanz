@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import HeroBox from '../components/HeroBox';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
 import { useMutation } from '@apollo/client';
@@ -41,11 +42,12 @@ const Signup = () => {
 	};
 
 	return (
+	<Container>
 		<Grid container >
-			<Grid sx={{ border: 1 }} item xs={12}>
-				<Typography variant="h1">
-					HERO BAR AREA
-				</Typography>
+			<Grid item xs={12}>
+			<Grid item xs={12} sx={{ overflow: 'hidden' }}>
+                    <HeroBox />
+                </Grid>
 			</Grid>
 			<Container component="main" maxWidth="xs">
 				<CssBaseline />
@@ -57,7 +59,7 @@ const Signup = () => {
 						alignItems: 'center',
 					}}
 				>
-					<Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+					<Avatar sx={{ m: 1, bgcolor: 'secondary' }}>
 						<LockOutlinedIcon />
 					</Avatar>
 					<Typography component="h1" variant="h5">
@@ -103,6 +105,7 @@ const Signup = () => {
 				</Box>
 			</Container>
 		</Grid>
+	</Container>
 	);
 };
 

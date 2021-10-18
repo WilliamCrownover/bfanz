@@ -52,11 +52,15 @@ const theme = createTheme({
   // }, //hold for later use
   typography: {
     fontFamily: 'Khand',
+    button: {
+      fontFamily: 'Khand',
+    }
   },
   background: {
     paper: '#000000',
     default: '#000000'
   },
+
   // action: {
   //   active: '#83f500',
   //   hover: '#83f500',

@@ -1,12 +1,20 @@
 import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+import HeroBox from '../components/HeroBox';
 import Typography from '@mui/material/Typography';
 
 const About = () => {
 
     return (
+        <Container>
+            			<Grid  item xs={12}>
+				<Grid item xs={12} sx={{ overflow: 'hidden' }}>
+                    <HeroBox />
+                </Grid>
+			</Grid>
         <Grid container rowSpacing={4
         }>
-            <Grid sx={{ border: 1 }} item xs={12}>
+            <Grid sx={{ border: 1, mt: 5, padding: 2 }} item xs={12}>
                 <Typography variant="h4">
                     Purpose
                 </Typography>
@@ -14,7 +22,7 @@ const About = () => {
                     Our purpose statement
                 </Typography>
             </Grid>
-            <Grid sx={{ border: 1 }} item xs={12}>
+            <Grid sx={{ border: 1, mt: 2, padding: 2 }} item xs={12}>
                 <Typography variant="h4">
                     About the Developers
                 </Typography>
@@ -22,7 +30,7 @@ const About = () => {
                     About the developers text and stuff
                 </Typography>
             </Grid>
-            <Grid sx={{ border: 1 }} item xs={12}>
+            <Grid sx={{ border: 1, mt: 2, padding: 2 }} item xs={12}>
                 <Typography variant="h4">
                     Legal Statement
                 </Typography>
@@ -31,6 +39,7 @@ const About = () => {
                 </Typography>
             </Grid>
         </Grid>
+        </Container>
     );
 };
 
