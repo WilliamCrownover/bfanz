@@ -2,30 +2,51 @@ import Grid from '@mui/material/Grid';
 import DashCard from '../components/DashCard';
 import AddMovieButton from '../components/AddMovieButton';
 import Container from '@mui/material/Container';
-import SearchBar from '../components/SearchBar';
+import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { useQuery } from '@apollo/client';
+import { GET_MOVIES } from '../utils/queries';
+import { Typography } from '@mui/material';
+import { percent, total } from '../utils/helpers';
 
 const Dashboard = () => {
+    const { loading, data } = useQuery( GET_MOVIES );
+
+    const allMovies = data?.getMovies || [];
+
     return (
-        <Container>
+        <Container sx={{mt: 3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item xs={12}>
                     <Box maxWidth="md" >
-                        <SearchBar />
+                        <TextField fullWidth id="find-movies" label="Find Movies" variant="outlined" />
                     </Box>
                 </Grid>
                 <Grid item>
                     <AddMovieButton />
                 </Grid>
-                {/* Testing larger collections */}
-                {Array.from(Array(8)).map((_, index) => (
+                {loading ? (
                     <Grid item>
-                        <DashCard />
+                        <Typography variant="h5" component="div">
+                            LOADING...
+                        </Typography>
                     </Grid>
-                ))}
-                {/* <Grid item>
-                    <DashCard />
-                </Grid> */}
+                ) : (
+                    <>
+                        {allMovies.map((movie) => (
+                            <Grid item key={movie._id}>
+                                <DashCard 
+                                    _id={movie._id}
+                                    title={movie.title}
+                                    hookQuestion={movie.hookQuestions[0].questionText}
+                                    seenPercent={percent(movie.seenItCount, movie.notSeenItCount)}
+                                    lovedItCount={movie.lovedItCount}
+                                    ratingTotal={total(movie.lovedItCount, movie.hatedItCount)}
+                                />
+                            </Grid>
+                        ))}
+                    </>
+                )}
             </Grid>
         </Container>
     );
