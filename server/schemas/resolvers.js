@@ -14,6 +14,10 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in first.')
         },
 
+        getAllMovies: async () => {
+            return await Movie.find().populate( 'hookQuestions' );
+        },
+
         getMovieById: async (parent, {id}) => {
 
             try {
