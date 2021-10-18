@@ -9,11 +9,12 @@ import './assets/Marquee.css';
 export default function Marquee() {
     return (
         <Grid >
-            <Box sx={{height: 420}} class = 'cellBackground'>
-                <img src="assets/filmCell.jpg"/>
-                <Box class = 'filmBackground' >
+            <Box sx={{minHeight: 800, alignItems: 'center', padding: 3, border: '1px solid red'}} class = 'cellBackground'>
+                <img src="assets/filmCell.jpg" alt='Film Cell Border'/>
+            </Box>
+            {/* nesting didn't work */}
+            <Box class = 'filmBackground' >
                 <img src='/assets/titleCard.jpg' alt="Silent Film Title Card" />
-                </Box>
             </Box>
         </Grid>
     );

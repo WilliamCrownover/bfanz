@@ -37,9 +37,10 @@
 .cellBackground {
     /* background-image: url(./filmCell.jpg); */
     /* position: absolute; */
+    margin-top: 50px;
     z-index: 2;
     min-height: fit-content;
-    /* animation: jitter .3s infinite;  */
+    animation: jitter .3s infinite; 
 }
 @keyframes grain {
     0%, 100% {transform: translate(0,0);}
