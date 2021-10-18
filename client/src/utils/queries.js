@@ -8,5 +8,22 @@ export const GET_ME = gql`
     }
 `
 
-//GET_MOVIES
+export const GET_MOVIES = gql`
+    query getMovies {
+        _id
+        title
+        description
+        seenItCount
+        notSeenItCount
+        lovedItCount
+        hatedItCount
+        hookQuestions {
+            _id
+            questionText
+            movieId
+            userId
+        }
+    }
+`
+
 //GET_HOOKQUESTIONS
