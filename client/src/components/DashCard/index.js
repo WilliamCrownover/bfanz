@@ -24,12 +24,21 @@ export default function BasicCard(props) {
                 <Stack direction="row" justifyContent="center" spacing={1}>
                     <Paper sx={{ p: 2 }}  elevation={3} >
                         <Typography variant="body2">
-                            Rating 1
+                            Seen It
+                        </Typography>
+                        <Typography variant="body2">
+                            {props.seenPercent}%
                         </Typography>
                     </Paper>
                     <Paper sx={{ p: 2 }} elevation={3} >
                         <Typography variant="body2">
-                            Rating 2
+                            {props.lovedItCount} out of {props.ratingTotal}
+                        </Typography>
+                        <Typography variant="body2">
+                            Fanz
+                        </Typography>
+                        <Typography variant="body2">
+                            Loved It!
                         </Typography>
                     </Paper>
                 </Stack>

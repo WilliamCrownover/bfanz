@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import { useQuery } from '@apollo/client';
 import { GET_MOVIES } from '../utils/queries';
 import { Typography } from '@mui/material';
+import { percent, total } from '../utils/helpers';
 
 const Dashboard = () => {
     const { loading, data } = useQuery( GET_MOVIES );
@@ -38,6 +39,9 @@ const Dashboard = () => {
                                     _id={movie._id}
                                     title={movie.title}
                                     hookQuestion={movie.hookQuestions[0].questionText}
+                                    seenPercent={percent(movie.seenItCount, movie.notSeenItCount)}
+                                    lovedItCount={movie.lovedItCount}
+                                    ratingTotal={total(movie.lovedItCount, movie.hatedItCount)}
                                 />
                             </Grid>
                         ))}
