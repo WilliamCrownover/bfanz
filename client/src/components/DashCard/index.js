@@ -6,18 +6,18 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 
 
-export default function BasicCard() {
+export default function BasicCard(props) {
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
                 <Typography variant="h5" component="div">
-                    Title
+                    {props.title}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     subtitle
-                </Typography>
+                </Typography> */}
                 <Typography variant="body2">
-                    Hook Question
+                    {props.hookQuestion}
                 </Typography>
             </CardContent>
             <CardContent>

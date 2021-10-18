@@ -2,68 +2,84 @@
     {
         "title": "Repo the Genetic Opera",
         "description": "URL or API image",
-        "seenItCount": 0,
-        "notSeenItCount": 0,
-        "lovedItCount": 0,
-        "hatedItCount": 0,
-        "hookQuestions": []
-
-
+        "seenItCount": 2,
+        "notSeenItCount": 8,
+        "lovedItCount": 1,
+        "hatedItCount": 1,
+        "hookQuestions": [
+            {
+                "questionText": "Testing the hook questions"
+            }
+        ]
     },
 
     {
         "title": "Flight of the Navigator",
         "description": "URL or API image",
-        "seenItCount": 0,
-        "notSeenItCount": 0,
-        "lovedItCount": 0,
-        "hatedItCount": 0,
-        "hookQuestions": []
+        "seenItCount": 5,
+        "notSeenItCount": 5,
+        "lovedItCount": 4,
+        "hatedItCount": 1,
+        "hookQuestions": [
+            {
+                "questionText": "Testing the hook questions"
+            }
+        ]
     },
 
     {
         "title": "The Last Dragon",
         "description": "URL or API image",
-        "seenItCount": 0,
-        "notSeenItCount": 0,
-        "lovedItCount": 0,
-        "hatedItCount": 0,
-        "hookQuestions": []
-
-
+        "seenItCount": 7,
+        "notSeenItCount": 3,
+        "lovedItCount": 3,
+        "hatedItCount": 4,
+        "hookQuestions": [
+            {
+                "questionText": "Testing the hook questions"
+            }
+        ]
     },
 
     {
         "title": "The Wiz",
         "description": "URL or API image",
-        "seenItCount": 0,
-        "notSeenItCount": 0,
-        "lovedItCount": 0,
-        "hatedItCount": 0,
-        "hookQuestions": []
-
-
+        "seenItCount": 9,
+        "notSeenItCount": 1,
+        "lovedItCount": 7,
+        "hatedItCount": 2,
+        "hookQuestions": [
+            {
+                "questionText": "Testing the hook questions"
+            }
+        ]
     },
 
     {
         "title": "The Red Violin",
         "description": "URL or API image",
-        "seenItCount": 0,
-        "notSeenItCount": 0,
-        "lovedItCount": 0,
+        "seenItCount": 4,
+        "notSeenItCount": 6,
+        "lovedItCount": 4,
         "hatedItCount": 0,
-        "hookQuestions": []
+        "hookQuestions": [
+            {
+                "questionText": "Testing the hook questions"
+            }
+        ]
     },
 
     {
         "title": "One Hour Photo",
         "description": "URL or API image",
-        "seenItCount": 0,
-        "notSeenItCount": 0,
+        "seenItCount": 1,
+        "notSeenItCount": 9,
         "lovedItCount": 0,
-        "hatedItCount": 0,
-        "hookQuestions": []
-
-
+        "hatedItCount": 1,
+        "hookQuestions": [
+            {
+                "questionText": "Testing the hook questions"
+            }
+        ]
     }
 ]

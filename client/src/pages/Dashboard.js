@@ -34,7 +34,11 @@ const Dashboard = () => {
                     <>
                         {allMovies.map((movie) => (
                             <Grid item key={movie._id}>
-                                <DashCard movie={movie}/>
+                                <DashCard 
+                                    _id={movie._id}
+                                    title={movie.title}
+                                    hookQuestion={movie.hookQuestions[0].questionText}
+                                />
                             </Grid>
                         ))}
                     </>
