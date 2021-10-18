@@ -1,6 +1,5 @@
 import Grid from '@mui/material/Grid';
-// import Container from '@mui/material/Container';
-// import Paper from '@mui/material/Paper'; 
+import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import './assets/Marquee.css';
 
@@ -8,8 +7,9 @@ import './assets/Marquee.css';
 
 export default function Marquee() {
     return (
+        <Container>
         <Grid sx={{mb: 5}}>
-            <Box sx={{minHeight: 800, alignItems: 'center', padding: 3, border: '1px solid red'}} class = 'cellBackground'>
+            <Box sx={{minHeight: 500, alignItems: 'center', justifyContent: 'center', padding: 3, border: '1px solid black'}} class = 'cellBackground'>
                 <img src="assets/filmCell.jpg" alt='Film Cell Border'/>
             </Box>
             {/* nesting didn't work */}
@@ -17,5 +17,6 @@ export default function Marquee() {
                 <img src='/assets/titleCard.jpg' alt="Silent Film Title Card" />
             </Box> */}
         </Grid>
+        </Container>
     );
 }

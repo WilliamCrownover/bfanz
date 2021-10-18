@@ -1,13 +1,12 @@
 .filmBackground {
     /* position: absolute; */
-    /* position: relative; */
     max-width: fit-content;
     margin: 50px;
     /* width: 100%;
     height: 100%; */
     overflow: hidden;
     background: radial-gradient(ellipse at center, #848884 0%, #d3d3d3 100%);
-    z-index: 4;
+    /* z-index: 4; */
 }
 
 .filmBackground::after {
@@ -31,7 +30,7 @@
     /* background-image: url(./filmCell.jpg); */
     /* position: absolute; */
     margin-top: 50px;
-    z-index: 2;
+    /* z-index: 2; */
     min-height: fit-content;
     animation: jitter .3s infinite; 
 }

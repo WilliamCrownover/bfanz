@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function HookQuestions() {
   return (
     <Container>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', padding: 5}}>
         <Grid container spacing={1} justifyContent="space-evenly">
           {Array.from(Array(8)).map((_, index) => (
             <Grid item xs="auto">

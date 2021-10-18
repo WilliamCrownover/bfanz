@@ -56,6 +56,10 @@ const theme = createTheme({
       selected: '#eceff1',
       focus: '#eceff1'
     }, 
+    background: {
+      paper: '#000000',
+      default: '#000000'
+    },
     // error: '#f52100',
     // info: '#0083f5',
     // success: '#83f500',
@@ -72,10 +76,7 @@ const theme = createTheme({
       fontFamily: 'Khand'
     }
   },
-  background: {
-    paper: '#000000',
-    default: '#000000'
-  },
+
   // overrides:{
   //   MuiFocused:{
   //   color: 'primary'

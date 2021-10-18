@@ -12,7 +12,7 @@ const Home = () => {
                 <Grid item xs={12} sx={{ overflow: 'hidden' }}>
                     <HeroBox />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} sx={{ justifyContent: 'center', alignItems: 'center'}}>
                     <Marquee display={{ md: "none" }}/>
                 </Grid>
                 <Grid item xs={12} >
