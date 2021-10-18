@@ -9,7 +9,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 export default function BasicCard() {
     return (
-        <RouterLink to="/AddMovie">
+        <RouterLink to="/AddMovie" style={{ textDecoration: 'none' }}>
             <Card sx={{ minWidth: 275 }}>
                 <CardActionArea>
                     <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
