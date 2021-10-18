@@ -4,8 +4,15 @@ import AddMovieButton from '../components/AddMovieButton';
 import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { useQuery } from '@apollo/client';
+import { GET_MOVIES } from '../utils/queries';
+import { Typography } from '@mui/material';
 
 const Dashboard = () => {
+    const { loading, data } = useQuery( GET_MOVIES );
+
+    const allMovies = data?.getMovies || [];
+
     return (
         <Container sx={{mt: 3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -17,15 +24,21 @@ const Dashboard = () => {
                 <Grid item>
                     <AddMovieButton />
                 </Grid>
-                {/* Testing larger collections */}
-                {Array.from(Array(8)).map((_, index) => (
+                {loading ? (
                     <Grid item>
-                        <DashCard />
+                        <Typography variant="h5" component="div">
+                            LOADING...
+                        </Typography>
                     </Grid>
-                ))}
-                {/* <Grid item>
-                    <DashCard />
-                </Grid> */}
+                ) : (
+                    <>
+                        {allMovies.map((movie) => (
+                            <Grid item key={movie._id}>
+                                <DashCard movie={movie}/>
+                            </Grid>
+                        ))}
+                    </>
+                )}
             </Grid>
         </Container>
     );

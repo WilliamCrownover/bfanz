@@ -10,18 +10,20 @@ export const GET_ME = gql`
 
 export const GET_MOVIES = gql`
     query getMovies {
-        _id
-        title
-        description
-        seenItCount
-        notSeenItCount
-        lovedItCount
-        hatedItCount
-        hookQuestions {
+        getMovies {
             _id
-            questionText
-            movieId
-            userId
+            title
+            description
+            seenItCount
+            notSeenItCount
+            lovedItCount
+            hatedItCount
+            hookQuestions {
+                _id
+                questionText
+                movieId
+                userId
+            }
         }
     }
 `
