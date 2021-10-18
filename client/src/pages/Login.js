@@ -15,9 +15,6 @@ import Auth from '../utils/auth';
 
 import { Link as RouterLink } from 'react-router-dom';
 
-const inputProps = {
-	color: 'tomato'
-  };
 
 const Login = () => {
 	const [loginUser] = useMutation( LOGIN );
@@ -72,7 +69,7 @@ const Login = () => {
 					</Typography>
 					<Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
 						<TextField
-							inputProps={inputProps}
+							color="primary"
 							margin="normal"
 							required
 							fullWidth
@@ -83,6 +80,7 @@ const Login = () => {
 							autoFocus
 						/>
 						<TextField
+							color="primary"
 							margin="normal"
 							required
 							fullWidth
@@ -106,8 +104,8 @@ const Login = () => {
 									Forgot password?
 								</Link>
 							</Grid>
-							<Grid item>
-								<RouterLink sx={{ color: 'secondary' }} to="/signup" variant="body2">
+							<Grid item sx={{mb: 2}}>
+								<RouterLink to="/signup" variant="body2">
 									{"Don't have an account? Sign Up"}
 								</RouterLink>
 							</Grid>

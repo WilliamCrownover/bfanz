@@ -8,8 +8,6 @@ import {
 import { setContext } from '@apollo/client/link/context';
 
 // import { Typography, Paper } from "@material-ui/core";
-// import { CreateMuiTheme } from '@mui/material/styles';
-// import { ThemeProvider, CreateMuiTheme } from '@material-ui/styles'; 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import logo from './logo.svg';
@@ -46,36 +44,44 @@ const theme = createTheme({
       secondary: '#eceff1',
       disabled: '#ffffff'
     },
-  //   error: '#f52100',
-  //   info: '#0083f5',
-  //   success: '#83f500',
-  // }, //hold for later use
+    primary: {
+      main: '#f5c300'
+    },
+    secondary: {
+      main: '#f5c300'
+    },
+    action: {
+      active: '#eceff1',
+      // hover: '#eceff1',
+      selected: '#eceff1',
+      focus: '#eceff1'
+    }, 
+    // error: '#f52100',
+    // info: '#0083f5',
+    // success: '#83f500',
+   },
   typography: {
     fontFamily: 'Khand',
     button: {
       fontFamily: 'Khand',
+    },
+    body1: {
+      fontFamily: 'Khand'
+    },
+    body2: {
+      fontFamily: 'Khand'
     }
   },
   background: {
     paper: '#000000',
     default: '#000000'
   },
-
-  // action: {
-  //   active: '#83f500',
-  //   hover: '#83f500',
-  //   selected: '#83f500'
-  // },  //hold for later use
-  // components: {
-  //   MuiBox: {
-  //     styleOverrides: {
-  //       root: { 
-  //         padding: 0,
-  //       },
-  //     },
-  //   },
-  // },  //neither styleOverrides nor defaultProps worked
-}});
+  // overrides:{
+  //   MuiFocused:{
+  //   color: 'primary'
+  //   }
+  // }
+});
 
 function App() {
   return (
