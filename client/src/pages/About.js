@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 const About = () => {
 
     return (
-        <Grid container rowSpacing={4
+        <Grid sx={{mt: 3}} container rowSpacing={4
         }>
             <Grid sx={{ border: 1 }} item xs={12}>
                 <Typography variant="h4">

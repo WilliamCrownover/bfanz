@@ -6,7 +6,7 @@ import HeroBox from '../components/HeroBox/index';
 const Home = () => {
 
     return (
-        <Grid container >
+        <Grid sx={{ mt: 3 }} container >
             <Grid item xs={12}>
                 <HeroBox />
             </Grid>

@@ -54,7 +54,7 @@ const Signup = () => {
 	};
 
 	return (
-		<Grid container >
+		<Grid sx={{mt: 3}} container >
 			<Grid sx={{ border: 1 }} item xs={12}>
 				<Typography variant="h1">
 					HERO BAR AREA
