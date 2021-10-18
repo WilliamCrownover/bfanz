@@ -20,7 +20,11 @@ const About = () => {
                     About the Developers
                 </Typography>
                 <Typography variant="body1">
-                    Michelle Antoinette Oakley: FullStack Web Developer with University of Washington bootcamp certificate.
+                    Michelle Antoinette Oakley: Cult movie lover who wants to learn more about software development and project management.
+
+                    Sheri Elgin: Movie lover and IT Administrator interested in learning more about web development and automation.
+
+
 
 
                 </Typography>
