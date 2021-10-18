@@ -28,4 +28,21 @@ export const GET_MOVIES = gql`
     }
 `
 
+export const GET_MOVIE_BY_ID = gql`
+    query getMovieByID($id: ID!) {
+        getMovieById(id: $id) {
+            _id
+            title
+            seenItCount
+            notSeenItCount
+            lovedItCount
+            hatedItCount
+            description
+            hookQuestions {
+                questionText
+            }
+        }
+    }
+`
+
 //GET_HOOKQUESTIONS
