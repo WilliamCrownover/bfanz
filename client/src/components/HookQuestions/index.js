@@ -17,7 +17,7 @@ export default function HookQuestions() {
       <Grid container spacing={1} justifyContent="space-evenly">
         {Array.from(Array(8)).map((_, index) => (
           <Grid item xs="auto">
-            <Item>variable width conteasdfasdfasdfasdfnt</Item>
+            <Item>variable width conteasdfa  kjirj zljdj sdfasdfasdfnt</Item>
           </Grid>
         ))}
 
