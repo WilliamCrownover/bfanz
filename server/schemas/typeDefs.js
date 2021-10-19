@@ -36,6 +36,8 @@ const typeDefs = gql`
 
         me: User
 
+        getMovies: [Movie]
+
         getMovieById(id: ID): Movie
 
         getMovieByTitle(title: String): Movie
