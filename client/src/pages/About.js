@@ -28,15 +28,15 @@ const About = () => {
                         About the Developers
                     </Typography>
                     <Typography variant="body1">
-                        Michelle Oakley: Cult movie lover who wants to learn more about software development and project management.
+                        <p>Michelle Oakley: Cult movie lover who wants to learn more about software development and project management.</p>
 
-                        Sheri Elgin: Movie lover and IT Administrator interested in learning more about web development and automation.
+                        <p>Sheri Elgin: Movie lover and IT Administrator interested in learning more about web development and automation.</p>
 
-                        Adrian Cronin: Full Stack Web Developer and movie neophyte.
+                        <p>Adrian Cronin: Full Stack Web Developer and movie neophyte.</p>
 
-                        William Crownover: Full-Stack Web Developer and Digital Production Artist focused on user experience and data visualizations.
+                        <p>William Crownover: Full-Stack Web Developer and Digital Production Artist focused on user experience and data visualizations.</p>
 
-                        Joseph Pruitt: Math nerd turned developer. I love learning, puzzles and efficiency. Sometimes I code okay.
+                        <p>Joseph Pruitt: Math nerd turned developer. I love learning, puzzles and efficiency. Sometimes I code okay.</p>
 
 
 
