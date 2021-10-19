@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import SeenToggle from './SeenToggle';
 import LikedToggle from './LikedToggle';
 
-export default function RatingCard({checked}) {
+export default function RatingCard() {
     return (
         <Container>
             <Card sx={{ minWidth: 275, minHeight: 200 }}>
@@ -46,11 +46,11 @@ export default function RatingCard({checked}) {
                                 >
                                     <Grid item sx={{ border: 1 }} xs={6}>
                                         {/* Seen it toggle */}
-                                        <SeenToggle checked={checked}/>
+                                        <SeenToggle/>
                                     </Grid>
                                     <Grid item sx={{ border: 1, overflow: 'hidden'}} xs={6}>
                                         {/* Liked it toggle */}
-                                        <LikedToggle checked={checked} />
+                                        <LikedToggle/>
                                     </Grid>
                                 </Grid>
                             </Container>
