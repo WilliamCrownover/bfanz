@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 const About = () => {
 
     return (
-        <Grid sx={{mt: 3}} container rowSpacing={4
+        <Grid sx={{ mt: 3 }} container rowSpacing={4
         }>
             <Grid sx={{ border: 1 }} item xs={12}>
                 <Typography variant="h4">
@@ -28,6 +28,8 @@ const About = () => {
 
                     William Crownover: Full-Stack Web Developer and Digital Production Artist focused on user experience and data visualizations.
 
+                    Joseph Pruitt: Math nerd turned developer. I love learning, puzzles and efficiency. Sometimes I code okay.
+
 
 
 
@@ -38,7 +40,7 @@ const About = () => {
                     Legal Statement
                 </Typography>
                 <Typography variant="body1">
-                    Legal stuff our lawyers told us to put
+                    All images and description belong to Open Movie Database.
                 </Typography>
             </Grid>
         </Grid>
