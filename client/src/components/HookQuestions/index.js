@@ -22,7 +22,6 @@ export default function HookQuestions() {
               <Item>variable width conteasdfa  kjirj zljdj sdfasdfasdfnt</Item>
             </Grid>
           ))}
-
         </Grid>
       </Box>
     </Container>

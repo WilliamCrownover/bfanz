@@ -10,12 +10,8 @@ export default function Marquee() {
         <Container>
         <Grid sx={{mb: 5}}>
             <Box sx={{minHeight: 500, alignItems: 'center', justifyContent: 'center', padding: 3, border: '1px solid black'}} class = 'cellBackground'>
-                <img src="assets/filmCell.jpg" alt='Film Cell Border'/>
+                <img src="assets/filmCellWelcome.jpg" alt='Film Cell Border'/>
             </Box>
-            {/* nesting didn't work */}
-            {/* <Box class = 'filmBackground' >
-                <img src='/assets/titleCard.jpg' alt="Silent Film Title Card" />
-            </Box> */}
         </Grid>
         </Container>
     );

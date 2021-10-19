@@ -21,10 +21,6 @@
     background-image: url(./moregrain.png);
     animation: grain 1s steps(9) infinite;
 }
-/* .grainy-image {
-    opacity: 88%;
-    z-index: -1;
-} */
 
 .cellBackground {
     /* background-image: url(./filmCell.jpg); */
