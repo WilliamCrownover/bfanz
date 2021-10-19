@@ -17,7 +17,14 @@ const typeDefs = gql`
     type Movie {
         _id: ID
         title: String!
+        year: String
+        genre: String
+        director: String
+        writer: String
+        actors: String
         description: String
+        poster: String
+        indbID: String
         seenItCount: Int
         notSeenItCount: Int 
         lovedItCount: Int 
