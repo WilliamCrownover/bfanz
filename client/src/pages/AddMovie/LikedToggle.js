@@ -6,20 +6,22 @@ import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 
 export default function LikedToggle() {
     return (
-        <ToggleButtonGroup
-            value='placeholder value'
-            exclusive
-            onChange='placeholder function'
-        >
-            <ToggleButton value="Liked it">
-                <MoodIcon />
-            </ToggleButton>
-            <ToggleButton value="Neutral about it">
-                <SentimentNeutralIcon />
-            </ToggleButton>
-            <ToggleButton value="Did not like it">
-                <MoodBadIcon />
-            </ToggleButton>
-        </ToggleButtonGroup>
+        <>
+            <ToggleButtonGroup
+                value='placeholder value'
+                exclusive
+                onChange='placeholder function'
+            >
+                <ToggleButton value="Liked it">
+                    <MoodIcon />
+                </ToggleButton>
+                <ToggleButton value="Neutral about it">
+                    <SentimentNeutralIcon />
+                </ToggleButton>
+                <ToggleButton value="Did not like it">
+                    <MoodBadIcon />
+                </ToggleButton>
+            </ToggleButtonGroup>
+        </>
     )
 };
