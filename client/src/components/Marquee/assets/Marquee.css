@@ -18,7 +18,7 @@
     height: 600px; */
     left: -40%;
     top: -40%;
-    background-image: url(./moregrain.png);
+    /* background-image: url(./moregrain.png); */
     animation: grain 1s steps(9) infinite;
 }
 
