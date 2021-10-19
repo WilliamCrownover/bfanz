@@ -19,8 +19,8 @@ const About = () => {
                         Purpose
                     </Typography>
                     <Typography variant="body1">
-                        To provide a fun and safe space for Cult Classic and B-Movie enthusiast
-                        to share and rate their favorite films.
+                        To provide a fun and safe space for Cult Classic and B-Movie enthusiasts to share and rate their favorite films
+                        while providing an opportunity to discover new movie experiences.
                     </Typography>
                 </Grid>
                 <Grid sx={{ border: 1, mt: 2, padding: 2 }} item xs={12}>
