@@ -1,7 +1,13 @@
 [
     {
         "title": "Repo the Genetic Opera",
-        "description": "URL or API image",
+        "description": "A worldwide epidemic encourages a biotech company to launch an organ-financing program similar in nature to a standard car loan. The repossession clause is a killer, however.",
+        "director": "Darren Lynn Bousman",
+        "genre": "Horror, Musical, Sci-Fi",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTkyZWEzYmYtMTFhMi00YTkzLTkyOWQtMDg1MTQwMTE3M2Y0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+        "writer": "Darren Smith, Terrance Zdunich",
+        "year": "2008",
+        "actors": "Paul Sorvino, Anthony Head, Alexa PenaVega, Paris Hilton",
         "seenItCount": 2,
         "notSeenItCount": 8,
         "lovedItCount": 1,
@@ -21,7 +27,13 @@
 
     {
         "title": "Flight of the Navigator",
-        "description": "URL or API image",
+        "description": "In 1978, a boy travels 8 years into the future and has an adventure with an intelligent, wisecracking alien ship.",
+        "director": "Randal Kleiser",
+        "genre": "Adventure, Comedy, Family",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjUwNmY4ZmYtMzM2OS00N2UxLWFkMWEtZmI0ODRlNWRmM2MwXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg",
+        "writer": "Mark H. Baker, Michael Burton, Phil Joanou",
+        "year": "1986",
+        "actors": "Joey Cramer, Paul Reubens, Cliff De Young",
         "seenItCount": 5,
         "notSeenItCount": 5,
         "lovedItCount": 4,
@@ -38,7 +50,13 @@
 
     {
         "title": "The Last Dragon",
-        "description": "URL or API image",
+        "description": "In New York City, a young man searches for a Master to obtain the final level of martial arts mastery known as the Glow.",
+        "director": "Michael Schultz",
+        "genre": "Action, Comedy, Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjlkNDA2NTQtYzNlOS00YmY1LTk5YzEtMWVhYTY0ZDI0ZDIxXkEyXkFqcGdeQXVyNjEwMTA0NTc@._V1_SX300.jpg",
+        "writer": "Louis Venosta",
+        "year": "1985",
+        "actors": "Taimak, Vanity, Christopher Murney",
         "seenItCount": 7,
         "notSeenItCount": 3,
         "lovedItCount": 3,
@@ -55,7 +73,13 @@
 
     {
         "title": "The Wiz",
-        "description": "URL or API image",
+        "description": "An adaptation of \"The Wizard of Oz\" that tries to capture the essence of the African-American experience.",
+        "director": "Sidney Lumet",
+        "genre": "Andventure, Family, Fantasy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzU0YzkzYjItOThjNi00NTU4LWIxZDEtN2U4NmFkMGFiOWI3XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg",
+        "writer": "L. Frank Baum, William F. Brown, Joel Schumacher",
+        "year": "1978",
+        "actors": "Diana Ross, Michael Jackson, Nipsey Russell",
         "seenItCount": 9,
         "notSeenItCount": 1,
         "lovedItCount": 7,
@@ -71,8 +95,14 @@
     },
 
     {
-        "title": "The Red Violin",
-        "description": "URL or API image",
+        "title": "Le Violon Rouge",
+        "description": "A red-colored violin inspires passion, making its way through three centuries over several owners and countries, eventually ending up at an auction where it may find a new owner.",
+        "director": "François Girard",
+        "genre": "Drama, Music, Mystery",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmZiMGI1ZWQtM2ZiOS00YWQ0LWEwYzMtODhhYTMwMzM5MjU4XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg",
+        "writer": "Don McKellar, François Girard",
+        "year": "1998",
+        "actors": "Carlo Cecchi, Jean-Luc Bideau, Christoph Koncz, Samuel L. Jackson",
         "seenItCount": 4,
         "notSeenItCount": 6,
         "lovedItCount": 4,
@@ -89,7 +119,13 @@
 
     {
         "title": "One Hour Photo",
-        "description": "URL or API image",
+        "description": "A mentally unstable photo developer targets a middle-class family after his obsession with them becomes more sick and disturbing than any of them could imagine.",
+        "director": "Mark Romanek",
+        "genre": "Drama, Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYWVkMjAzY2QtZTA4Yi00OWZmLTliMzctZTkyODU4NTc3MmRjL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+        "writer": "Mark Romenek",
+        "year": "2002",
+        "actors": "Robin Williams, Connie Nielsen, Michael Vartan",
         "seenItCount": 1,
         "notSeenItCount": 9,
         "lovedItCount": 0,
