@@ -46,11 +46,11 @@ export default function RatingCard() {
                                 >
                                     <Grid item sx={{ border: 1 }} xs={6}>
                                         {/* Seen it toggle */}
-                                        <SeenToggle />
+                                        <SeenToggle/>
                                     </Grid>
                                     <Grid item sx={{ border: 1, overflow: 'hidden'}} xs={6}>
                                         {/* Liked it toggle */}
-                                        <LikedToggle />
+                                        <LikedToggle/>
                                     </Grid>
                                 </Grid>
                             </Container>
