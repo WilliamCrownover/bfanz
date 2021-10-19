@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import HeroBox from '../components/HeroBox';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
 import { useMutation } from '@apollo/client';
@@ -14,6 +15,7 @@ import Auth from '../utils/auth';
 
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from 'react';
+
 
 const Login = () => {
 	const [loginUser] = useMutation( LOGIN );
@@ -55,11 +57,12 @@ const Login = () => {
 	};
 
 	return (
-		<Grid sx={{mt: 3}} container >
-			<Grid sx={{ border: 1 }} item xs={12}>
-				<Typography variant="h1">
-					HERO BAR AREA
-				</Typography>
+	<Container>
+		<Grid container >
+			<Grid  item xs={12}>
+				<Grid item xs={12} sx={{ overflow: 'hidden' }}>
+                    <HeroBox />
+                </Grid>
 			</Grid>
 			<Container component="main" maxWidth="xs">
 				<CssBaseline />
@@ -71,7 +74,7 @@ const Login = () => {
 						alignItems: 'center',
 					}}
 				>
-					<Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+					<Avatar sx={{ m: 1, bgcolor: 'secondary' }}>
 						<LockOutlinedIcon />
 					</Avatar>
 					<Typography component="h1" variant="h5">
@@ -79,6 +82,7 @@ const Login = () => {
 					</Typography>
 					<Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
 						<TextField
+							color="primary"
 							margin="normal"
 							required
 							fullWidth
@@ -89,6 +93,7 @@ const Login = () => {
 							autoFocus
 						/>
 						<TextField
+							color="primary"
 							margin="normal"
 							required
 							fullWidth
@@ -102,7 +107,7 @@ const Login = () => {
 							type="submit"
 							fullWidth
 							variant="contained"
-							sx={{ mt: 3, mb: 2 }}
+							sx={{ mt: 3, mb: 2, backgroundColor: '#f5c300' }}
 						>
 							Login
 						</Button>
@@ -112,7 +117,7 @@ const Login = () => {
 									Forgot password?
 								</Link>
 							</Grid>
-							<Grid item>
+							<Grid item sx={{mb: 2}}>
 								<RouterLink to="/signup" variant="body2">
 									{"Don't have an account? Sign Up"}
 								</RouterLink>
@@ -127,6 +132,7 @@ const Login = () => {
 				</Box>
 			</Container>
 		</Grid>
+	</Container>
 	);
 };
 
