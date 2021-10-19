@@ -8,7 +8,9 @@
         "hatedItCount": 1,
         "hookQuestions": [
             {
-                "questionText": "Testing the hook questions"
+                "questionText": "Wanna see Paris Hilton's face fall off on stage?",
+                "questionText": "Did you know that organs can be repossed?",
+                "questionText": "Have you ever seen a slasher musical?"
             }
         ]
     },
@@ -22,7 +24,8 @@
         "hatedItCount": 1,
         "hookQuestions": [
             {
-                "questionText": "Testing the hook questions"
+                "questionText": "Rude AI that flies?!",
+                "questionText": "Ever seen a chrome floating football?"
             }
         ]
     },
@@ -36,7 +39,9 @@
         "hatedItCount": 4,
         "hookQuestions": [
             {
-                "questionText": "Testing the hook questions"
+                "questionText": "Eats popcorn with chopsticks?",
+                "questionText": "Whose the baddest MOFO in Harlem?!"
+
             }
         ]
     },
@@ -50,7 +55,9 @@
         "hatedItCount": 2,
         "hookQuestions": [
             {
-                "questionText": "Testing the hook questions"
+                "questionText": "Did you know that the ruby slippers are actually supposed to be silver?",
+                "questionText": "Wanna see Michael Jackson's real nose?"
+
             }
         ]
     },
@@ -64,7 +71,8 @@
         "hatedItCount": 0,
         "hookQuestions": [
             {
-                "questionText": "Testing the hook questions"
+                "questionText": "Did you know that Samuel Jackson is in a film where he dosen't cuss?",
+                "questionText": "Dead blood violin? Say What?!"
             }
         ]
     },
@@ -78,7 +86,8 @@
         "hatedItCount": 1,
         "hookQuestions": [
             {
-                "questionText": "Testing the hook questions"
+                "questionText": "Wanna see Robin Williams's eyes bleed?",
+                "questionText": "Ever wondered what that retail employee is thinking?"
             }
         ]
     }
