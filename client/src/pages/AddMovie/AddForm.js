@@ -8,54 +8,51 @@ import AddCrewCard from './AddCrewCard'
 
 export default function addForm() {
     return (
-        // will need to actually wrap this in a form
-        <Grid
-            container
-            direction='row'
-            justifyContent='center'
-            alignItems='center'
-            spacing={{ xs: 2, md: 3 }}
-        >
-            <Grid item xs={12}>
-                <TextField fullWidth id="title" label="Movie Title" variant="standard" />
-                {/* <TextField disabled fullWidth id="title" label="Movie Title" variant="standard" /> */}
-            </Grid>
-            <Grid item xs={12}>
-                <TextField fullWidth id="hook-questions" label="Hook" variant="standard" />
-                {/* <TextField disabled fullWidth id="hook-questions" label="Hook" variant="standard" /> */}
-            </Grid>
-            <Grid item xs={12}>
-                <TextField fullWidth id="description" label="Description" variant="filled" />
-                {/* <TextField disabled fullWidth id="description" label="Description" variant="filled" /> */}
-            </Grid>
+        <>
+            <Grid
+                container
+                direction='row'
+                justifyContent='center'
+                alignItems='center'
+                spacing={{ xs: 2, md: 3 }}
+            >
+                <Grid item xs={12}>
+                    <TextField fullWidth id="title" label="Movie Title" variant="standard" />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField fullWidth id="hook-questions" label="Hook" variant="standard" />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField fullWidth id="description" label="Description" variant="filled" />
+                </Grid>
 
-            {/* Lower Grid Area */}
-            <Grid item xs={12}>
-                <Container>
-                    <Grid
-                        container
-                        direction="row"
-                        justifyContent='center'
-                        alignItems="stretch"
-                        rowSpacing={1}
-                    >
-                        {/* RatingCard*/}
-                        <Grid item xs={12} md={6} sx={{ color: 'black' }}>
-                            <RatingCard />
+                {/* Lower Grid Area */}
+                <Grid item xs={12}>
+                    <Container>
+                        <Grid
+                            container
+                            direction="row"
+                            justifyContent='center'
+                            alignItems="stretch"
+                            rowSpacing={1}
+                        >
+                            {/* RatingCard*/}
+                            <Grid item xs={12} md={6} sx={{ color: 'black' }}>
+                                <RatingCard/>
+                            </Grid>
+
+                            {/* CrewCard*/}
+                            <Grid item xs={12} md={6}>
+                                <AddCrewCard/>
+                            </Grid>
+
                         </Grid>
-
-                        {/* CrewCard*/}
-                        <Grid item xs={12} md={6}>
-                            <AddCrewCard />
-                        </Grid>
-
-                    </Grid>
-                </Container>
+                    </Container>
+                </Grid>
+                <Grid item>
+                    <Button size="large" variant='outlined'>Add Movie</Button>
+                </Grid>
             </Grid>
-            <Grid item>
-                <Button size="large" variant='outlined'> Add Movie</Button>
-                {/* <Button disabled size="large" variant='outlined'> Add </Button> */}
-            </Grid>
-        </Grid>
+        </>
     );
 };

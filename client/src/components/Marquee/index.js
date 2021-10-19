@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import './assets/Marquee.css';
 
-{/* <img src='/assets/marq1.jpg' alt="Silent Film Title Card" /> */}
+// {/* <img src='/assets/marq1.jpg' alt="Silent Film Title Card" /> */}
 
 export default function Marquee() {
     return (
