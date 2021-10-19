@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 import AddForm from './AddForm';
 
@@ -76,9 +77,11 @@ const AddMovie = () => {
                                         zIndex: 1
                                     }}
                                 >
-                                    <Typography>
-                                        Please Search for a Movie first
-                                    </Typography>
+                                    <Paper elevation={6} sx={{p:2}} >
+                                        <Typography variant="h5" align="center">
+                                            Please Search for a Movie first
+                                        </Typography>
+                                    </Paper>
                                 </Backdrop>
                             </Box>
                         </Grid>
