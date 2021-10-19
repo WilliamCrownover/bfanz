@@ -11,15 +11,13 @@ export const total = (num1, num2) => {
 export const fetchMovie = async (title) => {
 	title.replace(' ', '+');
 
-	const queryUrl = `http://www.omdbapi.com/?t=${title}&apikey=${process.env.API_KEY}`
+	const queryUrl = `http://www.omdbapi.com/?t=${title}&apikey=5b1b7e8b`
 
 	const res = await fetch ( queryUrl );
 
 	const movieData = await res.json();
 
-	console.log(movieData);
-
-	console.log(convertMovieData(movieData));
+	return convertMovieData(movieData);
 
 };
 
