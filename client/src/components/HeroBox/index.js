@@ -1,14 +1,9 @@
 import * as React from 'react';
-import hero from '../../assets/hero.jpg'
 
-class HeroBox extends React.Component {
-  render () {
-    return (
-      <>
-        <img src={hero} alt="Hero" />
-      </>
-    );
-  }
+
+
+export default function HeroBox(props) {
+  return (
+      <img src='/assets/hero.jpg' alt="Hero" style={{ height: "auto", flexGrow: 1, flexShrink: 1, flexBasis: "auto" }}/>
+  );
 }
-
-export default HeroBox;
