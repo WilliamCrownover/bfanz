@@ -8,9 +8,36 @@ const MovieSchema = new Schema({
         required: true,
         trim: true,
     },
+    year: {
+        type: String,
+        trim: true,
+    },
+    genre: {
+        type: String,
+        trim: true,
+    },
+    director: {
+        type: String,
+        trim: true,
+    },
+    writer: {
+        type: String,
+        trim: true,
+    },
+    actors: {
+        type: String,
+        trim: true,
+    },
+    poster: {
+        type: String,
+        trim: true,
+    },
+    indbID: {
+        type: String,
+        trim: true,
+    },
     description: {
         type: String,
-        required: true,
         trim: true,
     },
     seenItCount: {
