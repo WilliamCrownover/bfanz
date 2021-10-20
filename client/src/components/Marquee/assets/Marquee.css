@@ -45,6 +45,12 @@
     animation: jitter .3s infinite; 
 }
 
+/* @media screen and (max-width: 600px) {
+    width: 85%;
+} */
+
+
+
 @keyframes jitter {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -1px) rotate(-.15deg); }
