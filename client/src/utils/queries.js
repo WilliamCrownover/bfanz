@@ -14,6 +14,7 @@ export const GET_MOVIES = gql`
             _id
             title
             description
+            poster
             seenItCount
             notSeenItCount
             lovedItCount
