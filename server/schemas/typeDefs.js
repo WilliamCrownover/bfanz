@@ -48,6 +48,8 @@ const typeDefs = gql`
         getMovieById(id: ID): Movie
 
         getMovieByTitle(title: String): Movie
+
+        getRandomMovies(numberOfMovies: Int): [Movie]
     }
 
     type Mutation {
