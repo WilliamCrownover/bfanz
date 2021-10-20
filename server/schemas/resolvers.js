@@ -15,7 +15,7 @@ const resolvers = {
         },
 
         getMovies: async () => {
-            return await Movie.find().populate( 'hookQuestions' );
+            return await Movie.find()
         },
 
         getMovieById: async (parent, {id}) => {
