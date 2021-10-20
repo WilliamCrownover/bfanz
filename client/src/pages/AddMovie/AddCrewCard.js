@@ -38,7 +38,7 @@ export default function AddCrewCard() {
                             <Select
                                 labelId="add-crew-role-label"
                                 id="add-crew-role"
-                                value='placeholder role'
+                                value='placeholder value'
                                 label="Role"
                                 onChange='placeholder setRole function'
                             >
