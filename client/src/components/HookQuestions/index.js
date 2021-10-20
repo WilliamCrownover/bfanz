@@ -33,7 +33,6 @@ export default function HookQuestions() {
               <Item>{loading ? "loading" : movie.hookQuestions[0].questionText}</Item>
             </Grid>
           ))}
-
         </Grid>
       </Box>
     </Container>
