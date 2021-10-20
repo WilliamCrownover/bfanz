@@ -34,6 +34,15 @@ const resolvers = {
             } catch (err) {
                 console.error(err);
             }
+        },
+
+        getRandomMovies: async (parent, {numberOfMovies}) => {
+            
+            try {
+                return Movie.aggregate().sample(numberOfMovies).exec()
+            } catch (err) {
+                console.error(err)
+            }
         }
     },
 
