@@ -8,6 +8,11 @@ import SeenToggle from '../../pages/AddMovie/SeenToggle';
 
 export default function DetailsPage(props) {
 
+    let actorArr = props.actors.split(',');
+    actorArr = actorArr.map(actor => {
+        return actor.trim();
+    })
+
     return (
         <>
             <Grid item xs={12}>
@@ -58,7 +63,7 @@ export default function DetailsPage(props) {
                                 <Divider sx={{ m: 1 }} />
 
                                 <Grid item xs={6} >
-                                    <Stack direction="row" spacing={2} sx={{justifyContent: 'center'}}>
+                                    <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
                                         <SeenToggle />
                                         <LikedToggle />
                                     </Stack>
@@ -69,16 +74,39 @@ export default function DetailsPage(props) {
                     </Grid>
 
                     {/* right column */}
-                    <Grid item xs={12} md={6}>
-                        <Paper elevation={12} sx={{ p: 1 }}>
-                            <Stack direction='row' spacing={2}>
-                            <Typography variant="h5">
-                                Directed by:
-                            </Typography>
-                            <Typography variant="body1">
-                                {props.director}
-                            </Typography>
+                    <Grid item xs={12} md={6} >
+                        <Paper elevation={12} sx={{ p: 2 }}>
+                            <Stack direction='row' spacing={3}>
+                                <Typography variant="h6">
+                                    Directed by:
+                                </Typography>
+                                <Typography variant="body1">
+                                    {props.director}
+                                </Typography>
                             </Stack>
+
+                            <Stack direction='row' spacing={3}>
+                                <Typography variant="h6">
+                                    Written by:
+                                </Typography>
+                                <Typography variant="body1">
+                                    {props.writer}
+                                </Typography>
+                            </Stack>
+
+                            <Stack direction='row' spacing={3}>
+                                <Typography variant="h6">
+                                    Featuring:
+                                </Typography>
+                                <Stack direction='column'>
+                                    {actorArr.map((actor) => (
+                                        <Typography variant="body1">
+                                            {actor}
+                                        </Typography>
+                                    ))}
+                                </Stack>
+                            </Stack>
+
                         </Paper>
                     </Grid>
 
