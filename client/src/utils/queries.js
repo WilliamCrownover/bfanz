@@ -46,3 +46,13 @@ export const GET_MOVIE_BY_ID = gql`
 `
 
 //GET_HOOKQUESTIONS
+export const GET_RANDOM_HOOK_QUESTIONS = gql`
+    query getRandomHookQuestions($numberOfMovies: Int) {
+        getRandomMovies(numberOfMovies: $numberOfMovies) {
+            _id
+            hookQuestions {
+                questionText
+            }
+        }
+    }
+`
