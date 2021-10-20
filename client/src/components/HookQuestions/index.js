@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import { useQuery } from '@apollo/client';
+import { GET_RANDOM_HOOK_QUESTIONS } from '../../utils/queries';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -13,13 +15,22 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function HookQuestions() {
+  
+  const { loading, data } = useQuery(GET_RANDOM_HOOK_QUESTIONS,{
+    variables: {
+      numberOfMovies: 3
+    }
+  });
+
+  const hookQuestionArray = data?.getRandomMovies || []
+  
   return (
     <Container>
       <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', padding: 5}}>
         <Grid container spacing={1} justifyContent="space-evenly">
-          {Array.from(Array(8)).map((_, index) => (
+          {hookQuestionArray.map(movie => (
             <Grid item xs="auto">
-              <Item>variable width conteasdfa  kjirj zljdj sdfasdfasdfnt</Item>
+              <Item>{loading ? "loading" : movie.hookQuestions[0].questionText}</Item>
             </Grid>
           ))}
 
