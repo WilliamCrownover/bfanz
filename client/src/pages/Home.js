@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 const Home = () => {
 
     return (
+        <Container>
         <Grid container sx={{ width: '100vw' }}>
             <Grid item xs={12} sx={{ width: '100%' }}>
                 <Box
@@ -30,6 +31,7 @@ const Home = () => {
                 <HookQuestions />
             </Grid>
         </Grid>
+        </Container>
     );
 };
 
