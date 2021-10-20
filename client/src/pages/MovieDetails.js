@@ -45,6 +45,11 @@ const MovieDetails = () => {
 								lovedItCount={movieData.lovedItCount}
 								ratingTotal={total(movieData.lovedItCount, movieData.hatedItCount)}
 								description={movieData.description}
+								director={movieData.director}
+								year={movieData.year}
+								writer={movieData.writer}
+								actors={movieData.actors}
+								poster={movieData.poster}
 							/>
 						</Grid>
 					</>

@@ -14,6 +14,9 @@ export default function DetailsPage(props) {
                 <Typography align="center" variant="h3">
                     {props.title}
                 </Typography>
+                <Typography align="center" variant="subtitle1">
+                    {props.year}
+                </Typography>
             </Grid>
             <Divider sx={{ m: 3 }} />
             <Grid item md={7} sx={{ mx: 'auto' }}>
@@ -28,7 +31,7 @@ export default function DetailsPage(props) {
                     direction="row"
                     justifyContent='center'
                     alignItems="center"
-                    columnSpacing={3}
+                    spacing={3}
                 >
                     {/* left column */}
                     <Grid item xs={12} md={6}>
@@ -57,7 +60,6 @@ export default function DetailsPage(props) {
                                 <Grid item xs={6} >
                                     <Stack direction="row" spacing={2} sx={{justifyContent: 'center'}}>
                                         <SeenToggle />
-                                        <Divider orientation="vertical" flexItem />
                                         <LikedToggle />
                                     </Stack>
                                 </Grid>
@@ -69,6 +71,14 @@ export default function DetailsPage(props) {
                     {/* right column */}
                     <Grid item xs={12} md={6}>
                         <Paper elevation={12} sx={{ p: 1 }}>
+                            <Stack direction='row' spacing={2}>
+                            <Typography variant="h5">
+                                Directed by:
+                            </Typography>
+                            <Typography variant="body1">
+                                {props.director}
+                            </Typography>
+                            </Stack>
                         </Paper>
                     </Grid>
 
