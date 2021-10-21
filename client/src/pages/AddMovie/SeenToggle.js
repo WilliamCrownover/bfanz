@@ -8,32 +8,15 @@ export default function SeenToggle() {
     return (
         <>
             {Auth.loggedIn() ? (
-                <ToggleButtonGroup
-                    value='placeholder value'
-                    exclusive
-                    onChange='placeholder function'
-                >
-                    <ToggleButton value="placeholder value">
-                        <RemoveRedEyeIcon />
-                    </ToggleButton>
-                    <ToggleButton value="placeholder value">
-                        <VisibilityOffIcon />
-                    </ToggleButton>
-                </ToggleButtonGroup>
+
+                <ToggleButton value="placeholder value">
+                    <RemoveRedEyeIcon />
+                </ToggleButton>
+
             ) : (
-                <ToggleButtonGroup
-                    value='placeholder value'
-                    disabled
-                    exclusive
-                    onChange='placeholder function'
-                >
-                    <ToggleButton value="placeholder value">
-                        <RemoveRedEyeIcon />
-                    </ToggleButton>
-                    <ToggleButton value="placeholder value">
-                        <VisibilityOffIcon />
-                    </ToggleButton>
-                </ToggleButtonGroup>
+                <ToggleButton value="placeholder value">
+                    <RemoveRedEyeIcon />
+                </ToggleButton>
             )}
         </>
     )
