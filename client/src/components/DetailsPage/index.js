@@ -136,7 +136,7 @@ export default function DetailsPage(props) {
                                 </Typography>
                             </Grid>
 
-                            <Divider sx={{ m: 1 }} /> */}
+                            <Divider sx={{ m: 1 }} /> */
 
                             <Grid item xs={6} >
                                 <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>
