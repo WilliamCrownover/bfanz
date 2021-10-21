@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useQuery } from '@apollo/client';
 import { GET_HOOK_QUESTIONS } from '../../utils/queries';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -26,7 +27,9 @@ export default function HookQuestions() {
         <Grid container spacing={1} justifyContent="space-evenly">
           {hookQuestionArray.map(movie => (
             <Grid item xs="auto">
-              <Item>{loading ? "loading" : movie.hookQuestions[0].questionText}</Item>
+              <RouterLink to={`/movieDetails/${movie._id}`} style={{ textDecoration: 'none' }}>
+                <Item>{loading ? "loading" : movie.hookQuestions[0].questionText}</Item>
+              </RouterLink>
             </Grid>
           ))}
         </Grid>
