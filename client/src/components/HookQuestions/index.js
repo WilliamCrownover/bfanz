@@ -14,10 +14,10 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2 = {
     fontSize: '1rem',
     '@media (min-width:600px)': {
-      fontSize: '1.2rem',
+      fontSize: '1.1rem',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
+      fontSize: '1.2rem',
     },
   },
   padding: theme.spacing(1),
