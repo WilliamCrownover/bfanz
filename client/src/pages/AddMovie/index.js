@@ -13,12 +13,13 @@ import AddForm from './AddForm';
 import { fetchMovie } from '../../utils/helpers';
 
 const AddMovie = () => {
-    const [checked, setChecked] = useState(false);
+    // Removed setChecked function as it was unused.
+    const [checked, ] = useState(false);
     const [titleSearch, setTitleSearch] = useState('');
 
-    const handleCheck = () => {
-        setChecked(!checked)
-    };
+    // const handleCheck = () => {
+    //     setChecked(!checked)
+    // };
 
     const handleInputChange = (e) => {
         const { value } = e.target;
