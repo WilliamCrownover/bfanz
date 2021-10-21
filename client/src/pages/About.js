@@ -1,20 +1,25 @@
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import HeroBox from '../components/HeroBox';
 import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
 
 const About = () => {
 
     return (
         <Container>
-            <Grid item xs={12}>
-                <Grid item xs={12} sx={{ overflow: 'hidden' }}>
-                    <HeroBox />
-                </Grid>
+            <Grid item xs={12} sx={{display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Box
+                    component="img"
+                    src="/assets/hero.jpg"
+                    sx={{
+                        maxWidth: '100%',
+                        height: "auto",
+                    }}
+                />
             </Grid>
             <Grid container rowSpacing={4
             }>
-                <Grid sx={{ border: 1, mt: 5, padding: 2 }} item xs={12}>
+                <Grid sx={{ border: 1, mt: 10, padding: 2 }} item xs={12}>
                     <Typography variant="h4">
                         Purpose
                     </Typography>
@@ -23,7 +28,7 @@ const About = () => {
                         while providing an opportunity to discover new movie experiences.
                     </Typography>
                 </Grid>
-                <Grid sx={{ border: 1, mt: 4, padding: 2 }} item xs={12}>
+                <Grid sx={{ border: 1, mt: 5, padding: 2 }} item xs={12}>
                     <Typography variant="h4">
                         About the Developers
                     </Typography>
@@ -43,12 +48,12 @@ const About = () => {
 
                     </Typography>
                 </Grid>
-                <Grid sx={{ border: 1, mt: 4, padding: 2 }} item xs={12}>
+                <Grid sx={{ border: 1, mt: 5, mb: 5, padding: 2 }} item xs={12}>
                     <Typography variant="h4">
                         Legal Statement
                     </Typography>
                     <Typography variant="body1">
-                        All images and description belong to Open Movie Database.
+                        All images and descriptions belong to Open Movie Database.
                     </Typography>
                 </Grid>
             </Grid>
