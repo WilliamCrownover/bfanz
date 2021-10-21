@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useQuery } from '@apollo/client';
-import { GET_RANDOM_HOOK_QUESTIONS } from '../../utils/queries';
+import { GET_HOOK_QUESTIONS } from '../../utils/queries';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -16,13 +16,9 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function HookQuestions() {
   
-  const { loading, data } = useQuery(GET_RANDOM_HOOK_QUESTIONS,{
-    variables: {
-      numberOfMovies: 3
-    }
-  });
+  const { loading, data } = useQuery(GET_HOOK_QUESTIONS);
 
-  const hookQuestionArray = data?.getRandomMovies || []
+  const hookQuestionArray = data?.getMovies || []
   
   return (
     <Container>
