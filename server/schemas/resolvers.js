@@ -15,7 +15,7 @@ const resolvers = {
         },
 
         getMovies: async () => {
-            return await Movie.find().populate( 'hookQuestions' );
+            return await Movie.find().sort({dateAdded:-1});
         },
 
         getMovieById: async (parent, {id}) => {
@@ -33,6 +33,15 @@ const resolvers = {
                 return Movie.findOne( {title} );
             } catch (err) {
                 console.error(err);
+            }
+        },
+
+        getRandomMovies: async (parent, {numberOfMovies}) => {
+            
+            try {
+                return Movie.aggregate().sample(numberOfMovies).exec()
+            } catch (err) {
+                console.error(err)
             }
         }
     },
@@ -55,12 +64,12 @@ const resolvers = {
 
                 const { errors } = err;
 
-                if (errors.password) {
-                    return {token: '', success: false, message: errors.password.message}
-                }
-
                 if (errors.username) {
                     return {token: '', success: false, message: errors.username.message}
+                }
+
+                if (errors.password) {
+                    return {token: '', success: false, message: errors.password.message}
                 }
             }
 

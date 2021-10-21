@@ -60,6 +60,10 @@ const MovieSchema = new Schema({
         required: true,
         default: 0,
     },
+    dateAdded: {
+        type: Date,
+        default: Date.now
+    },
     hookQuestions: [hookQuestionSchema],
 });
 

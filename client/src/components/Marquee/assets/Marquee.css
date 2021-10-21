@@ -1,40 +1,28 @@
-.filmBackground {
-    /* position: absolute; */
+/* .filmBackground {
+     position: absolute; 
     max-width: fit-content;
     margin: 50px;
-    /* width: 100%;
-    height: 100%; */
+     width: 100%;
+    height: 100%; 
     overflow: hidden;
     background: radial-gradient(ellipse at center, #848884 0%, #d3d3d3 100%);
-    /* z-index: 4; */
-}
-
+     z-index: 4; 
+ }  */
+/* 
 .filmBackground::after {
     content:"";
-    /* position: absolute; */
+    position: absolute;
     width: 170vw;
     height: 170vh;
-    /* width: 1400px;
-    height: 600px; */
+    width: 1400px;
+    height: 600px;
     left: -40%;
     top: -40%;
     background-image: url(./moregrain.png);
     animation: grain 1s steps(9) infinite;
-}
-/* .grainy-image {
-    opacity: 88%;
-    z-index: -1;
 } */
 
-.cellBackground {
-    /* background-image: url(./filmCell.jpg); */
-    /* position: absolute; */
-    margin-top: 50px;
-    /* z-index: 2; */
-    min-height: fit-content;
-    animation: jitter .3s infinite; 
-}
-@keyframes grain {
+/* @keyframes grain {
     0%, 100% {transform: translate(0,0);}
     10% {transform: translate(-5%,-10%);}
     20% {transform: translate(-9%,-12%);}
@@ -45,19 +33,35 @@
     70% {transform: translate(9%,4%);}
     80% {transform: translate(-2%,5%);}
     90% {transform: translate(-1%,7%);}
+} */
+
+
+.cellBackground {
+    /* background-image: url(./filmCell.jpg); */
+    /* position: absolute; */
+    margin-top: 50px;
+    /* z-index: 2; */
+    min-height: fit-content;
+    animation: jitter .3s infinite; 
 }
+
+/* @media screen and (max-width: 600px) {
+    width: 85%;
+} */
+
+
 
 @keyframes jitter {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -1px) rotate(-.15deg); }
-    20% { transform: translate(0px, 0px) rotate(-.25deg); }
+    20% { transform: translate(0px, 0px) rotate(-.20deg); }
     30% { transform: translate(1px, 1px) rotate(-.15deg); }
     40% { transform: translate(1px, -1px) rotate(0deg); }
     50% { transform: translate(-1px, 1px) rotate(.15deg); }
     60% { transform: translate(-2px, 1px) rotate(0deg); }
     70% { transform: translate(-1px, 1px) rotate(-.15deg); }
     80% { transform: translate(1px, -1px) rotate(0deg); }
-    90% { transform: translate(1px, 1px) rotate(-.15deg); }
-    100% { transform: translate(1px, -1px) rotate(-.25deg); }
+    90% { transform: translate(1px, 1px) rotate(-.10deg); }
+    100% { transform: translate(1px, -1px) rotate(-.15deg); }
   }
 
