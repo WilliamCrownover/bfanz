@@ -42,6 +42,7 @@ const Dashboard = () => {
                                     seenPercent={percent(movie.seenItCount, movie.notSeenItCount)}
                                     lovedItCount={movie.lovedItCount}
                                     ratingTotal={total(movie.lovedItCount, movie.hatedItCount)}
+                                    poster={movie.poster}
                                 />
                             </Grid>
                         ))}
