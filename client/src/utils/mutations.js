@@ -18,3 +18,29 @@ export const LOGIN = gql`
         }
     }
 `
+export const UPDATE_SEENIT = gql`
+    mutation UpdateSeenItCountMutation($id: ID, $count: Int) {
+        updateSeenItCount(id: $id, count: $count) {
+            seenItCount
+            _id
+        }
+    }
+`
+export const ADD_SEEN_MOVIE = gql`
+    mutation AddSeenMovieToUser($movieId: ID) {
+        addSeenMovieToUser(movieId: $movieId) {
+            _id
+            username
+            moviesSeen
+        }
+    }
+`
+export const REMOVE_SEEN_MOVIE = gql`
+    mutation RemoveSeenMovieToUser($movieId: ID) {
+        removeSeenMovieToUser(movieId: $movieId) {
+            _id
+            username
+            moviesSeen
+        }
+    }
+`

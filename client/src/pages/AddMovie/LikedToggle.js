@@ -12,7 +12,7 @@ export default function LikedToggle() {
                 <ToggleButtonGroup
                     value='placeholder value'
                     exclusive
-                    onChange='placeholder function'
+                    // onChange='placeholder function'
                 >
                     <ToggleButton value="Liked it">
                         <MoodIcon />
@@ -29,7 +29,7 @@ export default function LikedToggle() {
                     value='placeholder value'
                     disabled
                     exclusive
-                    onChange='placeholder function'
+                    // onChange='placeholder function'
                 >
                     <ToggleButton value="Liked it">
                         <MoodIcon />
