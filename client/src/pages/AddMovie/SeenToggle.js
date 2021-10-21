@@ -14,6 +14,7 @@ export default function SeenToggle(props) {
 
     let seenIt = false;
     let disable = false;
+    let text = "Have you seen it?"
 
     setTimeout(() => {
         disable = true;
@@ -23,6 +24,7 @@ export default function SeenToggle(props) {
         for(let i = 0; i < user.moviesSeen.length; i++) {
             if(user.moviesSeen[i] === props._id) {
                 seenIt = true;
+                text = "Another film off the list!"
             }
         };
     };
@@ -90,19 +92,25 @@ export default function SeenToggle(props) {
         <>
             {Auth.loggedIn() && !loading? (
 
-                <ToggleButton 
-                    value="placeholder value" 
-                    selected={seenIt}
-                    onClick={handleToggle}
-                    disabled={disable}
-                >
-                    <RemoveRedEyeIcon />
-                </ToggleButton>
+                <>
+                    <p style={{display: 'inline'}}>{text}</p>
+                    <ToggleButton 
+                        value="placeholder value" 
+                        selected={seenIt}
+                        onClick={handleToggle}
+                        disabled={disable}
+                    >
+                        <RemoveRedEyeIcon />
+                    </ToggleButton>
+                </>
 
             ) : (
-                <ToggleButton disabled value="placeholder value">
-                    <RemoveRedEyeIcon />
-                </ToggleButton>
+                <>
+                    <p style={{display: 'inline'}}>Login to mark as "Seen It"</p>
+                    <ToggleButton disabled value="placeholder value">
+                        <RemoveRedEyeIcon />
+                    </ToggleButton>
+                </>
             )}
         </>
     )

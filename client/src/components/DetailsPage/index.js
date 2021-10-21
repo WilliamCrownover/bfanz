@@ -117,20 +117,20 @@ export default function DetailsPage(props) {
 
                             <Divider sx={{ m: 1 }} />
 
-                            <Grid item xs={6}>
+                            {/* <Grid item xs={6}>
                                 <Typography variant="body2" align='center'>
                                     {props.lovedItCount} out of {props.ratingTotal} Fanz Loved It!
                                 </Typography>
                             </Grid>
 
-                            <Divider sx={{ m: 1 }} />
+                            <Divider sx={{ m: 1 }} /> */}
 
                             <Grid item xs={6} >
-                                <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
+                                <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <SeenToggle 
                                         _id={props._id}
                                     />
-                                    <LikedToggle/>
+                                    {/* <LikedToggle/> */}
                                 </Stack>
                             </Grid>
 
