@@ -15,7 +15,7 @@ const resolvers = {
         },
 
         getMovies: async () => {
-            return await Movie.find()
+            return await Movie.find().sort({dateAdded:-1});
         },
 
         getMovieById: async (parent, {id}) => {
