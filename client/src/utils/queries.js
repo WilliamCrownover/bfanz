@@ -55,7 +55,6 @@ export const GET_MOVIE_BY_ID = gql`
 `
 
 //GET_HOOKQUESTIONS
-
 export const GET_HOOK_QUESTIONS = gql`
     query getHookQuestions {
         getMovies {
@@ -66,7 +65,6 @@ export const GET_HOOK_QUESTIONS = gql`
         }
     }
 `
-
 export const GET_RANDOM_HOOK_QUESTIONS = gql`
     query getRandomHookQuestions($numberOfMovies: Int) {
         getRandomMovies(numberOfMovies: $numberOfMovies) {

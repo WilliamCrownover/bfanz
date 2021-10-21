@@ -5,17 +5,6 @@
   .MuiListItemText-primary:hover {
     color: #eceff1;
   }
-  
-  .MuiToolbar-root {
+    .MuiToolbar-root {
     background-color: black;
   }
-
-  /* .MuiTypography-root {
-      font-family: 'Khand';
-      font-size: 2rem;
-  }
-
-  span {
-    font-family: 'Khand';
-    font-size: 2rem;
-  } */

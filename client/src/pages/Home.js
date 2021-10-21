@@ -1,10 +1,8 @@
 import HookQuestions from "../components/HookQuestions";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-// import HeroBox from "../components/HeroBox/index";
 import Marquee from "../components/Marquee";
 import Box from "@mui/material/Box";
-// import { makeStyles } from "@material-ui/core";
 
 const Home = () => {
 

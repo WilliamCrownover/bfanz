@@ -9,7 +9,6 @@ export const ADD_USER = gql`
         }
     }
 `
-
 export const LOGIN = gql`
     mutation Login($username: String, $password: String) {
         login(username: $username, password: $password) {
@@ -19,10 +18,6 @@ export const LOGIN = gql`
         }
     }
 `
-
-//   USERS
-//CHANGE_PASSWORD
-
 export const UPDATE_SEENIT = gql`
     mutation UpdateSeenItCountMutation($id: ID, $count: Int) {
         updateSeenItCount(id: $id, count: $count) {
@@ -31,7 +26,6 @@ export const UPDATE_SEENIT = gql`
         }
     }
 `
-
 export const ADD_SEEN_MOVIE = gql`
     mutation AddSeenMovieToUser($movieId: ID) {
         addSeenMovieToUser(movieId: $movieId) {
@@ -41,7 +35,6 @@ export const ADD_SEEN_MOVIE = gql`
         }
     }
 `
-
 export const REMOVE_SEEN_MOVIE = gql`
     mutation RemoveSeenMovieToUser($movieId: ID) {
         removeSeenMovieToUser(movieId: $movieId) {
@@ -51,15 +44,3 @@ export const REMOVE_SEEN_MOVIE = gql`
         }
     }
 `
-
-//EDIT_RATEIT
-
-//    HOOKS
-//ADD_HOOK
-//EDIT_HOOK
-//DELETE_HOOK
-
-//    MOVIES
-//ADD_MOVIE
-//EDIT_MOVIE
-//DELETE_MOVIE
