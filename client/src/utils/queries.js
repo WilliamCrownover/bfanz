@@ -39,6 +39,11 @@ export const GET_MOVIE_BY_ID = gql`
             lovedItCount
             hatedItCount
             description
+            year
+            director
+            writer
+            actors
+            poster
             hookQuestions {
                 questionText
             }
