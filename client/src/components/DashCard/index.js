@@ -34,7 +34,7 @@ export default function BasicCard(props) {
                                     Seen It
                                 </Typography>
                                 <Typography variant="body2">
-                                    {props.seenPercent}%
+                                    {props.seenItCount} Fanz
                                 </Typography>
                             </Paper>
                             <Paper sx={{ p: 2 }} elevation={3} >

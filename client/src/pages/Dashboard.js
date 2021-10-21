@@ -40,6 +40,7 @@ const Dashboard = () => {
                                     title={movie.title}
                                     hookQuestion={movie.hookQuestions[0].questionText}
                                     seenPercent={percent(movie.seenItCount, movie.notSeenItCount)}
+                                    seenItCount={movie.seenItCount}
                                     lovedItCount={movie.lovedItCount}
                                     ratingTotal={total(movie.lovedItCount, movie.hatedItCount)}
                                     poster={movie.poster}

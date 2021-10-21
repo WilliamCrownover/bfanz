@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import LikedToggle from '../../pages/AddMovie/LikedToggle';
+// import LikedToggle from '../../pages/AddMovie/LikedToggle';
 import SeenToggle from '../../pages/AddMovie/SeenToggle';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -105,7 +105,7 @@ export default function DetailsPage(props) {
                             <Grid item md={9} xs={12} lineHeight='1.6'>
                             <Stack direction='column'>
                                 {actorArr.map((actor) => (
-                                    <Typography variant="body1">
+                                    <Typography key={actor} variant="body1">
                                         {actor}
                                     </Typography>
                                 ))}
@@ -136,12 +136,14 @@ export default function DetailsPage(props) {
                                 </Typography>
                             </Grid>
 
-                            <Divider sx={{ m: 1 }} />
+                            <Divider sx={{ m: 1 }} /> */}
 
                             <Grid item xs={6} >
-                                <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
-                                    <SeenToggle />
-                                    <LikedToggle />
+                                <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>
+                                    <SeenToggle 
+                                        _id={props._id}
+                                    />
+                                    {/* <LikedToggle/> */}
                                 </Stack>
                             </Grid>
 
@@ -159,7 +161,7 @@ export default function DetailsPage(props) {
                             Hooks:
                         </Typography>
                         {props.hookQuestions.map((hook) => (
-                            <Typography variant="body1" sx={{ my: 2 }}>
+                            <Typography key={hook._id} variant="body1" sx={{ my: 2 }}>
                                 {hook.questionText}
                             </Typography>
                         ))}
