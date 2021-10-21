@@ -1,119 +1,88 @@
-// import * as React from 'react';
+import { fetchMovie } from '../utils/helpers';
+import { useQuery } from '@apollo/client';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import DetailsPage from '../components/DetailsPage';
+import { useParams } from 'react-router';
+import { GET_MOVIE_BY_ID } from '../utils/queries';
+import { percent, total } from '../utils/helpers';
+import { Container, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 
-import AddForm from '../components/AddForm';
-import { fetchMovie } from '../utils/helpers';
-
 const AddMovie = () => {
-    // Removed setChecked function as it was unused.
-    const [checked, ] = useState(false);
-    const [titleSearch, setTitleSearch] = useState('');
+    const { movieId } = useParams();
 
-    // const handleCheck = () => {
-    //     setChecked(!checked)
-    // };
+    const { loading, data } = useQuery(GET_MOVIE_BY_ID, {
+        variables: {
+            id: movieId
+        }
+    });
+
+    const [titleSearch, setTitleSearch] = useState('');
 
     const handleInputChange = (e) => {
         const { value } = e.target;
-
         return setTitleSearch(value);
     };
 
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
-
         // THIS IS WHERE THE 3RD PARTY DATA COMES FROM!
         console.log(await fetchMovie(titleSearch));
-
-        // setTitleSearch('');
+        setTitleSearch('');
     }
 
+    const movieData = data?.getMovieById || {};
+
     return (
-        <>
-            {/* if checked === true removed the overlay */}
-            {checked ? (
-                //  minWidth is to prevent buttons from being hidden
-                <Container sx={{ my: 3, minWidth: 450 }} maxWidth="md">
-                    <Grid
-                        container
-                        direction='row'
-                        justifyContent='center'
-                        alignItems='center'
-                        spacing={{ xs: 2, md: 3 }}
-                    >
-                        <Grid item xs={9} sx={{ zIndex: 10 }}>
-                            <TextField
-                                fullWidth
-                                id="check-movies"
-                                label="Enter Title"
-                                variant="outlined"
-                                value={titleSearch}
-                                onChange={handleInputChange} 
-                            />
-                        </Grid>
-                        <Grid item xs={3} sx={{ zIndex: 10 }}>
-                            <Button size="large" variant='outlined' onClick={handleSearchSubmit}> Check </Button>
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <AddForm />
-                        </Grid>
+        <Container sx={{ my: 3 }}>
+            <Grid
+                container
+                direction='row'
+                justifyContent='center'
+                alignItems='center'
+                spacing={{ xs: 2, md: 3 }}
+            >
+                <Grid item xs={9} sx={{ zIndex: 10 }}>
+                    <TextField
+                        fullWidth
+                        id="search-movies"
+                        label="Enter Movie Title"
+                        variant="outlined"
+                        value={titleSearch}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+                <Grid item xs={3} sx={{ zIndex: 10 }}>
+                    <Button size="large" variant='outlined' onClick={handleSearchSubmit}> Search </Button>
+                </Grid>
+                {movieData ? (
+                    <Grid xs={12} item key={movieData._id}>
+                        {/* <DetailsPage
+                            _id={movieData._id}
+                            title={movieData.title}
+                            hookQuestions={movieData.hookQuestions}
+                            seenPercent={percent(movieData.seenItCount, movieData.notSeenItCount)}
+                            lovedItCount={movieData.lovedItCount}
+                            ratingTotal={total(movieData.lovedItCount, movieData.hatedItCount)}
+                            description={movieData.description}
+                            director={movieData.director}
+                            year={movieData.year}
+                            writer={movieData.writer}
+                            actors={movieData.actors}
+                            poster={movieData.poster}
+                        /> */}
                     </Grid>
-                </Container>
-            ) : (
-                // if checked === false hide the form behind an overlay
-                <Container sx={{ my: 3, minWidth: 450 }} maxWidth="md">
-                    <Grid
-                        container
-                        direction='row'
-                        justifyContent='center'
-                        alignItems='center'
-                        spacing={{ xs: 2, md: 3 }}
-                    >
-                        <Grid item xs={9} sx={{ zIndex: 10 }}>
-                            <TextField
-                                fullWidth
-                                id="check-movies"
-                                label="Enter Title"
-                                variant="outlined"
-                                value={titleSearch}
-                                onChange={handleInputChange} 
-                            />
-                        </Grid>
-                        <Grid item xs={3} sx={{ zIndex: 10 }}>
-                            <Button size="large" variant='outlined' onClick={handleSearchSubmit}> Check </Button>
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <Box sx={{ postion: 'relative' }}>
-                                <AddForm />
-                                <Backdrop
-                                    open={true}
-                                    sx={{
-                                        color: '#fff',
-                                        zIndex: 1
-                                    }}
-                                >
-                                    <Paper elevation={6} sx={{p:2}} >
-                                        <Typography variant="h5" align="center">
-                                            Please Search for a Movie first
-                                        </Typography>
-                                    </Paper>
-                                </Backdrop>
-                            </Box>
-                        </Grid>
+                ) : (
+                    <Grid item>
+                        <Typography variant="h5">
+                            Search for a Movie
+                        </Typography>
                     </Grid>
-                </Container>
-            )}
-        </>
+                )}
+            </Grid>
+        </Container>
     );
 };
 
