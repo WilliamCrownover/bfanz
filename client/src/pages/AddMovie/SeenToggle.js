@@ -9,7 +9,8 @@ import { GET_ME } from '../../utils/queries';
 export default function SeenToggle(props) {
     const { loading, data } = useQuery(GET_ME);
     const user = data?.me || {moviesSeen:[]};
-    console.log("~ user", user);
+    // For testing purposes
+    // console.log("~ user", user);
 
     let seenIt = false;
     let disable = false;
@@ -39,14 +40,15 @@ export default function SeenToggle(props) {
 
         if(!seenIt) {
             try {
-                const {data} = await updateSeenItCount({
+                await updateSeenItCount({
                     variables: {
                         id: props._id,
                         count: 1
                     }
                 });
 
-                console.log("count", data.updateSeenItCount.seenItCount);
+                // For testing purposes
+                // console.log("count", data.updateSeenItCount.seenItCount);
 
                 await addMovieToUser({
                     variables: {
@@ -59,14 +61,15 @@ export default function SeenToggle(props) {
             }
         } else {
             try {
-                const {data} = await updateSeenItCount({
+                await updateSeenItCount({
                     variables: {
                         id: props._id,
                         count: -1
                     }
                 });
 
-                console.log("count", data.updateSeenItCount.seenItCount);
+                // For testing purposes
+                // console.log("count", data.updateSeenItCount.seenItCount);
 
                 await removeMovieFromUser({
                     variables: {

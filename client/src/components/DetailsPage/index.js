@@ -111,7 +111,7 @@ export default function DetailsPage(props) {
                         >
                             <Grid item xs={6}>
                                 <Typography variant="body2" align='center'>
-                                    Seen It {props.seenPercent}%
+                                    Seen It: {props.seenItCount} Fanz
                                 </Typography>
                             </Grid>
 

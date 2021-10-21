@@ -9,7 +9,6 @@ export const GET_ME = gql`
         }
     }
 `
-
 export const GET_MOVIES = gql`
     query getMovies {
         getMovies {
@@ -30,7 +29,6 @@ export const GET_MOVIES = gql`
         }
     }
 `
-
 export const GET_MOVIE_BY_ID = gql`
     query getMovieByID($id: ID!) {
         getMovieById(id: $id) {
@@ -53,8 +51,6 @@ export const GET_MOVIE_BY_ID = gql`
         }
     }
 `
-
-//GET_HOOKQUESTIONS
 export const GET_HOOK_QUESTIONS = gql`
     query getHookQuestions {
         getMovies {

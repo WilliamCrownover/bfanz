@@ -39,6 +39,7 @@ const MovieDetails = () => {
 								title={movieData.title}
 								hookQuestions={movieData.hookQuestions}
 								seenPercent={percent(movieData.seenItCount, movieData.notSeenItCount)}
+								seenItCount={movieData.seenItCount}
 								lovedItCount={movieData.lovedItCount}
 								ratingTotal={total(movieData.lovedItCount, movieData.hatedItCount)}
 								description={movieData.description}
