@@ -107,7 +107,10 @@ const resolvers = {
                     return {token: '', success: false, message: errors.username.message}
                 }
             }
+        },
 
+        updateSeenItCount: async (parent, { id, count }) => {
+            return Movie.findOneAndUpdate( {_id: id}, {$inc: {'seenItCount': count}});
         }
     }
 }

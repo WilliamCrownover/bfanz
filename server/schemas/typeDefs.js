@@ -55,6 +55,7 @@ const typeDefs = gql`
     type Mutation {
         signup(username: String, password: String): Auth
         login(username: String, password: String): Auth
+        updateSeenItCount(id: ID, count: Int): Movie
     }
 `
 module.exports = typeDefs;
