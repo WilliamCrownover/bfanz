@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import HeroBox from '../components/HeroBox';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
 import { useMutation } from '@apollo/client';
@@ -58,11 +57,16 @@ const Login = () => {
 	return (
 	<Container>
 		<Grid container >
-			<Grid  item xs={12}>
-				<Grid item xs={12} sx={{ overflow: 'hidden' }}>
-                    <HeroBox />
-                </Grid>
-			</Grid>
+		<Grid item xs={12} sx={{display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Box
+                    component="img"
+                    src="/assets/hero.jpg"
+                    sx={{
+                        maxWidth: '100%',
+                        height: "auto",
+                    }}
+                />
+            </Grid>
 			<Container component="main" maxWidth="xs">
 				<CssBaseline />
 				<Box
