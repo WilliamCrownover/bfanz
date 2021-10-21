@@ -10,8 +10,8 @@
         "actors": "Paul Sorvino, Anthony Head, Alexa PenaVega, Paris Hilton",
         "seenItCount": 2,
         "notSeenItCount": 8,
-        // "lovedItCount": 1,
-        // "hatedItCount": 1,
+        "lovedItCount": 1,
+        "hatedItCount": 1,
         "hookQuestions": [
             {
                 "questionText": "Wanna see Paris Hilton's face fall off on stage?"
@@ -36,8 +36,8 @@
         "actors": "Joey Cramer, Paul Reubens, Cliff De Young",
         "seenItCount": 5,
         "notSeenItCount": 5,
-        // "lovedItCount": 4,
-        // "hatedItCount": 1,
+        "lovedItCount": 4,
+        "hatedItCount": 1,
         "hookQuestions": [
             {
                 "questionText": "Rude AI that flies?!"
@@ -58,8 +58,8 @@
         "year": "1985",
         "actors": "Taimak, Vanity, Christopher Murney",
         "seenItCount": 7,
-        // "notSeenItCount": 3,
-        // "lovedItCount": 3,
+        "notSeenItCount": 3,
+        "lovedItCount": 3,
         "hatedItCount": 4,
         "hookQuestions": [
             {
@@ -82,8 +82,8 @@
         "actors": "Diana Ross, Michael Jackson, Nipsey Russell",
         "seenItCount": 9,
         "notSeenItCount": 1,
-        // "lovedItCount": 7,
-        // "hatedItCount": 2,
+        "lovedItCount": 7,
+        "hatedItCount": 2,
         "hookQuestions": [
             {
                 "questionText": "Did you know that the ruby slippers are actually supposed to be silver?"
@@ -105,8 +105,8 @@
         "actors": "Carlo Cecchi, Jean-Luc Bideau, Christoph Koncz, Samuel L. Jackson",
         "seenItCount": 4,
         "notSeenItCount": 6,
-        // "lovedItCount": 4,
-        // "hatedItCount": 0,
+        "lovedItCount": 4,
+        "hatedItCount": 0,
         "hookQuestions": [
             {
                 "questionText": "Did you know that Samuel Jackson is in a film where he dosen't cuss?"
@@ -128,8 +128,8 @@
         "actors": "Robin Williams, Connie Nielsen, Michael Vartan",
         "seenItCount": 1,
         "notSeenItCount": 9,
-        // "lovedItCount": 0,
-        // "hatedItCount": 1,
+        "lovedItCount": 0,
+        "hatedItCount": 1,
         "hookQuestions": [
             {
                 "questionText": "Wanna see Robin Williams's eyes bleed?"
