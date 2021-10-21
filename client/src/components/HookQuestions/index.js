@@ -34,7 +34,7 @@ export default function HookQuestions() {
       <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', padding: 5}}>
         <Grid container spacing={1} justifyContent="space-evenly">
           {randomHookQuestionArray.map(movie => (
-            <Grid item xs="auto">
+            <Grid item xs="auto" key={movie._id}>
               <RouterLink to={`/movieDetails/${movie._id}`} style={{ textDecoration: 'none' }}>
                 <Item>{loading ? "loading" : getRandomQuestion(movie)}</Item>
               </RouterLink>
