@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import { useQuery } from '@apollo/client';
 import { GET_HOOK_QUESTIONS } from '../../utils/queries';
 import { Link as RouterLink } from 'react-router-dom';
+import { getRandomValueFromArray, randomizeArray } from '../../utils/helpers';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -20,15 +21,24 @@ export default function HookQuestions() {
   const { loading, data } = useQuery(GET_HOOK_QUESTIONS);
 
   const hookQuestionArray = data?.getMovies || []
+
+  const randomHookQuestionArray = randomizeArray(hookQuestionArray);
+
+  const getRandomQuestion = (movie) => {
+    console.log(movie);
+    const randomQuestion = getRandomValueFromArray(movie.hookQuestions)
+    console.log(randomQuestion)
+    return randomQuestion.questionText
+  }
   
   return (
     <Container>
       <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', padding: 5}}>
         <Grid container spacing={1} justifyContent="space-evenly">
-          {hookQuestionArray.map(movie => (
+          {randomHookQuestionArray.map(movie => (
             <Grid item xs="auto">
               <RouterLink to={`/movieDetails/${movie._id}`} style={{ textDecoration: 'none' }}>
-                <Item>{loading ? "loading" : movie.hookQuestions[0].questionText}</Item>
+                <Item>{loading ? "loading" : getRandomQuestion(movie)}</Item>
               </RouterLink>
             </Grid>
           ))}
