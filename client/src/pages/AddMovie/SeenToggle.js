@@ -1,22 +1,41 @@
 import ToggleButton from '@mui/material/ToggleButton';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import Auth from '../../utils/auth';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
-import { UPDATE_SEENIT } from '../../utils/mutations';
+import { ADD_SEEN_MOVIE, REMOVE_SEEN_MOVIE, UPDATE_SEENIT } from '../../utils/mutations';
 import { GET_ME } from '../../utils/queries';
 
 export default function SeenToggle(props) {
-    const { data } = useQuery(GET_ME); // Remember this can have a loading parameter
-    const user = data?.me || {};
+    const { loading, data } = useQuery(GET_ME);
+    const user = data?.me || {moviesSeen:[]};
     console.log("~ user", user);
 
-    const [seenIt, setSeenIt] = useState(false);
+    let seenIt = false;
+    let disable = false;
 
-    const [updateSeenItCount] = useMutation(UPDATE_SEENIT)
+    setTimeout(() => {
+        disable = true;
+    }, 2000);
+
+    if(!loading) {
+        for(let i = 0; i < user.moviesSeen.length; i++) {
+            if(user.moviesSeen[i] === props._id) {
+                seenIt = true;
+            }
+        };
+    };
+
+    // const [seenIt, setSeenIt] = useState(false);
+
+    const [updateSeenItCount] = useMutation(UPDATE_SEENIT);
+    const [addMovieToUser] = useMutation(ADD_SEEN_MOVIE);
+    const [removeMovieFromUser] = useMutation(REMOVE_SEEN_MOVIE);
 
     const handleToggle = async (e) => {
         e.preventDefault();
+
+        disable = !disable;
 
         if(!seenIt) {
             try {
@@ -28,6 +47,13 @@ export default function SeenToggle(props) {
                 });
 
                 console.log("count", data.updateSeenItCount.seenItCount);
+
+                await addMovieToUser({
+                    variables: {
+                        movieId: props._id
+                    }
+                })
+
             } catch (err) {
                 console.error(err);
             }
@@ -41,22 +67,31 @@ export default function SeenToggle(props) {
                 });
 
                 console.log("count", data.updateSeenItCount.seenItCount);
+
+                await removeMovieFromUser({
+                    variables: {
+                        movieId: props._id
+                    }
+                })
+
             } catch (err) {
                 console.error(err);
             }
         }
 
-        setSeenIt(!seenIt);
+        seenIt = !seenIt;
+        disable = !disable;
     };
 
     return (
         <>
-            {Auth.loggedIn() ? (
+            {Auth.loggedIn() && !loading? (
 
                 <ToggleButton 
                     value="placeholder value" 
                     selected={seenIt}
-                    onChange={handleToggle}
+                    onClick={handleToggle}
+                    disabled={disable}
                 >
                     <RemoveRedEyeIcon />
                 </ToggleButton>

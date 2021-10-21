@@ -47,6 +47,7 @@ export const GET_MOVIE_BY_ID = gql`
             actors
             poster
             hookQuestions {
+                _id
                 questionText
             }
         }

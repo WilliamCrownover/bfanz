@@ -93,7 +93,7 @@ export default function DetailsPage(props) {
                             </Typography>
                             <Stack direction='column'>
                                 {actorArr.map((actor) => (
-                                    <Typography variant="body1">
+                                    <Typography key={actor} variant="body1">
                                         {actor}
                                     </Typography>
                                 ))}
@@ -148,7 +148,7 @@ export default function DetailsPage(props) {
                             Hooks:
                         </Typography>
                         {props.hookQuestions.map((hook) => (
-                            <Typography variant="body1" sx={{ my: 2 }}>
+                            <Typography key={hook._id} variant="body1" sx={{ my: 2 }}>
                                 {hook.questionText}
                             </Typography>
                         ))}

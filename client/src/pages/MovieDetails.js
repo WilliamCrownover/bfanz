@@ -1,6 +1,5 @@
 import { useQuery } from '@apollo/client';
 import Grid from '@mui/material/Grid';
-import DashCard from '../components/DashCard';
 import DetailsPage from '../components/DetailsPage';
 import { useParams } from 'react-router';
 import { GET_MOVIE_BY_ID } from '../utils/queries';

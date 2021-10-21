@@ -22,7 +22,7 @@ export const LOGIN = gql`
 
 //   USERS
 //CHANGE_PASSWORD
-//EDIT_SEENIT
+
 export const UPDATE_SEENIT = gql`
     mutation UpdateSeenItCountMutation($id: ID, $count: Int) {
         updateSeenItCount(id: $id, count: $count) {
@@ -31,6 +31,27 @@ export const UPDATE_SEENIT = gql`
         }
     }
 `
+
+export const ADD_SEEN_MOVIE = gql`
+    mutation AddSeenMovieToUser($movieId: ID) {
+        addSeenMovieToUser(movieId: $movieId) {
+            _id
+            username
+            moviesSeen
+        }
+    }
+`
+
+export const REMOVE_SEEN_MOVIE = gql`
+    mutation RemoveSeenMovieToUser($movieId: ID) {
+        removeSeenMovieToUser(movieId: $movieId) {
+            _id
+            username
+            moviesSeen
+        }
+    }
+`
+
 //EDIT_RATEIT
 
 //    HOOKS
