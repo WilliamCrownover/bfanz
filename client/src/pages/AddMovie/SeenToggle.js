@@ -12,7 +12,7 @@ export default function SeenToggle() {
                 </ToggleButton>
 
             ) : (
-                <ToggleButton value="placeholder value">
+                <ToggleButton disabled value="placeholder value">
                     <RemoveRedEyeIcon />
                 </ToggleButton>
             )}
