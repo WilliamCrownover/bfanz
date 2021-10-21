@@ -19,9 +19,18 @@ export const LOGIN = gql`
         }
     }
 `
+
 //   USERS
 //CHANGE_PASSWORD
 //EDIT_SEENIT
+export const UPDATE_SEENIT = gql`
+    mutation UpdateSeenItCountMutation($id: ID, $count: Int) {
+        updateSeenItCount(id: $id, count: $count) {
+            seenItCount
+            _id
+        }
+    }
+`
 //EDIT_RATEIT
 
 //    HOOKS

@@ -110,7 +110,7 @@ const resolvers = {
         },
 
         updateSeenItCount: async (parent, { id, count }) => {
-            return Movie.findOneAndUpdate( {_id: id}, {$inc: {'seenItCount': count}});
+            return Movie.findOneAndUpdate( {_id: id}, {$inc: {'seenItCount': count}}, { new: true });
         }
     }
 }

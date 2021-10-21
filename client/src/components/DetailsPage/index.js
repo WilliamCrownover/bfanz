@@ -127,8 +127,10 @@ export default function DetailsPage(props) {
 
                             <Grid item xs={6} >
                                 <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
-                                    <SeenToggle />
-                                    <LikedToggle />
+                                    <SeenToggle 
+                                        _id={props._id}
+                                    />
+                                    <LikedToggle/>
                                 </Stack>
                             </Grid>
 
