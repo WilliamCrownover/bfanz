@@ -18,8 +18,6 @@ const MovieDetails = () => {
 
 	const movieData = data?.getMovieById || {};
 
-	console.log(movieData);
-
 	return (
 		<Container sx={{ mt: 3 }}>
 			<Grid
@@ -38,9 +36,9 @@ const MovieDetails = () => {
 					<>
 						<Grid xs={12} item key={movieData._id}>
 							<DetailsPage
-								_id={movieData._id}
+								_id={movieData._id} 
 								title={movieData.title}
-								hookQuestion={movieData.hookQuestions[0].questionText}
+								hookQuestions={movieData.hookQuestions}
 								seenPercent={percent(movieData.seenItCount, movieData.notSeenItCount)}
 								lovedItCount={movieData.lovedItCount}
 								ratingTotal={total(movieData.lovedItCount, movieData.hatedItCount)}
