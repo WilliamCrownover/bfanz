@@ -3,8 +3,8 @@ import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import RatingCard from './RatingCard'
-import AddCrewCard from './AddCrewCard'
+import RatingCard from '../RatingCard'
+import AddCrewCard from '../AddCrewCard'
 
 export default function addForm() {
     return (

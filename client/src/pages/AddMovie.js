@@ -9,8 +9,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 
-import AddForm from './AddForm';
-import { fetchMovie } from '../../utils/helpers';
+import AddForm from '../components/AddForm';
+import { fetchMovie } from '../utils/helpers';
 
 const AddMovie = () => {
     // Removed setChecked function as it was unused.

@@ -2,8 +2,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import SeenToggle from './SeenToggle';
-import LikedToggle from './LikedToggle';
+import SeenToggle from '../SeenToggle';
+import LikedToggle from '../LikedToggle';
 
 export default function RatingCard() {
     return (
