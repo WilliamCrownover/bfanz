@@ -24,6 +24,9 @@ export default function BasicCard(props) {
                         </Typography>
                     </CardContent>
                     <CardContent>
+                        <img src={props.poster} alt="The movie poster" style={{width: '100%'}}/>
+                    </CardContent>
+                    <CardContent>
                         <Stack direction="row" justifyContent="center" spacing={1}>
                             <Paper sx={{ p: 2 }}  elevation={3} >
                                 <Typography variant="body2">
