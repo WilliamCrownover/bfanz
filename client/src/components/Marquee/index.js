@@ -1,3 +1,4 @@
+// MARQUEE COMPONENT INDEX.JS 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import './assets/Marquee.css';
