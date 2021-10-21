@@ -25,9 +25,7 @@ export default function HookQuestions() {
   const randomHookQuestionArray = randomizeArray(hookQuestionArray);
 
   const getRandomQuestion = (movie) => {
-    console.log(movie);
     const randomQuestion = getRandomValueFromArray(movie.hookQuestions)
-    console.log(randomQuestion)
     return randomQuestion.questionText
   }
   
