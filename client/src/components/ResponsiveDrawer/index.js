@@ -18,7 +18,8 @@ import TheaterComedySharpIcon from '@mui/icons-material/TheaterComedySharp';
 import InfoSharpIcon from '@mui/icons-material/InfoSharp';
 import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 import './ResponsiveDrawer.css';
-
+import { useQuery } from '@apollo/client';
+import { GET_RANDOM_HOOK_QUESTIONS } from '../../utils/queries';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -35,6 +36,13 @@ import MovieDetails from '../../pages/MovieDetails';
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
+  const randomHook = useQuery(GET_RANDOM_HOOK_QUESTIONS, {
+		variables: {
+			numberOfMovies: 1
+		}
+	});
+ 	const movieData = randomHook.data?.getRandomMovies || {}
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -55,7 +63,7 @@ function ResponsiveDrawer(props) {
     },
     {
       text: 'Surprise',
-      link: '/',
+      link: `/movieDetails/${movieData[0]?._id}`,
       icon: <TheaterComedySharpIcon />
     },
     {
