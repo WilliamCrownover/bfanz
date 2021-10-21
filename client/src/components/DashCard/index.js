@@ -25,11 +25,11 @@ export default function BasicCard(props) {
                         </Typography>
                     </CardContent>
                     <CardContent>
-                        <img src={props.poster} alt="The movie poster" style={{width: '100%'}}/>
+                        <img src={props.poster} alt="The movie poster" style={{ width: '100%' }} />
                     </CardContent>
                     <CardContent>
                         <Stack direction="row" justifyContent="center" spacing={1}>
-                            <Paper sx={{ p: 2 }}  elevation={3} >
+                            <Paper sx={{ p: 2 }} elevation={3} >
                                 <Typography variant="body2">
                                     Seen It
                                 </Typography>
@@ -37,7 +37,7 @@ export default function BasicCard(props) {
                                     {props.seenItCount} Fanz
                                 </Typography>
                             </Paper>
-                            <Paper sx={{ p: 2 }} elevation={3} >
+                            {/* <Paper sx={{ p: 2 }} elevation={3} >
                                 <Typography variant="body2">
                                     {props.lovedItCount} out of {props.ratingTotal}
                                 </Typography>
@@ -47,7 +47,7 @@ export default function BasicCard(props) {
                                 <Typography variant="body2">
                                     Loved It!
                                 </Typography>
-                            </Paper>
+                            </Paper> */}
                         </Stack>
                     </CardContent>
                 </CardActionArea>
