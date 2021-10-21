@@ -23,7 +23,7 @@ const About = () => {
                         while providing an opportunity to discover new movie experiences.
                     </Typography>
                 </Grid>
-                <Grid sx={{ border: 1, mt: 2, padding: 2 }} item xs={12}>
+                <Grid sx={{ border: 1, mt: 4, padding: 2 }} item xs={12}>
                     <Typography variant="h4">
                         About the Developers
                     </Typography>
@@ -43,7 +43,7 @@ const About = () => {
 
                     </Typography>
                 </Grid>
-                <Grid sx={{ border: 1, mt: 2, padding: 2 }} item xs={12}>
+                <Grid sx={{ border: 1, mt: 4, padding: 2 }} item xs={12}>
                     <Typography variant="h4">
                         Legal Statement
                     </Typography>
