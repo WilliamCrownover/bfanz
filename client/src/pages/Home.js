@@ -22,8 +22,8 @@ const Home = () => {
             <Grid item xs={12} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Marquee />
             </Grid>
-            <Grid item xs={12} >
-                <HookQuestions />
+            <Grid item xs={12} sx={{ mb: 5 }} >
+                <HookQuestions  />
             </Grid>
         </Grid>
         </Container>

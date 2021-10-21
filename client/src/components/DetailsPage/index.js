@@ -1,3 +1,4 @@
+// DETAILS PAGE COMPONENT INDEX.JS 
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -60,37 +61,48 @@ export default function DetailsPage(props) {
                         {props.year}
                     </Typography>
 
-                    <Divider sx={{ m: 3 }} />
+                    <Divider sx={{ m: 2 }} />
 
                     <Typography align="center" variant="body1">
                         {props.description}
                     </Typography>
 
-                    <Divider sx={{ m: 3 }} />
+                    <Divider sx={{ m: 2 }} />
 
-                    <Paper elevation={12} sx={{ p: 2 }}>
-                        <Stack direction='row' spacing={3}>
+                    <Paper elevation={0} sx={{ml: 2}}>
+                        <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
+                        <Grid item md={3} xs={12}>
                             <Typography variant="h6">
                                 Directed by:
                             </Typography>
+</Grid>
+                            <Grid item md={9} xs={12} lineHeight='1.6'>
                             <Typography variant="body1">
                                 {props.director}
                             </Typography>
+                            </Grid>
                         </Stack>
 
-                        <Stack direction='row' spacing={3}>
+                        <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
+                        <Grid item md={3} xs={12}>
                             <Typography variant="h6">
                                 Written by:
                             </Typography>
+                            </Grid>
+                            <Grid item md={9} xs={12} lineHeight='1.6'>
                             <Typography variant="body1">
                                 {props.writer}
                             </Typography>
+                            </Grid>
                         </Stack>
 
-                        <Stack direction='row' spacing={3}>
+                        <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
+                        <Grid item md={3} xs={12}>
                             <Typography variant="h6">
                                 Featuring:
                             </Typography>
+                            </Grid>
+                            <Grid item md={9} xs={12} lineHeight='1.6'>
                             <Stack direction='column'>
                                 {actorArr.map((actor) => (
                                     <Typography key={actor} variant="body1">
@@ -98,6 +110,7 @@ export default function DetailsPage(props) {
                                     </Typography>
                                 ))}
                             </Stack>
+                            </Grid>
                         </Stack>
                     </Paper>
 
@@ -110,15 +123,15 @@ export default function DetailsPage(props) {
                             alignItems="stretch"
                         >
                             <Grid item xs={6}>
-                                <Typography variant="body2" align='center'>
-                                    Seen It: {props.seenItCount} Fanz
+                                <Typography variant="body2" align='center' color='#D97409' fontSize='1.1rem'>
+                                    Seen It : {props.seenItCount} Fanz
                                 </Typography>
                             </Grid>
 
                             <Divider sx={{ m: 1 }} />
 
                             {/* <Grid item xs={6}>
-                                <Typography variant="body2" align='center'>
+                                <Typography variant="body2" align='center' color='#D97409' fontSize='1.1rem'>
                                     {props.lovedItCount} out of {props.ratingTotal} Fanz Loved It!
                                 </Typography>
                             </Grid>
