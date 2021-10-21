@@ -1,3 +1,4 @@
+// HOOK QUESTIONS COMPONENT INDEX.JS 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -10,10 +11,18 @@ import { Link as RouterLink } from 'react-router-dom';
 import { getRandomValueFromArray, randomizeArray } from '../../utils/helpers';
 
 const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
+  ...theme.typography.body2 = {
+    fontSize: '1rem',
+    '@media (min-width:600px)': {
+      fontSize: '1.2rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5rem',
+    },
+  },
   padding: theme.spacing(1),
   textAlign: 'center',
-  color: theme.palette.text.secondary,
+  color: theme.palette.text.primary,
 }));
 
 export default function HookQuestions() {
@@ -31,12 +40,12 @@ export default function HookQuestions() {
   
   return (
     <Container>
-      <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', padding: 5}}>
+      <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', maxWidth: '100%', height: 'auto', padding: 5, mb: 5}}>
         <Grid container spacing={1} justifyContent="space-evenly">
           {randomHookQuestionArray.map(movie => (
-            <Grid item xs="auto" key={movie._id}>
+            <Grid item xs="auto" sx={{mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', borderLeft: '1em solid transparent', borderRight: '1em solid transparent', textOverflow: 'ellipsis'}} key={movie._id}>
               <RouterLink to={`/movieDetails/${movie._id}`} style={{ textDecoration: 'none' }}>
-                <Item>{loading ? "loading" : getRandomQuestion(movie)}</Item>
+                <Item sx={{elevation:0, backgroundImage: 'none'}}>{loading ? "loading" : getRandomQuestion(movie)}</Item>
               </RouterLink>
             </Grid>
           ))}

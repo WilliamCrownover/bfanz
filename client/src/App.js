@@ -74,6 +74,17 @@ const theme = createTheme({
     },
     body2: {
       fontFamily: 'Khand'
+    }, 
+    h3: {
+      color: '#703ADD'
+    },
+    h4: {
+      marginTop: '1px',
+      color: '#D97409',
+      fontWeight: '300'
+    },
+    h6: {
+      color: '#703ADD'
     }
   },
 

@@ -1,8 +1,7 @@
+// MARQUEE COMPONENT INDEX.JS 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import './assets/Marquee.css';
-
-// {/* <img src='/assets/marq1.jpg' alt="Silent Film Title Card" /> */}
 
 export default function Marquee() {
     return (
