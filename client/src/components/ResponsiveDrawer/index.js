@@ -35,9 +35,6 @@ import MovieDetails from '../../pages/MovieDetails';
 
 const drawerWidth = 240;
 
-function handleBlur() {
-  window.location.reload();
-}
 function ResponsiveDrawer(props) {
   const randomHook = useQuery(GET_RANDOM_HOOK_QUESTIONS, {
 		variables: {
@@ -83,7 +80,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List sx={{ mt: 6 }}>
         {buttonSet1.map((navButton, index) => (
-          <Link to={navButton.link} onBlur={handleBlur} key={navButton.text} style={{ textDecoration: 'none' }}>
+          <Link to={navButton.link} key={navButton.text} style={{ textDecoration: 'none' }}>
             <ListItem button >
               <ListItemIcon>
                 {navButton.icon}
