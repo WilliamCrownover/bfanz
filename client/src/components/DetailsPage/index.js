@@ -124,19 +124,19 @@ export default function DetailsPage(props) {
                         >
                             <Grid item xs={6}>
                                 <Typography variant="body2" align='center' color='#D97409' fontSize='1.1rem'>
-                                    Seen It {props.seenPercent}%
+                                    Seen It : {props.seenItCount} Fanz
                                 </Typography>
                             </Grid>
 
                             <Divider sx={{ m: 1 }} />
 
-                            <Grid item xs={6}>
+                            {/* <Grid item xs={6}>
                                 <Typography variant="body2" align='center' color='#D97409' fontSize='1.1rem'>
                                     {props.lovedItCount} out of {props.ratingTotal} Fanz Loved It!
                                 </Typography>
                             </Grid>
 
-                            <Divider sx={{ m: 1 }} /> */
+                            <Divider sx={{ m: 1 }} /> */}
 
                             <Grid item xs={6} >
                                 <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>

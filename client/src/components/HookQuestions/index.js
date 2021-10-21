@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
       fontSize: '1.2rem',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.5rem',
+      fontSize: '1.4rem',
     },
   },
   padding: theme.spacing(1),

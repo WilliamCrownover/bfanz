@@ -66,6 +66,11 @@ const theme = createTheme({
       fontFamily: 'Khand'
     },
     body2: {
+      fontSize: '1.4rem',
+      fontFamily: 'Khand'
+    }, 
+    body3: {
+      fontSize: '1.4rem',
       fontFamily: 'Khand'
     }, 
     h3: {
