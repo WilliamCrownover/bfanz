@@ -3,11 +3,12 @@ import { gql } from '@apollo/client'
 export const GET_ME = gql`
     query getMe {
         me {
+            _id
             username
+            moviesSeen
         }
     }
 `
-
 export const GET_MOVIES = gql`
     query getMovies {
         getMovies {
@@ -28,7 +29,6 @@ export const GET_MOVIES = gql`
         }
     }
 `
-
 export const GET_MOVIE_BY_ID = gql`
     query getMovieByID($id: ID!) {
         getMovieById(id: $id) {
@@ -45,12 +45,12 @@ export const GET_MOVIE_BY_ID = gql`
             actors
             poster
             hookQuestions {
+                _id
                 questionText
             }
         }
     }
 `
-
 export const GET_MOVIE_BY_TITLE = gql`
     query	getMovieByTitle($movie: String) {
         getMovieByTitle(title: $movie) {
@@ -85,7 +85,6 @@ export const GET_HOOK_QUESTIONS = gql`
         }
     }
 `
-
 export const GET_RANDOM_HOOK_QUESTIONS = gql`
     query getRandomHookQuestions($numberOfMovies: Int) {
         getRandomMovies(numberOfMovies: $numberOfMovies) {
