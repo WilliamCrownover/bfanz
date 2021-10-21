@@ -6,10 +6,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-// import { Typography, Paper } from "@material-ui/core";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
 import logo from './logo.svg';
 import './App.css';
 import ResponsiveDrawer from './components/ResponsiveDrawer';
@@ -52,7 +49,6 @@ const theme = createTheme({
     },
     action: {
       active: '#eceff1',
-      // hover: '#eceff1',
       selected: '#eceff1',
       focus: '#eceff1'
     }, 
@@ -60,9 +56,6 @@ const theme = createTheme({
       paper: '#000000',
       default: '#000000'
     },
-    // error: '#f52100',
-    // info: '#0083f5',
-    // success: '#83f500',
    },
   typography: {
     fontFamily: 'Khand',
@@ -87,12 +80,6 @@ const theme = createTheme({
       color: '#703ADD'
     }
   },
-
-  // overrides:{
-  //   MuiFocused:{
-  //   color: 'primary'
-  //   }
-  // }
 });
 
 function App() {

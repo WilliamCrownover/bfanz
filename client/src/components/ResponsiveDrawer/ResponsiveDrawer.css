@@ -5,10 +5,6 @@
   .MuiListItemText-primary:hover {
     color: #eceff1;
   }
-  
-  .MuiToolbar-root {
+    .MuiToolbar-root {
     background-color: black;
   }
-/* .menuItem {
-  font-size: 1.4rem;
-} */
