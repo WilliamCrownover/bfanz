@@ -10,34 +10,19 @@ const Home = () => {
 
     return (
         <Container>
-        <Grid container sx={{ width: "95vw" }}>
-            <Grid item xs={12} sx={{ width: "99vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Grid container >
+            <Grid item xs={12} sx={{display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Box
                     component="img"
                     src="/assets/hero.jpg"
                     sx={{
-                        width: {
-                            xs: "100%",
-                            sm: "72%",
-                            md: "85%",
-                            xl: "90%"
-                        },
-                        maxHeight: "400px",
+                        maxWidth: '100%',
+                        height: "auto",
                     }}
                 />
             </Grid>
-            <Grid item xs={12} sx={{width: "90vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Marquee  
-                    sx={{
-                        width: {
-                            xs: "100%",
-                            sm: "72%",
-                            md: "85%",
-                            xl: "90%"
-                        },
-                        maxHeight: "300px",
-                    }}
-                />
+            <Grid item xs={12} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Marquee />
             </Grid>
             <Grid item xs={12} >
                 <HookQuestions />
