@@ -111,6 +111,26 @@ const resolvers = {
 
         updateSeenItCount: async (parent, { id, count }) => {
             return Movie.findOneAndUpdate( {_id: id}, {$inc: {'seenItCount': count}}, { new: true });
+        },
+
+        addSeenMovieToUser: async (parent, {movieId}, context ) => {
+            if(context.user) {
+                return User.findOneAndUpdate( 
+                    { _id: context.user._id },
+                    { $addToSet: { moviesSeen: movieId }},
+                    { new: true }
+                )
+            }
+        },
+
+        removeSeenMovieToUser: async (parent, {movieId}, context ) => {
+            if(context.user) {
+                return User.findOneAndUpdate( 
+                    { _id: context.user._id },
+                    { $pull: { moviesSeen: movieId }},
+                    { new: true }
+                )
+            }
         }
     }
 }
