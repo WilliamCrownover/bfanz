@@ -1,18 +1,33 @@
+import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import LikedToggle from '../LikedToggle';
-import SeenToggle from '../SeenToggle';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
 
 
 export default function AddMovieDetails(props) {
+    const [hookText, setHookText] = useState('');
 
+    const handleInputChange = (e) => {
+        const { value } = e.target;
+        return setHookText(value);
+    };
+
+    const handleMovieSubmit = async (e) => {
+        e.preventDefault();
+
+
+        // mutation to take all the info and create a movie in the database
+
+
+    }
+
+    // split the actors string into an array
     let actorArr = props.actors.split(',');
     actorArr = actorArr.map(actor => {
         return actor.trim();
@@ -21,17 +36,24 @@ export default function AddMovieDetails(props) {
     const hookQuestionButton = (
         <>
             {Auth.loggedIn() ? (
-                <Stack direction='row' spacing={1}>
-                    <TextField
-                        fullWidth
-                        multiline
-                        maxRows={3}
-                        id="addHook"
-                        label="Add Hook"
-                        variant="filled"
-                    />
-                    <Button variant='outlined'> Add </Button>
-                </Stack>
+                <>
+                    <Typography variant="h6">Add a Hook to add this movie to our collection</Typography>
+                    <Divider sx={{ m: 1 }} />
+                    <Stack direction='row' spacing={1}>
+                        <TextField
+                            fullWidth
+                            required
+                            multiline
+                            maxRows={3}
+                            id="addHook"
+                            label="Enter Hook"
+                            variant="filled"
+                            value={hookText}
+                            onChange={handleInputChange}
+                        />
+                        <Button variant='outlined' onClick={handleMovieSubmit}> Add Movie</Button>
+                    </Stack>
+                </>
             ) : (
                 <Stack direction='row' spacing={1}>
                     <TextField
@@ -40,7 +62,7 @@ export default function AddMovieDetails(props) {
                         multiline
                         maxRows={3}
                         id="addHook"
-                        label="Add Hook"
+                        label="Login to Add Movies"
                         variant="filled"
                     />
                     <Button disabled variant='outlined'> Add </Button>
@@ -103,54 +125,9 @@ export default function AddMovieDetails(props) {
 
                     <Divider sx={{ m: 3 }} />
 
-                    {/* <Paper elevation={12} sx={{ p: 1 }}>
-                        <Grid
-                            container
-                            direction="column"
-                            alignItems="stretch"
-                        >
-                            <Grid item xs={6}>
-                                <Typography variant="body2" align='center'>
-                                    Seen It {props.seenPercent}%
-                                </Typography>
-                            </Grid>
-
-                            <Divider sx={{ m: 1 }} />
-
-                            <Grid item xs={6}>
-                                <Typography variant="body2" align='center'>
-                                    {props.lovedItCount} out of {props.ratingTotal} Fanz Loved It!
-                                </Typography>
-                            </Grid>
-
-                            <Divider sx={{ m: 1 }} />
-
-                            <Grid item xs={6} >
-                                <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
-                                    <SeenToggle />
-                                    <LikedToggle />
-                                </Stack>
-                            </Grid>
-
-                        </Grid>
-                    </Paper>
-
-                    <Divider sx={{ m: 3 }} /> */}
-
-                    {/* <Paper elevation={12} sx={{ p: 3 }}>
+                    <Paper elevation={12} sx={{ p: 3 }}>
                         {hookQuestionButton}
-
-                        <Divider sx={{ m: 3 }} />
-
-                        <Typography variant="h6">
-                            Hooks:
-                        </Typography>
-                        {props.hookQuestions.map((hook) => (
-                            <Typography variant="body1" sx={{ my: 2 }}>
-                                {hook.questionText}
-                            </Typography>
-                        ))}
-                    </Paper> */}
+                    </Paper>
 
                 </Grid>
 
