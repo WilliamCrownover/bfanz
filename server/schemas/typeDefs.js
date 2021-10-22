@@ -58,6 +58,7 @@ const typeDefs = gql`
         updateSeenItCount(id: ID, count: Int): Movie
         addSeenMovieToUser( movieId: ID): User
         removeSeenMovieToUser( movieId: ID): User
+        addMoreHookQuestions( questionText: String, movieId: ID ): HookQuestion
     }
 `
 module.exports = typeDefs;
