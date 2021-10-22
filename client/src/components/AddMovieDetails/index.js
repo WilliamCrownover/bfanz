@@ -114,8 +114,8 @@ export default function AddMovieDetails(props) {
                                 Featuring:
                             </Typography>
                             <Stack direction='column'>
-                                {actorArr.map((actor) => (
-                                    <Typography variant="body1">
+                                {actorArr.map((actor, index) => (
+                                    <Typography key={index} variant="body1">
                                         {actor}
                                     </Typography>
                                 ))}
