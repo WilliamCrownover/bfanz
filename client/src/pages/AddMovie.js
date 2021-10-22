@@ -19,7 +19,7 @@ const AddMovie = () => {
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
         const searchResponse = await fetchMovie(titleSearch);
-        console.log(searchResponse);
+
         if (searchResponse.response === 'True') {
             setMovieData(searchResponse);
         } else {
@@ -56,6 +56,7 @@ const AddMovie = () => {
                     <>
                         <Grid xs={12} item key={movieData._id}>
                             <AddMovieDetails
+                                imdbID={movieData.imdbID}
                                 title={movieData.title}
                                 hookQuestions={movieData.hookQuestions}
                                 description={movieData.description}
