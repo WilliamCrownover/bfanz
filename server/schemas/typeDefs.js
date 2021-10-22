@@ -47,6 +47,7 @@ const typeDefs = gql`
         description: String
         poster: String
         imdbID: String
+        response: String
     }
 
     type HookQuestion {
