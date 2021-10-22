@@ -108,6 +108,23 @@ const resolvers = {
                 }
             }
 
+        },
+
+        findOrCreateMovie: async function (parent, args) {
+            
+            try {
+                
+                const movie = await Movie.findOne({title: args.title});
+
+                if (movie) {
+                    return movie
+                } else {
+                    return Movie.create(args)
+                }
+
+            } catch (err) {
+                console.error(err)
+            }
         }
     }
 }

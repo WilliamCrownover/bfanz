@@ -14,6 +14,11 @@ const typeDefs = gql`
         moviesSeen: [ID]
     }
 
+    input HookQuestion {
+        questionText: String 
+        userId: ID 
+    }
+
     type Movie {
         _id: ID
         title: String!
@@ -35,7 +40,6 @@ const typeDefs = gql`
     type HookQuestion {
         _id: ID 
         questionText: String 
-        movieId: ID 
         userId: ID
     }
 
@@ -53,8 +57,11 @@ const typeDefs = gql`
     }
 
     type Mutation {
+
         signup(username: String, password: String): Auth
         login(username: String, password: String): Auth
+
+        findOrCreateMovie(title: String!, year: String, genre: String, director: String, writer: String, actors: String, poster: String, indbID: String, description: String): Movie
     }
 `
 module.exports = typeDefs;
