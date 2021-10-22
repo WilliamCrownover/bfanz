@@ -38,7 +38,7 @@ export default function HookQuestions() {
     return randomQuestion.questionText
   }
   
-const colorSet = ['red', 'blue', 'green'];
+const colorSet = ['#F5C300', '#D97409', '#703ADD', '#ECEFF1'];
 
   return (
     <Container>
