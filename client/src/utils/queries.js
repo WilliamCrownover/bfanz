@@ -100,6 +100,7 @@ export const GET_OMDB_MOVIES = gql`
             writer
             actors
             description
+            response
             poster
         }
     }

@@ -14,6 +14,16 @@ const AddMovie = () => {
 
     const [fetchMovie, { data }] = useLazyQuery(GET_OMDB_MOVIES, {
         variables: { searchString: titleSearch },
+        onCompleted: (data) => {
+            console.log(data)
+            const searchResponse = data.getOmdbMovie;
+            if (searchResponse.response === 'True') {
+                setMovieData(searchResponse);
+            } else {
+                setNotFoundText('No Results found, please try again');
+                setMovieData(null);
+            }
+        }
     })
 
     const handleInputChange = (e) => {
@@ -25,15 +35,6 @@ const AddMovie = () => {
         e.preventDefault();
         fetchMovie({
             variables: { searchString: titleSearch },
-            onCompleted: () => {
-                // if (searchResponse.response === 'True') {
-                //     setMovieData(searchResponse);
-                // } else {
-                //     setNotFoundText('No Results found, please try again');
-                //     setMovieData(null);
-                // }
-                console.log('query completed');
-            }
         });
 
         // const searchResponse = data;
