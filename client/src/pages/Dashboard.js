@@ -16,16 +16,37 @@ import { useState } from "react"
 const Dashboard = () => {
     const { loading, data } = useQuery( GET_MOVIES );
     const allMovies = data?.getMovies || [];
+    
+    const [movieList, setMovieList] = useState(allMovies);
+
+    const [search, setSearch] = useState("");
+
+    if(search === "") {
+        setTimeout(() => {
+            setMovieList(allMovies);
+        }, 10);
+    }
+    // let movieList = [];
+
+    // if(!loading) {
+    //     movieList = allMovies
+    // }
+
+    // console.log(movieList);
 
     const getMyMovie = (event) => {
         event.preventDefault();
-        const newMovieList = originalList.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()));
+        const newMovieList = allMovies.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()));
+        // movieList = newMovieList;
         setMovieList(newMovieList);
     }
 
-    const [movieList, setMovieList] = useState(allMovies);
-    const [originalList, setOriginalList] = useState(allMovies);
-    const [search, setSearch] = useState("");
+
+    // if(!loading) {
+    //     setMovieList(allMovies);
+    // }
+
+    // const [originalList, setOriginalList] = useState(allMovies);
 
     return (
         <Container sx={{mt: 3, mb: 3}}>
