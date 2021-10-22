@@ -14,17 +14,10 @@ export const GET_MOVIES = gql`
         getMovies {
             _id
             title
-            description
             poster
             seenItCount
-            notSeenItCount
-            lovedItCount
-            hatedItCount
             hookQuestions {
-                _id
                 questionText
-                movieId
-                userId
             }
         }
     }
