@@ -40,17 +40,23 @@ export default function HookQuestions() {
     return randomQuestion.questionText
   }
   
+const colorSet = ['#F5C300', '#D97409', '#703ADD', '#ECEFF1'];
+
   return (
     <Container>
       <Box sx={{ flexGrow: 1 , border: '3px solid #121212', borderRadius: '20px', maxWidth: '100%', height: 'auto', padding: 5, mb: 5}}>
         <Grid container spacing={1} justifyContent="space-evenly">
-          {randomHookQuestionArray.map(movie => (
+          {  randomHookQuestionArray.map(movie => {
+               let index = Math.floor(Math.random() * colorSet.length);
+            return (
             <Grid item xs="auto" sx={{mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', borderLeft: '1em solid transparent', borderRight: '1em solid transparent', textOverflow: 'ellipsis'}} key={movie._id}>
               <RouterLink to={`/movieDetails/${movie._id}`} style={{ textDecoration: 'none' }}>
-                <Item sx={{elevation:0, backgroundImage: 'none'}}>{loading ? "loading" : getRandomQuestion(movie)}</Item>
+                <Item sx={{elevation:0, backgroundImage: 'none', color: colorSet[index]}}>{loading ? "loading" : getRandomQuestion(movie)}</Item>
               </RouterLink>
             </Grid>
-          ))}
+            )
+          })
+        }
         </Grid>
       </Box>
     </Container>

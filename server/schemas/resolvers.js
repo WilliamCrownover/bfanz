@@ -179,6 +179,12 @@ const resolvers = {
                 console.error(err)
             }
         },
+
+        deleteMovie: async (parent, {movieId}, context ) => {
+            if(context.user) {
+                return Movie.findOneAndDelete({ _id: movieId })
+            }
+        }
     }
 }
 

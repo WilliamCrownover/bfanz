@@ -6,6 +6,7 @@ export const GET_ME = gql`
             _id
             username
             moviesSeen
+            admin
         }
     }
 `
@@ -44,9 +45,10 @@ export const GET_MOVIE_BY_ID = gql`
         }
     }
 `
+
 export const GET_MOVIE_BY_TITLE = gql`
-    query	getMovieByTitle($movie: String) {
-        getMovieByTitle(title: $movie) {
+    query getMovieByTitle($title: String!) {
+        getMovieByTitle(title: $title) {
             _id
             title
             seenItCount
@@ -60,13 +62,12 @@ export const GET_MOVIE_BY_TITLE = gql`
             actors
             poster
             hookQuestions {
+                _id
                 questionText
             }
         }
     }
 `
-
-//GET_HOOKQUESTIONS
 
 export const GET_HOOK_QUESTIONS = gql`
     query getHookQuestions {
