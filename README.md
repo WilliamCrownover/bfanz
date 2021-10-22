@@ -7,10 +7,11 @@ Where B Movies get discovered. We are building an app that helps movie enthusias
 
 ## Project Title: # bfanz  
 **Creation date:** October 2021  
-**Collaborators:** Adrian Cronin, William Crownover, Sheri Elgin, Michelle Oakley, Joseph Pruitt  
+**Collaborators:** [Adrian Cronin](https://github.com/AdrianCronin) - [William Crownover](https://github.com/WilliamCrownover) - [Sheri Elgin](https://github.com/grudgecat) - [Michelle Oakley](https://github.com/michellecoder) - [Joseph Pruitt](https://github.com/j92pruitt)
 
 ## Screen Cap  
-![screen cap of BFanz Homepage](/public/img/screencap.png)  
+![Bfanz](https://user-images.githubusercontent.com/77079861/138397567-a134e254-710f-4e36-b94b-2a0d01044260.JPG)
+
 
 ## Project Links  
 GitHub Source Code:  https://github.com/WilliamCrownover/bfanz/  
@@ -32,6 +33,9 @@ Heroku link:  https://bfanz.herokuapp.com/
 ***
 
  ## Steps to run the application 
+  * npm i
+  * npm run seed 
+  * npm run develop
 
  ***
  ## Contribution Guidelines  
@@ -48,4 +52,10 @@ The general process will be to:
 
  ***
  ## Future Development
-
+ * Give ability to Update username and/or password
+ * Give ability to Search for movies by director and actor
+ * Add film grain effects to marquee 
+ * Update to allow text to change to 'goodbye '’when you log out
+ * Give users opportunity to make suggestions for other movies related to current movie 
+ * Give users a 'my top ten favorites' list to display with their user account
+ * Have the poster image stay center while the user scrolls up or down
