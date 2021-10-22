@@ -11,7 +11,9 @@ import { GET_MOVIES } from '../utils/queries';
 import { Typography } from '@mui/material';
 import { percent, total } from '../utils/helpers';
 
-
+const getMyMovie = (props) => {
+    console.log(props);
+}
 
 const Dashboard = () => {
     const { loading, data } = useQuery( GET_MOVIES );
@@ -21,9 +23,9 @@ const Dashboard = () => {
         <Container sx={{mt: 3, mb: 3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item xs={12} sx={{mt: 5}}>
-                    <Stack direction='row' spacing={1} >
+                    <Stack component="form" onSubmit={getMyMovie} noValidate direction='row' spacing={1} >
                         <TextField fullWidth id="find-movies" label="Find Movies" variant="outlined" />
-                        <Button variant='outlined' onClick="getMyMovie"> Search </Button>
+                        <Button variant='outlined'> Search </Button>
                     </Stack>
                 </Grid>
                 <Grid item>
