@@ -25,20 +25,18 @@ const AddMovie = () => {
         e.preventDefault();
         fetchMovie({
             variables: { searchString: titleSearch },
-            onCompleted: data => {
+            onCompleted: () => {
                 // if (searchResponse.response === 'True') {
                 //     setMovieData(searchResponse);
                 // } else {
                 //     setNotFoundText('No Results found, please try again');
                 //     setMovieData(null);
                 // }
-                console.log(data);
+                console.log('query completed');
             }
         });
 
         // const searchResponse = data;
-
-
 
         setTitleSearch('');
     }
