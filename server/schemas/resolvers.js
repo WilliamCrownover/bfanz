@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-errors");
 const { User, Movie } = require("../models")
-const {signToken} = require("../utils/auth")
+const {signToken} = require("../utils/auth");
+const { fetchMovie } = require("../utils/helpers");
 
 const resolvers = {
 
@@ -40,6 +41,15 @@ const resolvers = {
             
             try {
                 return Movie.aggregate().sample(numberOfMovies).exec()
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        getOmdbMovie: async (parent, {searchString}) => {
+
+            try {
+                return fetchMovie(searchString)
             } catch (err) {
                 console.error(err)
             }
@@ -147,7 +157,24 @@ const resolvers = {
                     { new: true }
                 )
             }
-        }
+        },
+
+        findOrCreateMovie: async function (parent, args) {
+            
+            try {
+                
+                const movie = await Movie.findOne({title: args.title});
+
+                if (movie) {
+                    return movie
+                } else {
+                    return Movie.create(args)
+                }
+
+            } catch (err) {
+                console.error(err)
+            }
+        },
     }
 }
 

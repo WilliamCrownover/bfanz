@@ -1,15 +1,20 @@
-import { fetchMovie } from '../utils/helpers';
 import Grid from '@mui/material/Grid';
 import AddMovieDetails from '../components/AddMovieDetails';
 import { Container, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import { useLazyQuery } from '@apollo/client';
+import { GET_OMDB_MOVIES } from '../utils/queries';
 
 const AddMovie = () => {
     const [notFoundText, setNotFoundText] = useState('Search for a movie to add');
     const [titleSearch, setTitleSearch] = useState('');
     const [movieData, setMovieData] = useState(null);
+
+    const [fetchMovie, { data }] = useLazyQuery(GET_OMDB_MOVIES, {
+        variables: { searchString: titleSearch },
+    })
 
     const handleInputChange = (e) => {
         const { value } = e.target;
@@ -18,14 +23,22 @@ const AddMovie = () => {
 
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
-        const searchResponse = await fetchMovie(titleSearch);
+        fetchMovie({
+            variables: { searchString: titleSearch },
+            onCompleted: data => {
+                // if (searchResponse.response === 'True') {
+                //     setMovieData(searchResponse);
+                // } else {
+                //     setNotFoundText('No Results found, please try again');
+                //     setMovieData(null);
+                // }
+                console.log(data);
+            }
+        });
 
-        if (searchResponse.response === 'True') {
-            setMovieData(searchResponse);
-        } else {
-            setNotFoundText('No Results found, please try again');
-            setMovieData(null);
-        }
+        // const searchResponse = data;
+
+
 
         setTitleSearch('');
     }

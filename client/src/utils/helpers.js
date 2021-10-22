@@ -8,34 +8,6 @@ export const total = (num1, num2) => {
 	return num1 + num2;
 }
 
-export const fetchMovie = async (title) => {
-	title.replace(' ', '+');
-
-	const queryUrl = `http://www.omdbapi.com/?t=${title}&apikey=5b1b7e8b`
-
-	const res = await fetch ( queryUrl );
-
-	const movieData = await res.json();
-
-	return convertMovieData(movieData);
-
-};
-
-const convertMovieData = (data) => {
-	return {
-		title: data.Title,
-		year: data.Year,
-		genre: data.Genre,
-		director: data.Director,
-		writer: data.Writer,
-		actors: data.Actors,
-		description: data.Plot,
-		poster: data.Poster,
-		imdbID: data.imdbID,
-		response: data.Response
-	}
-};
-
 export const randomizeArray = (arr) => {
 	
 	const inputArr = [...arr]

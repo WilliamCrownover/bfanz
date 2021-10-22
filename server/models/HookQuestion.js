@@ -11,10 +11,6 @@ const hookQuestionSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Movie',
     },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
 });
 
 module.exports = hookQuestionSchema;
