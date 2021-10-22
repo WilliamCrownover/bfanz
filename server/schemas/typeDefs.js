@@ -82,7 +82,7 @@ const typeDefs = gql`
 
         addMoreHookQuestions( questionText: String, movieId: ID ): HookQuestion
 
-        findOrCreateMovie(title: String!, year: String, genre: String, director: String, writer: String, actors: String, poster: String, imdbID: String, description: String, hookQuestions:[HookQuestionFormat]): Movie
+        findOrCreateMovie(title: String!, year: String, genre: String, director: String, writer: String, actors: String, poster: String, imdbID: String, description: String, questionText:String): Movie
     }
 `
 module.exports = typeDefs;

@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_MOVIE } from '../../utils/mutations';
 
 
 export default function AddMovieDetails(props) {
@@ -18,14 +20,19 @@ export default function AddMovieDetails(props) {
         return setHookText(value);
     };
 
-    
+    const [addMovie, ] = useMutation(ADD_MOVIE, {
+        variables: {
+            ...props,
+            questionText: hookText
+        }
+    })
 
     const handleMovieSubmit = async (e) => {
         e.preventDefault();
 
 
         // mutation to take all the info and create a movie in the database
-
+        addMovie()
 
     }
 
