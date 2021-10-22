@@ -18,6 +18,8 @@ export default function AddMovieDetails(props) {
         return setHookText(value);
     };
 
+    
+
     const handleMovieSubmit = async (e) => {
         e.preventDefault();
 

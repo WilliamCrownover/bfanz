@@ -164,6 +164,7 @@ const resolvers = {
             try {
                 
                 const movie = await Movie.findOne({title: args.title});
+                console.log(args.hookQuestions)
 
                 if (movie) {
                     return movie
