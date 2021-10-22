@@ -131,6 +131,22 @@ const resolvers = {
                     { new: true }
                 )
             }
+        },
+
+        addMoreHookQuestions: async (parent, {questionText, movieId}, context) => {
+            if(context.user) {
+                return Movie.findOneAndUpdate( 
+                    { _id: movieId },
+                    { $addToSet: { hookQuestions: 
+                        {
+                            questionText: questionText,
+                            movieId: movieId,
+                            userId: context.user._id
+                        } 
+                    }},
+                    { new: true }
+                )
+            }
         }
     }
 }
