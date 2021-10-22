@@ -10,12 +10,17 @@ import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 
 import AddForm from './AddForm';
-import { fetchMovie } from '../../utils/helpers';
+import { useLazyQuery } from '@apollo/client';
+import { GET_OMDB_MOVIES } from '../../utils/queries';
 
 const AddMovie = () => {
     // Removed setChecked function as it was unused.
     const [checked, ] = useState(false);
     const [titleSearch, setTitleSearch] = useState('');
+
+    const [fetchMovie, {data}] = useLazyQuery(GET_OMDB_MOVIES, {
+        variables: {searchString: titleSearch},
+    })
 
     // const handleCheck = () => {
     //     setChecked(!checked)
@@ -31,10 +36,12 @@ const AddMovie = () => {
         e.preventDefault();
 
         // THIS IS WHERE THE 3RD PARTY DATA COMES FROM!
-        console.log(await fetchMovie(titleSearch));
+        fetchMovie()
 
         // setTitleSearch('');
     }
+
+    console.log(data)
 
     return (
         <>

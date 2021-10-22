@@ -71,3 +71,19 @@ export const GET_RANDOM_HOOK_QUESTIONS = gql`
         }
     }
 `
+
+export const GET_OMDB_MOVIES = gql`
+    query getOmdbMovie($searchString: String) {
+        getOmdbMovie(searchString: $searchString) {
+            imdbID
+            title
+            year
+            genre
+            director
+            writer
+            actors
+            description
+            poster
+        }
+    }
+`
