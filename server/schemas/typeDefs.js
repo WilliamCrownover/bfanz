@@ -24,7 +24,7 @@ const typeDefs = gql`
         actors: String
         description: String
         poster: String
-        indbID: String
+        imdbID: String
         seenItCount: Int
         notSeenItCount: Int 
         lovedItCount: Int 

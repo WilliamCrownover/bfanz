@@ -19,7 +19,7 @@ const AddMovie = () => {
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
         const searchResponse = await fetchMovie(titleSearch);
-
+        console.log(searchResponse);
         if (searchResponse.response === 'True') {
             setMovieData(searchResponse);
         } else {
