@@ -3,7 +3,6 @@ import DashCard from '../components/DashCard';
 import AddMovieButton from '../components/AddMovieButton';
 import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
-// import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useQuery } from '@apollo/client';
@@ -26,27 +25,12 @@ const Dashboard = () => {
             setMovieList(allMovies);
         }, 10);
     }
-    // let movieList = [];
-
-    // if(!loading) {
-    //     movieList = allMovies
-    // }
-
-    // console.log(movieList);
 
     const getMyMovie = (event) => {
         event.preventDefault();
         const newMovieList = allMovies.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()));
-        // movieList = newMovieList;
         setMovieList(newMovieList);
     }
-
-
-    // if(!loading) {
-    //     setMovieList(allMovies);
-    // }
-
-    // const [originalList, setOriginalList] = useState(allMovies);
 
     return (
         <Container sx={{mt: 3, mb: 3}}>
