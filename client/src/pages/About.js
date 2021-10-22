@@ -28,11 +28,11 @@ const About = () => {
                         while providing an opportunity to discover new movie experiences.
                     </Typography>
                 </Grid>
-                <Grid sx={{ mt: 2, padding: 2 }} item xs={12}>
+                <Grid sx={{ mt: 2, padding: 2}} item xs={12}>
                     <Typography variant="h4">
                         About the Developers
                     </Typography>
-                    <Typography variant="body1" sx={{fontSize: '1.2rem'}}>
+                    <Typography variant="body1" sx={{fontSize: '1.2rem', lineHeight: 2}}>
                         <p><b>Michelle Oakley:</b> Cult movie lover who wants to learn more about software development and project management.</p>
 
                         <p><b>Sheri Elgin:</b> Movie lover and IT Administrator interested in learning more about web development and automation.</p>
@@ -44,7 +44,7 @@ const About = () => {
                         <p><b>Joseph Pruitt:</b> Math nerd turned developer. I love learning, puzzles and efficiency. Sometimes I code okay.</p>
                     </Typography>
                 </Grid>
-                <Grid sx={{ mt: 2, padding: 2 }} item xs={12}>
+                <Grid sx={{ mt: 3, padding: 2 }} item xs={12}>
                     <Typography variant="h4">
                         Legal Statement
                     </Typography>

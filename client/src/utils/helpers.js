@@ -32,3 +32,12 @@ export const getRandomValueFromArray = (arr) => {
 		return arr[randomIndex]
 	}
 }
+
+export const searchFailsMessage = (movieArr) => {
+	const movieList = movieArr;
+	if (movieList === []) {
+		return `<p visibility='visible'>"Movie was not found in our database. Click Add Movie button to add it to our collection!"</p>;`
+	} else {
+		return `<p visibility='hidden'>;`
+	}
+}
