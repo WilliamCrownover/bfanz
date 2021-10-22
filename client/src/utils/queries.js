@@ -54,7 +54,7 @@ export const GET_MOVIE_BY_ID = gql`
 
 export const GET_MOVIE_BY_TITLE = gql`
     query getMovieByTitle($title: String!) {
-        getMovieByTitle(title: $String) {
+        getMovieByTitle(title: $title) {
             _id
             title
             seenItCount

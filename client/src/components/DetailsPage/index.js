@@ -69,47 +69,47 @@ export default function DetailsPage(props) {
 
                     <Divider sx={{ m: 2 }} />
 
-                    <Paper elevation={0} sx={{ml: 2}}>
+                    <Paper elevation={0} sx={{ ml: 2 }}>
                         <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
-                        <Grid item md={3} xs={12}>
-                            <Typography variant="h6">
-                                Directed by:
-                            </Typography>
-</Grid>
+                            <Grid item md={3} xs={12}>
+                                <Typography variant="h6">
+                                    Directed by:
+                                </Typography>
+                            </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
-                            <Typography variant="body1">
-                                {props.director}
-                            </Typography>
+                                <Typography variant="body1">
+                                    {props.director}
+                                </Typography>
                             </Grid>
                         </Stack>
 
                         <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
-                        <Grid item md={3} xs={12}>
-                            <Typography variant="h6">
-                                Written by:
-                            </Typography>
+                            <Grid item md={3} xs={12}>
+                                <Typography variant="h6">
+                                    Written by:
+                                </Typography>
                             </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
-                            <Typography variant="body1">
-                                {props.writer}
-                            </Typography>
+                                <Typography variant="body1">
+                                    {props.writer}
+                                </Typography>
                             </Grid>
                         </Stack>
 
                         <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
-                        <Grid item md={3} xs={12}>
-                            <Typography variant="h6">
-                                Featuring:
-                            </Typography>
+                            <Grid item md={3} xs={12}>
+                                <Typography variant="h6">
+                                    Featuring:
+                                </Typography>
                             </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
-                            <Stack direction='column'>
-                                {actorArr.map((actor) => (
-                                    <Typography key={actor} variant="body1">
-                                        {actor}
-                                    </Typography>
-                                ))}
-                            </Stack>
+                                <Stack direction='column'>
+                                    {actorArr.map((actor) => (
+                                        <Typography key={actor} variant="body1">
+                                            {actor}
+                                        </Typography>
+                                    ))}
+                                </Stack>
                             </Grid>
                         </Stack>
                     </Paper>
@@ -140,7 +140,7 @@ export default function DetailsPage(props) {
 
                             <Grid item xs={6} >
                                 <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <SeenToggle 
+                                    <SeenToggle
                                         _id={props._id}
                                     />
                                     {/* <LikedToggle/> */}

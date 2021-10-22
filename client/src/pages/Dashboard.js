@@ -11,10 +11,11 @@ import { GET_MOVIES } from '../utils/queries';
 import { Typography } from '@mui/material';
 import { percent, total } from '../utils/helpers';
 
+
+
 const Dashboard = () => {
     const { loading, data } = useQuery( GET_MOVIES );
     const allMovies = data?.getMovies || [];
-
 
     return (
         <Container sx={{mt: 3, mb: 3}}>
@@ -22,7 +23,7 @@ const Dashboard = () => {
                 <Grid item xs={12} sx={{mt: 5}}>
                     <Stack direction='row' spacing={1} >
                         <TextField fullWidth id="find-movies" label="Find Movies" variant="outlined" />
-                        <Button variant='outlined'> Search </Button>
+                        <Button variant='outlined' onClick="getMyMovie"> Search </Button>
                     </Stack>
                 </Grid>
                 <Grid item>
