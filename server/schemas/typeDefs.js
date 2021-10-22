@@ -75,6 +75,10 @@ const typeDefs = gql`
 
         signup(username: String, password: String): Auth
         login(username: String, password: String): Auth
+        
+        updateSeenItCount(id: ID, count: Int): Movie
+        addSeenMovieToUser( movieId: ID): User
+        removeSeenMovieToUser( movieId: ID): User
 
         findOrCreateMovie(title: String!, year: String, genre: String, director: String, writer: String, actors: String, poster: String, indbID: String, description: String): Movie
     }

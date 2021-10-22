@@ -1,3 +1,4 @@
+// DASH CARD COMPONENT INDEX.JS 
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,30 +14,31 @@ export default function BasicCard(props) {
             <Card sx={{ minWidth: 275, maxWidth: 275, height: '100%' }}>
                 <CardActionArea>
                     <CardContent>
-                        <Typography variant="h5" component="div">
+                        <Typography variant="h5" component="div" sx={{fontSize: '1.6rem', color: '#703ADD'}}>
                             {props.title}
                         </Typography>
                         {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
                             subtitle
                         </Typography> */}
-                        <Typography variant="body2">
+                        <Typography variant="body3">
                             {props.hookQuestion}
                         </Typography>
                     </CardContent>
                     <CardContent>
-                        <img src={props.poster} alt="The movie poster" style={{width: '100%'}}/>
+                        <img src={props.poster} alt="The movie poster" style={{ width: '100%' }} />
                     </CardContent>
                     <CardContent>
                         <Stack direction="row" justifyContent="center" spacing={1}>
-                            <Paper sx={{ p: 2 }}  elevation={3} >
-                                <Typography variant="body2">
+                            <Paper sx={{ p: 2 }} elevation={3} >
+                                <Typography variant="body3">
                                     Seen It
                                 </Typography>
-                                <Typography variant="body2">
-                                    {props.seenPercent}%
+                                <br/>
+                                <Typography variant="body3">
+                                    {props.seenItCount} Fanz
                                 </Typography>
                             </Paper>
-                            <Paper sx={{ p: 2 }} elevation={3} >
+                            {/* <Paper sx={{ p: 2 }} elevation={3} >
                                 <Typography variant="body2">
                                     {props.lovedItCount} out of {props.ratingTotal}
                                 </Typography>
@@ -46,7 +48,7 @@ export default function BasicCard(props) {
                                 <Typography variant="body2">
                                     Loved It!
                                 </Typography>
-                            </Paper>
+                            </Paper> */}
                         </Stack>
                     </CardContent>
                 </CardActionArea>

@@ -1,28 +1,11 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
-
-/* CSS HEX colors */
-/* // --black: #000000;   //background
-// --saffron: #f5c300;    //primary
-// --cultured: #eceff1;   //secondary
-// --azure: #0083f5;      //info
-// --white: #ffffff;
-// --lawn-green: #83f500; //success
-// --red: #f52100;        //error */
 
 * {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-

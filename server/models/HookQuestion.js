@@ -13,5 +13,4 @@ const hookQuestionSchema = new Schema({
     },
 });
 
-
 module.exports = hookQuestionSchema;

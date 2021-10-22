@@ -1,3 +1,4 @@
+// RESPONSIVE DRAWER COMPONENT INDEX.JS 
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -86,7 +87,7 @@ function ResponsiveDrawer(props) {
                 {navButton.icon}
                 {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
               </ListItemIcon>
-              <ListItemText sx={{ fontSize: 32 }} primary={navButton.text} />
+              <ListItemText sx={{ typography: 'body2', fontSize: '1.4rem' }} primary={navButton.text} />
             </ListItem>
           </Link>
         ))}
@@ -202,7 +203,6 @@ function ResponsiveDrawer(props) {
 ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
    */
   window: PropTypes.func,
 };
