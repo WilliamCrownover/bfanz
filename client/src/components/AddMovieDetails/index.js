@@ -14,10 +14,20 @@ import { ADD_MOVIE } from '../../utils/mutations';
 
 export default function AddMovieDetails(props) {
     const [hookText, setHookText] = useState('');
+    const [validText, setValidText ] = useState(false);
 
     const handleInputChange = (e) => {
         const { value } = e.target;
-        return setHookText(value);
+
+        setValidText(true);
+
+        if(value.trim() === '') {
+            setValidText(false);
+        }
+
+        if(value.length <= 120) {
+            return setHookText(value);
+        }
     };
 
     const [addMovie, ] = useMutation(ADD_MOVIE, {
@@ -60,8 +70,13 @@ export default function AddMovieDetails(props) {
                             value={hookText}
                             onChange={handleInputChange}
                         />
-                        <Button variant='outlined' onClick={handleMovieSubmit}> Add Movie</Button>
+                        <Button 
+                            disabled={!validText}
+                            variant='outlined' 
+                            onClick={handleMovieSubmit}
+                        > Add Movie</Button>
                     </Stack>
+                    <p>{hookText.length}/120</p>
                 </>
             ) : (
                 <Stack direction='row' spacing={1}>
