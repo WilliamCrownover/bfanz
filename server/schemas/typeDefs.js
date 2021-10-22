@@ -29,12 +29,25 @@ const typeDefs = gql`
         actors: String
         description: String
         poster: String
-        indbID: String
+        imdbID: String
         seenItCount: Int
         notSeenItCount: Int 
         lovedItCount: Int 
         hatedItCount: Int
         hookQuestions: [HookQuestion]
+    }
+
+    type Movie {
+        _id: ID
+        title: String!
+        year: String
+        genre: String
+        director: String
+        writer: String
+        actors: String
+        description: String
+        poster: String
+        imdbID: String
     }
 
     type HookQuestion {
@@ -54,6 +67,8 @@ const typeDefs = gql`
         getMovieByTitle(title: String): Movie
 
         getRandomMovies(numberOfMovies: Int): [Movie]
+
+        getOmdbMovie:
     }
 
     type Mutation {
