@@ -1,21 +1,15 @@
 import { fetchMovie } from '../utils/helpers';
-import { useQuery } from '@apollo/client';
 import Grid from '@mui/material/Grid';
 import AddMovieDetails from '../components/AddMovieDetails';
-import { useParams } from 'react-router';
-import { GET_MOVIE_BY_ID } from '../utils/queries';
-import { percent, total } from '../utils/helpers';
 import { Container, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
 
 const AddMovie = () => {
-
+    const [notFoundText, setNotFoundText] = useState('Search for a movie to add');
     const [titleSearch, setTitleSearch] = useState('');
-    const [searchData, setSearchData] = useState({});
+    const [movieData, setMovieData] = useState(null);
 
     const handleInputChange = (e) => {
         const { value } = e.target;
@@ -24,25 +18,17 @@ const AddMovie = () => {
 
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
-        // THIS IS WHERE THE 3RD PARTY DATA COMES FROM!
-        setSearchData(await fetchMovie(titleSearch));
-        // console.log(await fetchMovie(titleSearch));
-        console.log(searchData, 'handleSearchSubmit');
+        const searchResponse = await fetchMovie(titleSearch);
+
+        if (searchResponse.response === 'True') {
+            setMovieData(searchResponse);
+        } else {
+            setNotFoundText('No Results found, please try again');
+            setMovieData(null);
+        }
+
         setTitleSearch('');
     }
-
-    const movieData = {
-        title: 'Inception',
-        description: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
-        director: "Christopher Nolan",
-        writer: "Christopher Nolan",
-        year: "2010",
-        actors: "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page",
-        poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg'
-    };
-
-    // const movieData = null;
-    console.log(movieData, " movie data");
 
     return (
         <Container sx={{ my: 3 }}>
@@ -84,7 +70,7 @@ const AddMovie = () => {
                 ) : (
                     <Grid item>
                         <Typography variant="h5">
-                            Search for a Movie
+                            {notFoundText}
                         </Typography>
                     </Grid>
                 )}

@@ -31,7 +31,8 @@ const convertMovieData = (data) => {
 		actors: data.Actors,
 		description: data.Plot,
 		poster: data.Poster,
-		indbID: data.imdbID
+		indbID: data.imdbID,
+		response: data.Response
 	}
 };
 
