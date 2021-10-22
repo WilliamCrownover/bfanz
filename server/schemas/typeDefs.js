@@ -37,8 +37,7 @@ const typeDefs = gql`
         hookQuestions: [HookQuestion]
     }
 
-    type Movie {
-        _id: ID
+    type OmdbResponse {
         title: String!
         year: String
         genre: String
@@ -68,7 +67,7 @@ const typeDefs = gql`
 
         getRandomMovies(numberOfMovies: Int): [Movie]
 
-        getOmdbMovie:
+        getOmdbMovie(searchString: String): OmdbResponse
     }
 
     type Mutation {

@@ -11,11 +11,11 @@ const convertMovieData = (data) => {
 		actors: data.Actors,
 		description: data.Plot,
 		poster: data.Poster,
-		indbID: data.imdbID
+		imdbID: data.imdbID
 	}
 };
 
-export const fetchMovie = async (title) => {
+const fetchMovie = async (title) => {
 	title.replace(' ', '+');
 
 	const queryUrl = `http://www.omdbapi.com/?t=${title}&apikey=${process.env.OMDB_API_KEY}`
@@ -25,3 +25,5 @@ export const fetchMovie = async (title) => {
 	return convertMovieData(res.data);
 
 };
+
+module.exports = {fetchMovie}
