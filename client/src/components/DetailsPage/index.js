@@ -18,6 +18,7 @@ import { ADD_ANOTHER_HOOKQUESTION } from '../../utils/mutations';
 
 export default function DetailsPage(props) {
     const [ questionText, setQuestionText ] = useState('');
+    const [ questionTextLength, setQuestionTextLength ] = useState(0);
     const [ submitHookQuestion ] = useMutation(ADD_ANOTHER_HOOKQUESTION, {
         refetchQueries: [
             GET_MOVIE_BY_ID
@@ -46,7 +47,11 @@ export default function DetailsPage(props) {
 
     const handleInputChange = (e) => {
         const {value} = e.target;
-        setQuestionText(value);
+
+        if(value.length <=120) {
+            setQuestionText(value);
+            setQuestionTextLength(value.length);
+        }
     }
 
     const handleSubmit = async (e) => {
@@ -63,6 +68,8 @@ export default function DetailsPage(props) {
             } catch (err) {
                 console.error(err);
             }
+        } else if ( questionText.length > 120 ) {
+
         }
 
         setQuestionText('');
@@ -71,6 +78,7 @@ export default function DetailsPage(props) {
     const hookQuestionButton = (
         <>
             {Auth.loggedIn() ? (
+                <>
                 <Stack direction='row' spacing={1}>
                     <TextField
                         fullWidth
@@ -90,6 +98,8 @@ export default function DetailsPage(props) {
                         onClick={handleSubmit}
                     > Add </Button>
                 </Stack>
+                {seenIt && <p>{questionTextLength}/120</p>}
+                </>
             ) : (
                 <Stack direction='row' spacing={1}>
                     <TextField
