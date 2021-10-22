@@ -12,9 +12,11 @@ import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/client';
 import { GET_ME } from '../../utils/queries';
+import { useState } from 'react';
 
 
 export default function DetailsPage(props) {
+    const [ questionText, setQuestionText ] = useState('');
 
     const { loading, data } = useQuery(GET_ME);
     const user = data?.me || {moviesSeen:[]};
@@ -36,6 +38,19 @@ export default function DetailsPage(props) {
         return actor.trim();
     })
 
+    const handleInputChange = (e) => {
+        const {value} = e.target;
+        setQuestionText(value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(questionText);
+        
+        setQuestionText('');
+    }
+
     const hookQuestionButton = (
         <>
             {Auth.loggedIn() ? (
@@ -48,10 +63,14 @@ export default function DetailsPage(props) {
                         label={text}
                         variant="filled"
                         disabled={!seenIt}
+                        value={questionText}
+                        onChange={handleInputChange}
                     />
                     <Button 
                         variant='outlined'
                         disabled={!seenIt}
+                        value={questionText}
+                        onClick={handleSubmit}
                     > Add </Button>
                 </Stack>
             ) : (
