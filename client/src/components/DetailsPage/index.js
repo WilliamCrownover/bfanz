@@ -73,6 +73,7 @@ export default function DetailsPage(props) {
         }
 
         setQuestionText('');
+        setQuestionTextLength(0);
     }
 
     const hookQuestionButton = (
