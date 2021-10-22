@@ -51,6 +51,30 @@ export const GET_MOVIE_BY_ID = gql`
         }
     }
 `
+
+export const GET_MOVIE_BY_TITLE = gql`
+    query getMovieByTitle($title: String!) {
+        getMovieByTitle(title: $String) {
+            _id
+            title
+            seenItCount
+            notSeenItCount
+            lovedItCount
+            hatedItCount
+            description
+            year
+            director
+            writer
+            actors
+            poster
+            hookQuestions {
+                _id
+                questionText
+            }
+        }
+    }
+`
+
 export const GET_HOOK_QUESTIONS = gql`
     query getHookQuestions {
         getMovies {
