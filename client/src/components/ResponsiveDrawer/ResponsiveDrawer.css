@@ -1,0 +1,10 @@
+.MuiListItemText-primary {
+    color: #f5c300;
+    font-family: 'Khand';
+  }
+  .MuiListItemText-primary:hover {
+    color: #eceff1;
+  }
+    .MuiToolbar-root {
+    background-color: black;
+  }
