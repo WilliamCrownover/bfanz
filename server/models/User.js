@@ -20,7 +20,11 @@ const userSchema = new Schema({
     moviesSeen: [{
         type: Schema.Types.ObjectId,
         ref: 'Movie',
-    }]
+    }],
+    admin: {
+        type: Boolean,
+        default: false
+    }
 });
 
 userSchema.pre('save', async function (next) {

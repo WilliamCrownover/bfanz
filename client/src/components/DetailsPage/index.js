@@ -26,8 +26,6 @@ export default function DetailsPage(props) {
     const { loading, data } = useQuery(GET_ME);
     const user = data?.me || {moviesSeen:[]};
 
-    const admin = true;
-
     let seenIt = false;
     let text = "Please watch the film first";
 
@@ -244,7 +242,7 @@ export default function DetailsPage(props) {
                 <Grid item md={6} xs={12} sx={{ mx: 'auto', p: 3 }}>
                     <Box component='img' src={props.poster} alt='movie poster' />
                     <br/>
-                    {admin && 
+                    {user.admin && 
                         <Button 
                             sx={{mt: 3}}
                             variant='outlined'

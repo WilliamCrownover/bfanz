@@ -12,6 +12,7 @@ const typeDefs = gql`
         username: String!
         moviesAdded: [ID]
         moviesSeen: [ID]
+        admin: Boolean
     }
 
     input HookQuestion {
