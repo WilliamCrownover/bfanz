@@ -12,19 +12,17 @@ export default function BasicCard() {
     return (
         <RouterLink to="/AddMovie" style={{ textDecoration: 'none' }}>
             <Card sx={{ minWidth: 275 }}>
-                <CardActionArea>
-                    <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Typography variant="h5" component="div">
-                            Add New Movie
-                        </Typography>
-                    </CardContent>
-                    <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Fab aria-label="add" sx={{backgroundColor: '#f5c300'}}>
+                <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Typography variant="h5" component="div">
+                        Add New Movie
+                    </Typography>
+                </CardContent>
+                <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Fab aria-label="add" sx={{ backgroundColor: '#f5c300' }}>
                         <AddIcon />
-                        </Fab>
-                    </CardContent>
-                </CardActionArea>
+                    </Fab>
+                </CardContent>
             </Card>
-        </RouterLink>
+        </RouterLink >
     );
 }
