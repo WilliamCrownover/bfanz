@@ -6,6 +6,9 @@ import { GET_MOVIE_BY_ID } from '../utils/queries';
 import { percent, total } from '../utils/helpers';
 import { Container, Typography } from '@mui/material';
 
+
+
+
 const MovieDetails = () => {
 	const { movieId } = useParams();
 

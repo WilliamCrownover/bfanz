@@ -20,7 +20,7 @@ export default function BasicCard(props) {
                         {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
                             subtitle
                         </Typography> */}
-                        <Typography variant="body3">
+                        <Typography variant="body3" sx={{fontSize: '1rem'}}>
                             {props.hookQuestion}
                         </Typography>
                     </CardContent>
