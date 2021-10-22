@@ -5,8 +5,7 @@ import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-// import LikedToggle from '../../pages/AddMovie/LikedToggle';
-import SeenToggle from '../../pages/AddMovie/SeenToggle';
+import SeenToggle from '../SeenToggle';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
@@ -14,7 +13,6 @@ import { useMutation, useQuery } from '@apollo/client';
 import { GET_ME, GET_MOVIE_BY_ID } from '../../utils/queries';
 import { useState } from 'react';
 import { ADD_ANOTHER_HOOKQUESTION } from '../../utils/mutations';
-
 
 export default function DetailsPage(props) {
     const [ questionText, setQuestionText ] = useState('');
@@ -137,47 +135,47 @@ export default function DetailsPage(props) {
 
                     <Divider sx={{ m: 2 }} />
 
-                    <Paper elevation={0} sx={{ml: 2}}>
+                    <Paper elevation={0} sx={{ ml: 2 }}>
                         <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
-                        <Grid item md={3} xs={12}>
-                            <Typography variant="h6">
-                                Directed by:
-                            </Typography>
-                        </Grid>
+                            <Grid item md={3} xs={12}>
+                                <Typography variant="h6">
+                                    Directed by:
+                                </Typography>
+                            </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
-                            <Typography variant="body1">
-                                {props.director}
-                            </Typography>
+                                <Typography variant="body1">
+                                    {props.director}
+                                </Typography>
                             </Grid>
                         </Stack>
 
                         <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
-                        <Grid item md={3} xs={12}>
-                            <Typography variant="h6">
-                                Written by:
-                            </Typography>
+                            <Grid item md={3} xs={12}>
+                                <Typography variant="h6">
+                                    Written by:
+                                </Typography>
                             </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
-                            <Typography variant="body1">
-                                {props.writer}
-                            </Typography>
+                                <Typography variant="body1">
+                                    {props.writer}
+                                </Typography>
                             </Grid>
                         </Stack>
 
                         <Stack direction='row' alignItems='flex-start' justifyContent='flex-start' spacing={2}>
-                        <Grid item md={3} xs={12}>
-                            <Typography variant="h6">
-                                Featuring:
-                            </Typography>
+                            <Grid item md={3} xs={12}>
+                                <Typography variant="h6">
+                                    Featuring:
+                                </Typography>
                             </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
-                            <Stack direction='column'>
-                                {actorArr.map((actor) => (
-                                    <Typography key={actor} variant="body1">
-                                        {actor}
-                                    </Typography>
-                                ))}
-                            </Stack>
+                                <Stack direction='column'>
+                                    {actorArr.map((actor) => (
+                                        <Typography key={actor} variant="body1">
+                                            {actor}
+                                        </Typography>
+                                    ))}
+                                </Stack>
                             </Grid>
                         </Stack>
                     </Paper>
@@ -208,7 +206,7 @@ export default function DetailsPage(props) {
 
                             <Grid item xs={6} >
                                 <Stack direction="row" spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <SeenToggle 
+                                    <SeenToggle
                                         _id={props._id}
                                     />
                                     {/* <LikedToggle/> */}

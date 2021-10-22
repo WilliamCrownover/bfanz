@@ -38,7 +38,7 @@ const typeDefs = gql`
     }
 
     type OmdbResponse {
-        title: String!
+        title: String
         year: String
         genre: String
         director: String
