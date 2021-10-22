@@ -12,6 +12,7 @@ const typeDefs = gql`
         username: String!
         moviesAdded: [ID]
         moviesSeen: [ID]
+        admin: Boolean
     }
 
     input HookQuestion {
@@ -83,6 +84,7 @@ const typeDefs = gql`
         addMoreHookQuestions( questionText: String, movieId: ID ): HookQuestion
 
         findOrCreateMovie(title: String!, year: String, genre: String, director: String, writer: String, actors: String, poster: String, indbID: String, description: String): Movie
+        deleteMovie( movieId: ID ): Movie
     }
 `
 module.exports = typeDefs;

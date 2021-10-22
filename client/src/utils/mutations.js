@@ -52,3 +52,11 @@ export const ADD_ANOTHER_HOOKQUESTION = gql`
         }
     }
 `
+export const DELETE_MOVIE = gql`
+    mutation DeleteMovie($movieId: ID) {
+        deleteMovie(movieId: $movieId) {
+            _id
+            title
+        }
+    }
+`
