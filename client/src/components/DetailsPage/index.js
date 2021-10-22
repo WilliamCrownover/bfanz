@@ -10,9 +10,26 @@ import SeenToggle from '../../pages/AddMovie/SeenToggle';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
+import { useQuery } from '@apollo/client';
+import { GET_ME } from '../../utils/queries';
 
 
 export default function DetailsPage(props) {
+
+    const { loading, data } = useQuery(GET_ME);
+    const user = data?.me || {moviesSeen:[]};
+
+    let seenIt = false;
+    let text = "Please watch the film first";
+
+    if(!loading) {
+        for(let i = 0; i < user.moviesSeen.length; i++) {
+            if(user.moviesSeen[i] === props._id) {
+                seenIt = true;
+                text = "Add a hook question"
+            }
+        };
+    };
 
     let actorArr = props.actors.split(',');
     actorArr = actorArr.map(actor => {
@@ -28,10 +45,14 @@ export default function DetailsPage(props) {
                         multiline
                         maxRows={3}
                         id="addHook"
-                        label="Add Hook"
+                        label={text}
                         variant="filled"
+                        disabled={!seenIt}
                     />
-                    <Button variant='outlined'> Add </Button>
+                    <Button 
+                        variant='outlined'
+                        disabled={!seenIt}
+                    > Add </Button>
                 </Stack>
             ) : (
                 <Stack direction='row' spacing={1}>
@@ -41,7 +62,7 @@ export default function DetailsPage(props) {
                         multiline
                         maxRows={3}
                         id="addHook"
-                        label="Add Hook"
+                        label="Login to add a hook question"
                         variant="filled"
                     />
                     <Button disabled variant='outlined'> Add </Button>
@@ -75,7 +96,7 @@ export default function DetailsPage(props) {
                             <Typography variant="h6">
                                 Directed by:
                             </Typography>
-</Grid>
+                        </Grid>
                             <Grid item md={9} xs={12} lineHeight='1.6'>
                             <Typography variant="body1">
                                 {props.director}
