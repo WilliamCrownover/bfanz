@@ -12,7 +12,7 @@ import Auth from '../../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_ME, GET_MOVIE_BY_ID } from '../../utils/queries';
 import { useState } from 'react';
-import { ADD_ANOTHER_HOOKQUESTION } from '../../utils/mutations';
+import { ADD_ANOTHER_HOOKQUESTION, DELETE_MOVIE } from '../../utils/mutations';
 
 export default function DetailsPage(props) {
     const [ questionText, setQuestionText ] = useState('');
@@ -22,6 +22,7 @@ export default function DetailsPage(props) {
             GET_MOVIE_BY_ID
         ]
     });
+    const [ deleteMovie ] = useMutation(DELETE_MOVIE);
 
     const { loading, data } = useQuery(GET_ME);
     const user = data?.me || {moviesSeen:[]};
@@ -75,7 +76,19 @@ export default function DetailsPage(props) {
     }
 
     const handleDelete = async (e) => {
-        console.log('delete');
+        e.preventDefault();
+
+        try {
+            await deleteMovie({
+                variables: {
+                    movieId: props._id
+                }
+            })
+        } catch (err) {
+            console.error(err);
+        }
+
+        window.location.assign('/collection');
     }
 
     const hookQuestionButton = (
