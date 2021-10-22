@@ -10,13 +10,19 @@ import SeenToggle from '../../pages/AddMovie/SeenToggle';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
-import { useQuery } from '@apollo/client';
-import { GET_ME } from '../../utils/queries';
+import { useMutation, useQuery } from '@apollo/client';
+import { GET_ME, GET_MOVIE_BY_ID } from '../../utils/queries';
 import { useState } from 'react';
+import { ADD_ANOTHER_HOOKQUESTION } from '../../utils/mutations';
 
 
 export default function DetailsPage(props) {
     const [ questionText, setQuestionText ] = useState('');
+    const [ submitHookQuestion ] = useMutation(ADD_ANOTHER_HOOKQUESTION, {
+        refetchQueries: [
+            GET_MOVIE_BY_ID
+        ]
+    });
 
     const { loading, data } = useQuery(GET_ME);
     const user = data?.me || {moviesSeen:[]};
@@ -43,11 +49,22 @@ export default function DetailsPage(props) {
         setQuestionText(value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(questionText);
-        
+        if(questionText.length <= 120 && questionText.length > 0) {
+            try {
+                await submitHookQuestion({
+                    variables: {
+                        questionText: questionText,
+                        movieId: props._id
+                    }
+                })
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
         setQuestionText('');
     }
 
