@@ -7,7 +7,7 @@ Where B Movies get discovered. We are building an app that helps movie enthusias
 
 ## Project Title: # bfanz  
 **Creation date:** October 2021  
-**Collaborators:** Adrian Cronin, William Crownover, Sheri Elgin, Michelle Oakley, Joseph Pruitt  
+**Collaborators:** [Adrian Cronin](https://github.com/AdrianCronin) - [William Crownover](https://github.com/WilliamCrownover) - [Sheri Elgin](https://github.com/grudgecat) - [Michelle Oakley](https://github.com/michellecoder) - [Joseph Pruitt](https://github.com/j92pruitt)
 
 ## Screen Cap  
 ![Bfanz](https://user-images.githubusercontent.com/77079861/138397567-a134e254-710f-4e36-b94b-2a0d01044260.JPG)
@@ -59,5 +59,3 @@ The general process will be to:
  * Give users opportunity to make suggestions for other movies related to current movie 
  * Give users a 'my top ten favorites' list to display with their user account
  * Have the poster image stay center while the user scrolls up or down
-![image](https://user-images.githubusercontent.com/77079861/138397983-d437ac22-8b82-4171-8517-2c931a903708.png)
-
