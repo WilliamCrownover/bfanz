@@ -32,7 +32,7 @@ const MovieSchema = new Schema({
         type: String,
         trim: true,
     },
-    indbID: {
+    imdbID: {
         type: String,
         trim: true,
     },

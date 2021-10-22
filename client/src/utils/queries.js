@@ -14,17 +14,10 @@ export const GET_MOVIES = gql`
         getMovies {
             _id
             title
-            description
             poster
             seenItCount
-            notSeenItCount
-            lovedItCount
-            hatedItCount
             hookQuestions {
-                _id
                 questionText
-                movieId
-                userId
             }
         }
     }
@@ -92,6 +85,23 @@ export const GET_RANDOM_HOOK_QUESTIONS = gql`
             hookQuestions {
                 questionText
             }
+        }
+    }
+`
+
+export const GET_OMDB_MOVIES = gql`
+    query getOmdbMovie($searchString: String) {
+        getOmdbMovie(searchString: $searchString) {
+            imdbID
+            title
+            year
+            genre
+            director
+            writer
+            actors
+            description
+            response
+            poster
         }
     }
 `

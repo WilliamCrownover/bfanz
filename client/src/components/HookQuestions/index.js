@@ -31,7 +31,9 @@ export default function HookQuestions() {
 
   const hookQuestionArray = data?.getMovies || []
 
-  const randomHookQuestionArray = randomizeArray(hookQuestionArray);
+  const cleanHookQuestionArray = hookQuestionArray.filter(movie => movie.hookQuestions.length !== 0)
+
+  const randomHookQuestionArray = randomizeArray(cleanHookQuestionArray);
 
   const getRandomQuestion = (movie) => {
     const randomQuestion = getRandomValueFromArray(movie.hookQuestions)

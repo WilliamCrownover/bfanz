@@ -44,3 +44,11 @@ export const REMOVE_SEEN_MOVIE = gql`
         }
     }
 `
+export const ADD_ANOTHER_HOOKQUESTION = gql`
+    mutation AddMoreHookQuestions( $questionText: String, $movieId: ID ) {
+        addMoreHookQuestions( questionText: $questionText, movieId: $movieId ) {
+            _id
+            questionText
+        }
+    }
+`

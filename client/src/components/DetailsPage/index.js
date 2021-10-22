@@ -5,34 +5,100 @@ import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-// import LikedToggle from '../../pages/AddMovie/LikedToggle';
-import SeenToggle from '../../pages/AddMovie/SeenToggle';
+import SeenToggle from '../SeenToggle';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
-
+import { useMutation, useQuery } from '@apollo/client';
+import { GET_ME, GET_MOVIE_BY_ID } from '../../utils/queries';
+import { useState } from 'react';
+import { ADD_ANOTHER_HOOKQUESTION } from '../../utils/mutations';
 
 export default function DetailsPage(props) {
+    const [ questionText, setQuestionText ] = useState('');
+    const [ questionTextLength, setQuestionTextLength ] = useState(0);
+    const [ submitHookQuestion ] = useMutation(ADD_ANOTHER_HOOKQUESTION, {
+        refetchQueries: [
+            GET_MOVIE_BY_ID
+        ]
+    });
+
+    const { loading, data } = useQuery(GET_ME);
+    const user = data?.me || {moviesSeen:[]};
+
+    let seenIt = false;
+    let text = "Please watch the film first";
+
+    if(!loading) {
+        for(let i = 0; i < user.moviesSeen.length; i++) {
+            if(user.moviesSeen[i] === props._id) {
+                seenIt = true;
+                text = "Add a hook question"
+            }
+        };
+    };
 
     let actorArr = props.actors.split(',');
     actorArr = actorArr.map(actor => {
         return actor.trim();
     })
 
+    const handleInputChange = (e) => {
+        const {value} = e.target;
+
+        if(value.length <=120) {
+            setQuestionText(value);
+            setQuestionTextLength(value.length);
+        }
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if(questionText.length <= 120 && questionText.length > 0) {
+            try {
+                await submitHookQuestion({
+                    variables: {
+                        questionText: questionText,
+                        movieId: props._id
+                    }
+                })
+            } catch (err) {
+                console.error(err);
+            }
+        } else if ( questionText.length > 120 ) {
+
+        }
+
+        setQuestionText('');
+        setQuestionTextLength(0);
+    }
+
     const hookQuestionButton = (
         <>
             {Auth.loggedIn() ? (
+                <>
                 <Stack direction='row' spacing={1}>
                     <TextField
                         fullWidth
                         multiline
                         maxRows={3}
                         id="addHook"
-                        label="Add Hook"
+                        label={text}
                         variant="filled"
+                        disabled={!seenIt}
+                        value={questionText}
+                        onChange={handleInputChange}
                     />
-                    <Button variant='outlined'> Add </Button>
+                    <Button 
+                        variant='outlined'
+                        disabled={!seenIt}
+                        value={questionText}
+                        onClick={handleSubmit}
+                    > Add </Button>
                 </Stack>
+                {seenIt && <p>{questionTextLength}/120</p>}
+                </>
             ) : (
                 <Stack direction='row' spacing={1}>
                     <TextField
@@ -41,7 +107,7 @@ export default function DetailsPage(props) {
                         multiline
                         maxRows={3}
                         id="addHook"
-                        label="Add Hook"
+                        label="Login to add a hook question"
                         variant="filled"
                     />
                     <Button disabled variant='outlined'> Add </Button>
