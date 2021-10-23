@@ -10,20 +10,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_ME, GET_MOVIE_BY_ID, GET_RANDOM_HOOK_QUESTIONS } from '../../utils/queries';
+import { GET_ME, GET_MOVIE_BY_ID } from '../../utils/queries';
 import { useState } from 'react';
 import { ADD_ANOTHER_HOOKQUESTION, DELETE_MOVIE } from '../../utils/mutations';
-import { client } from '../../App';
 
 export default function DetailsPage(props) {
-
-    const getNewSurprise = async () => {
-        await client.refetchQueries({
-            include: [GET_RANDOM_HOOK_QUESTIONS]
-        });
-    }
-
-    getNewSurprise()
 
     const [ questionText, setQuestionText ] = useState('');
     const [ questionTextLength, setQuestionTextLength ] = useState(0);
