@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Marquee from "../components/Marquee";
 import Box from "@mui/material/Box";
+import heroImage from "./assets/hero.jpg";
 
 const Home = () => {
 
@@ -12,7 +13,7 @@ const Home = () => {
             <Grid item xs={12} sx={{display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Box
                     component="img"
-                    src="/assets/hero.jpg"
+                    src={heroImage}
                     sx={{
                         maxWidth: '100%',
                         height: "auto",
