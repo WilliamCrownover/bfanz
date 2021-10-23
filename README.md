@@ -59,3 +59,4 @@ The general process will be to:
  * Give users opportunity to make suggestions for other movies related to current movie 
  * Give users a 'my top ten favorites' list to display with their user account
  * Have the poster image stay center while the user scrolls up or down
+ * Add a movie using IMDB ID if not apart of OMDB or our Database
