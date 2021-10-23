@@ -54,7 +54,7 @@ const Dashboard = () => {
                     <>
                         {movieList.map((movie) => (
                             <Grid item key={movie._id}>
-                                <DashCard 
+                                <DashCard onChange="searchFailsMessage"
                                     _id={movie._id}
                                     title={movie.title}
                                     hookQuestion={movie.hookQuestions[0].questionText}
