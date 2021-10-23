@@ -150,7 +150,6 @@ const resolvers = {
                     { $addToSet: { hookQuestions: 
                         {
                             questionText: questionText,
-                            movieId: movieId,
                             userId: context.user._id
                         } 
                     }},
@@ -166,7 +165,16 @@ const resolvers = {
                 const movie = await Movie.findOne({title: args.title});
 
                 if (movie) {
-                    return movie
+                    return Movie.findOneAndUpdate( 
+                        { _id: movie._id },
+                        { $addToSet: { hookQuestions: 
+                            {
+                                questionText: args.questionText,
+                                userId: context.user._id
+                            } 
+                        }},
+                        { new: true }
+                    )
                 } else {
                     const movieData = {
                         ...args,
