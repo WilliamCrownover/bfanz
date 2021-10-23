@@ -36,7 +36,7 @@ const Dashboard = () => {
         <Container sx={{mt: 3, mb: 3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item xs={12} sx={{mt: 5}}>
-                    <Stack component="form"  direction='row' spacing={1} >
+                    <Stack component="form"  onSubmit={getMyMovie} direction='row' spacing={1} >
                         <TextField fullWidth id="find-movies" label="Find Movies" onChange={( event ) => setSearch(event.target.value)} value={search} variant="outlined" />
                         <Button onClick={getMyMovie} variant='outlined' > Search </Button>
                     </Stack>
