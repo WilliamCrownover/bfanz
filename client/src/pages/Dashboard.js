@@ -18,11 +18,11 @@ const Dashboard = () => {
         <Container sx={{mt: 3, mb: 3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} >
                 <Grid item xs={12} sx={{mt: 5}}>
-                    <Box maxWidth="lg" >
+                    <Box maxWidth="xl" >
                         <TextField fullWidth id="find-movies" label="Find Movies" variant="outlined" />
                     </Box>
                 </Grid>
-                <Grid xs={12} sm={6} md={4} lg={3} item>
+                <Grid xs={12} md={6} lg={4} xl={3} item>
                     <AddMovieButton />
                 </Grid>
                 {loading ? (
@@ -34,7 +34,7 @@ const Dashboard = () => {
                 ) : (
                     <>
                         {allMovies.map((movie) => (
-                            <Grid xs={12} sm={6} md={4} lg={3} item key={movie._id}>
+                            <Grid xs={12} md={6} lg={4} xl={3} item key={movie._id}>
                                 <DashCard 
                                     _id={movie._id}
                                     title={movie.title}
