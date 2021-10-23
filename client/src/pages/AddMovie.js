@@ -12,10 +12,9 @@ const AddMovie = () => {
     const [titleSearch, setTitleSearch] = useState('');
     const [movieData, setMovieData] = useState(null);
 
-    const [fetchMovie, { data }] = useLazyQuery(GET_OMDB_MOVIES, {
+    const [fetchMovie,] = useLazyQuery(GET_OMDB_MOVIES, {
         variables: { searchString: titleSearch },
         onCompleted: (data) => {
-            console.log(data)
             const searchResponse = data.getOmdbMovie;
             if (searchResponse.response === 'True') {
                 setMovieData(searchResponse);

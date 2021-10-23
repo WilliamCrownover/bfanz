@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import heroImage from './assets/hero.jpg'
 
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -60,7 +61,7 @@ const Login = () => {
 		<Grid item xs={12} sx={{display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Box
                     component="img"
-                    src="/assets/hero.jpg"
+                    src={heroImage}
                     sx={{
                         maxWidth: '100%',
                         height: "auto",
