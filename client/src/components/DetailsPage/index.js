@@ -15,6 +15,7 @@ import { useState } from 'react';
 import { ADD_ANOTHER_HOOKQUESTION, DELETE_MOVIE } from '../../utils/mutations';
 
 export default function DetailsPage(props) {
+
     const [ questionText, setQuestionText ] = useState('');
     const [ questionTextLength, setQuestionTextLength ] = useState(0);
     const [ submitHookQuestion ] = useMutation(ADD_ANOTHER_HOOKQUESTION, {
