@@ -150,7 +150,6 @@ const resolvers = {
                     { $addToSet: { hookQuestions: 
                         {
                             questionText: questionText,
-                            movieId: movieId,
                             userId: context.user._id
                         } 
                     }},
@@ -159,16 +158,29 @@ const resolvers = {
             }
         },
 
-        findOrCreateMovie: async function (parent, args) {
+        findOrCreateMovie: async function (parent, args, context) {
             
             try {
                 
                 const movie = await Movie.findOne({title: args.title});
 
                 if (movie) {
-                    return movie
+                    return Movie.findOneAndUpdate( 
+                        { _id: movie._id },
+                        { $addToSet: { hookQuestions: 
+                            {
+                                questionText: args.questionText,
+                                userId: context.user._id
+                            } 
+                        }},
+                        { new: true }
+                    )
                 } else {
-                    return Movie.create(args)
+                    const movieData = {
+                        ...args,
+                        hookQuestions: [{questionText: args.questionText, userId: context.user._id}]
+                    }
+                    return Movie.create(movieData)
                 }
 
             } catch (err) {

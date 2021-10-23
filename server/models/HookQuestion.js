@@ -7,9 +7,9 @@ const hookQuestionSchema = new Schema({
         trim: true,
         validate: [({ length }) => length <= 120, "Your hook question should be no more than 120 characters long."],
     },
-    movieId: {
+    userId: {
         type: Schema.Types.ObjectId,
-        ref: 'Movie',
+        ref: 'User',
     },
 });
 
