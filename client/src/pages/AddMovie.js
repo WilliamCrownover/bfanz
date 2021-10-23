@@ -51,7 +51,9 @@ const AddMovie = () => {
                 alignItems='center'
                 spacing={{ xs: 2, md: 3 }}
             >
+                
                 <Grid item xs={9} sx={{ zIndex: 10 }}>
+                <form onSubmit={handleSearchSubmit}>
                     <TextField
                         fullWidth
                         id="search-movies"
@@ -60,10 +62,12 @@ const AddMovie = () => {
                         value={titleSearch}
                         onChange={handleInputChange}
                     />
+                    </form>
                 </Grid>
                 <Grid item xs={3} sx={{ zIndex: 10 }}>
                     <Button size="large" variant='outlined' onClick={handleSearchSubmit}> Search </Button>
                 </Grid>
+                
                 {movieData ? (
                     <>
                         <Grid xs={12} item key={movieData._id}>
