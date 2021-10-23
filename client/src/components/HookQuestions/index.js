@@ -15,9 +15,13 @@ const Item = styled(Paper)(({ theme }) => ({
     fontSize: '1rem',
     '@media (min-width:600px)': {
       fontSize: '1.1rem',
+      overflow: 'hidden', 
+      textOverflow: 'elipses',
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '1.4rem',
+      overflow: 'hidden', 
+      textOverflow: 'elipses',
     },
   },
   padding: theme.spacing(1),

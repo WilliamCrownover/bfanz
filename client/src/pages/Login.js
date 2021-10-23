@@ -36,9 +36,7 @@ const Login = () => {
 			if ( !data ) {
 				throw new Error( 'something went wrong!' );
 			}
-
-			console.log(data);
-			
+		
 			if ( data.login.success === true ) {
 				Auth.login(data.login.token);
 				return;
