@@ -36,8 +36,6 @@ const Signup = () => {
 				throw new Error( 'something went wrong!' );
 			}
 
-			console.log(data);
-
 			if ( data.signup.success === true ) {
 				Auth.login(data.signup.token);
 				return;
