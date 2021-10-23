@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_MOVIE } from '../../utils/mutations';
+import { GET_MOVIES } from '../../utils/queries';
 
 
 export default function AddMovieDetails(props) {
@@ -30,10 +31,17 @@ export default function AddMovieDetails(props) {
         }
     };
 
-    const [addMovie, ] = useMutation(ADD_MOVIE, {
+    const [addMovie,] = useMutation(ADD_MOVIE, {
         variables: {
             ...props,
             questionText: hookText
+        },
+        refetchQueries: [
+            {query: GET_MOVIES}
+        ],
+        onCompleted: (data) => {
+            const detailsPageUrl = `/movieDetails/${data.findOrCreateMovie._id}`
+            window.location.assign(detailsPageUrl);
         }
     })
 
