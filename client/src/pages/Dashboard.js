@@ -34,14 +34,14 @@ const Dashboard = () => {
 
     return (
         <Container sx={{mt: 3, mb: 3}}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid container spacing={{ xs: 2, md: 3 }} >
                 <Grid item xs={12} sx={{mt: 5}}>
-                    <Stack component="form"  direction='row' spacing={1} >
+                    <Stack maxWidth="xl" component="form"  onSubmit={getMyMovie} direction='row' spacing={1} >
                         <TextField fullWidth id="find-movies" label="Find Movies" onChange={( event ) => setSearch(event.target.value)} value={search} variant="outlined" />
                         <Button onClick={getMyMovie} variant='outlined' > Search </Button>
                     </Stack>
                 </Grid>
-                <Grid item>
+                <Grid xs={12} md={6} lg={4} xl={3} item>
                     <AddMovieButton />
                 </Grid>
                 {loading ? (
@@ -51,9 +51,16 @@ const Dashboard = () => {
                         </Typography>
                     </Grid>
                 ) : (
-                    <>
+                        <>
+                            {(movieList.length === 0) &&
+                                <Grid item>
+                                    <Typography variant="h5" component="div">
+                                        We don't have that movie. Click the Add Movie button to add it to our collection!
+                                    </Typography>
+                                </Grid>
+                            }
                         {movieList.map((movie) => (
-                            <Grid item key={movie._id}>
+                            <Grid xs={12} md={6} lg={4} xl={3}  item key={movie._id}>
                                 <DashCard 
                                     _id={movie._id}
                                     title={movie.title}
