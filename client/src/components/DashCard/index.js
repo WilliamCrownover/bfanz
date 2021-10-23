@@ -11,7 +11,7 @@ import { Link as RouterLink } from 'react-router-dom';
 export default function BasicCard(props) {
     return (
         <RouterLink to={`/movieDetails/${props._id}`} style={{ textDecoration: 'none' }}>
-            <Card sx={{ minWidth: 275, maxWidth: 275, height: '100%' }}>
+            <Card sx={{ minWidth: 270, maxWidth: 270, height: '100%' }}>
                 <CardActionArea>
                     <CardContent>
                         <Typography variant="h5" component="div" sx={{fontSize: '1.6rem', color: '703ADD'}}>
