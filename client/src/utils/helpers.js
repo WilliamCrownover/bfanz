@@ -38,6 +38,6 @@ export const searchFailsMessage = (movieArr) => {
 	if (movieList === []) {
 		return `<p visibility='visible'>"Movie was not found in our database. Click Add Movie button to add it to our collection!"</p>;`
 	} else {
-		return `<p visibility='hidden'>;`
+		return `<p visibility='hidden'></p;`
 	}
 }
