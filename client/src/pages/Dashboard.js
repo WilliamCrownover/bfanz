@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import { useQuery } from '@apollo/client';
 import { GET_MOVIES } from '../utils/queries';
 import { Typography } from '@mui/material';
-import { percent, searchFailsMessage, total } from '../utils/helpers';
+import { percent, total } from '../utils/helpers';
 import { useState } from "react"
 
 
