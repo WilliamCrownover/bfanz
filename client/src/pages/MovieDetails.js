@@ -2,11 +2,9 @@ import { useQuery } from '@apollo/client';
 import Grid from '@mui/material/Grid';
 import DetailsPage from '../components/DetailsPage';
 import { useParams } from 'react-router';
-import { GET_MOVIE_BY_ID, GET_RANDOM_HOOK_QUESTIONS } from '../utils/queries';
+import { GET_MOVIE_BY_ID } from '../utils/queries';
 import { percent, total } from '../utils/helpers';
 import { Container, Typography } from '@mui/material';
-import { client } from '../App';
-import { useEffect } from 'react';
 
 const MovieDetails = () => {
 
