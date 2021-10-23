@@ -77,6 +77,7 @@ const AddMovie = () => {
                                 writer={movieData.writer}
                                 actors={movieData.actors}
                                 poster={movieData.poster}
+                                genre={movieData.genre}
                             />
                         </Grid>
                     </>

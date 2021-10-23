@@ -159,7 +159,7 @@ const resolvers = {
             }
         },
 
-        findOrCreateMovie: async function (parent, args) {
+        findOrCreateMovie: async function (parent, args, context) {
             
             try {
                 
@@ -168,7 +168,11 @@ const resolvers = {
                 if (movie) {
                     return movie
                 } else {
-                    return Movie.create(args)
+                    const movieData = {
+                        ...args,
+                        hookQuestions: [{questionText: args.questionText, userId: context.user._id}]
+                    }
+                    return Movie.create(movieData)
                 }
 
             } catch (err) {
