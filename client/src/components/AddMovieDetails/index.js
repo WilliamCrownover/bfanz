@@ -8,22 +8,49 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_MOVIE } from '../../utils/mutations';
+import { GET_MOVIES } from '../../utils/queries';
 
 
 export default function AddMovieDetails(props) {
     const [hookText, setHookText] = useState('');
+    const [validText, setValidText ] = useState(false);
 
     const handleInputChange = (e) => {
         const { value } = e.target;
-        return setHookText(value);
+
+        setValidText(true);
+
+        if(value.trim() === '') {
+            setValidText(false);
+        }
+
+        if(value.length <= 120) {
+            return setHookText(value);
+        }
     };
+
+    const [addMovie,] = useMutation(ADD_MOVIE, {
+        variables: {
+            ...props,
+            questionText: hookText
+        },
+        refetchQueries: [
+            {query: GET_MOVIES}
+        ],
+        onCompleted: (data) => {
+            const detailsPageUrl = `/movieDetails/${data.findOrCreateMovie._id}`
+            window.location.assign(detailsPageUrl);
+        }
+    })
 
     const handleMovieSubmit = async (e) => {
         e.preventDefault();
 
 
         // mutation to take all the info and create a movie in the database
-
+        addMovie()
 
     }
 
@@ -51,8 +78,13 @@ export default function AddMovieDetails(props) {
                             value={hookText}
                             onChange={handleInputChange}
                         />
-                        <Button variant='outlined' onClick={handleMovieSubmit}> Add Movie</Button>
+                        <Button 
+                            disabled={!validText}
+                            variant='outlined' 
+                            onClick={handleMovieSubmit}
+                        > Add Movie</Button>
                     </Stack>
+                    <p>{hookText.length}/120</p>
                 </>
             ) : (
                 <Stack direction='row' spacing={1}>

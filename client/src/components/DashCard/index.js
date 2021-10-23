@@ -14,13 +14,13 @@ export default function BasicCard(props) {
             <Card sx={{height: '100%' }}>
                 <CardActionArea>
                     <CardContent>
-                        <Typography variant="h5" component="div" sx={{fontSize: '1.6rem', color: '#703ADD'}}>
+                        <Typography variant="h5" component="div" sx={{fontSize: '1.6rem', color: '703ADD'}}>
                             {props.title}
                         </Typography>
                         {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
                             subtitle
                         </Typography> */}
-                        <Typography variant="body3">
+                        <Typography variant="body3" sx={{fontSize: '1rem'}}>
                             {props.hookQuestion}
                         </Typography>
                     </CardContent>

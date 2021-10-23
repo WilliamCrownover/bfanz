@@ -32,3 +32,4 @@ export const getRandomValueFromArray = (arr) => {
 		return arr[randomIndex]
 	}
 }
+
