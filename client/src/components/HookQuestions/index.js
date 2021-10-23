@@ -15,9 +15,13 @@ const Item = styled(Paper)(({ theme }) => ({
     fontSize: '1rem',
     '@media (min-width:600px)': {
       fontSize: '1.1rem',
+      overflow: 'hidden', 
+      textOverflow: 'elipses',
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '1.4rem',
+      overflow: 'hidden', 
+      textOverflow: 'elipses',
     },
   },
   padding: theme.spacing(1),
@@ -49,7 +53,7 @@ const colorSet = ['#F5C300', '#D97409', '#703ADD', '#ECEFF1'];
           {  randomHookQuestionArray.map(movie => {
                let index = Math.floor(Math.random() * colorSet.length);
             return (
-            <Grid item xs="auto" sx={{mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', borderLeft: '1em solid transparent', borderRight: '1em solid transparent', textOverflow: 'ellipsis'}} key={movie._id}>
+            <Grid item xs="auto" sx={{mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', maxWidth: '1100px', borderLeft: '1em solid transparent', borderRight: '1em solid transparent', textOverflow: 'ellipsis'}} key={movie._id}>
               <RouterLink to={`/movieDetails/${movie._id}`} style={{ textDecoration: 'none' }}>
                 <Item sx={{
                     elevation:0, 
