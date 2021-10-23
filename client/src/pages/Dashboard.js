@@ -18,7 +18,7 @@ const Dashboard = () => {
         <Container sx={{mt: 3, mb: 3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} >
                 <Grid item xs={12} sx={{mt: 5}}>
-                    <Box maxWidth="md" >
+                    <Box maxWidth="lg" >
                         <TextField fullWidth id="find-movies" label="Find Movies" variant="outlined" />
                     </Box>
                 </Grid>
