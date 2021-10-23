@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import { useQuery } from '@apollo/client';
 import { GET_MOVIES } from '../utils/queries';
 import { Typography } from '@mui/material';
-import { percent, total } from '../utils/helpers';
+import { percent, searchFailsMessage, total } from '../utils/helpers';
 import { useState } from "react"
 
 
@@ -51,10 +51,17 @@ const Dashboard = () => {
                         </Typography>
                     </Grid>
                 ) : (
-                    <>
+                        <>
+                            {(movieList.length === 0) &&
+                                <Grid item>
+                                    <Typography variant="h5" component="div">
+                                        We don't have that movie. Click the Add Movie button to add it to our collection!
+                                    </Typography>
+                                </Grid>
+                            }
                         {movieList.map((movie) => (
                             <Grid item key={movie._id}>
-                                <DashCard onChange="searchFailsMessage"
+                                <DashCard 
                                     _id={movie._id}
                                     title={movie.title}
                                     hookQuestion={movie.hookQuestions[0].questionText}

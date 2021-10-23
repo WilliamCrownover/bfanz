@@ -33,11 +33,3 @@ export const getRandomValueFromArray = (arr) => {
 	}
 }
 
-export const searchFailsMessage = (movieArr) => {
-	const movieList = movieArr;
-	if (movieList === []) {
-		return `<h3 visibility='visible'>"Movie was not found in our database. Click Add Movie button to add it to our collection!"</h3>;`
-	} else {
-		return `<h3 visibility='hidden'></h3;`
-	}
-}
