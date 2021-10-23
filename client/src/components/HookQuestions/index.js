@@ -55,11 +55,9 @@ const colorSet = ['#F5C300', '#D97409', '#703ADD', '#ECEFF1'];
                     elevation:0, 
                     backgroundImage: 'none', 
                     color: colorSet[index],
-                    // ":hoover": {
-                    //   backgroundColor: '#ffc2b4',
-                    // }
-                    // '& .ChildSelector': {
-                    //   elevation: 9}
+                    "&:hover": {
+                      backgroundColor: '#1c1c1c',
+                    }
                   }}>{loading ? "loading" : getRandomQuestion(movie)}</Item>
               </RouterLink>
             </Grid>

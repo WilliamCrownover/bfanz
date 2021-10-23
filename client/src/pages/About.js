@@ -32,16 +32,16 @@ const About = () => {
                     <Typography variant="h4">
                         About the Developers
                     </Typography>
-                    <Typography variant="body1" sx={{fontSize: '1.2rem', lineHeight: 2}}>
-                        <p><b>Michelle Oakley:</b> Cult movie lover who wants to learn more about software development and project management.</p>
+                    <Typography variant="body1" sx={{fontSize: '1.2rem'}}>
+                        <Typography sx={{pb:1}}><Box component='span' color='#703ADD' fontWeight="600">Michelle Oakley:</Box > Cult movie lover who wants to learn more about software development and project management.</Typography>
 
-                        <p><b>Sheri Elgin:</b> Movie lover and IT Administrator interested in learning more about web development and automation.</p>
+                        <Typography sx={{pb:1}}><Box component='span' color='#703ADD' fontWeight="600">Sheri Elgin: </Box >Movie lover and IT Administrator interested in learning more about web development and automation.</Typography>
 
-                        <p><b>Adrian Cronin:</b> Full Stack Web Developer and movie neophyte.</p>
+                        <Typography sx={{pb:1}}><Box component='span' color='#703ADD' fontWeight="600">Adrian Cronin: </Box >Full Stack Web Developer and movie neophyte. MUI king. </Typography>
 
-                        <p><b>William Crownover:</b> Full-Stack Web Developer and Digital Production Artist focused on user experience and data visualizations.</p>
+                        <Typography sx={{pb:1}}><Box component='span' color='#703ADD' fontWeight="600">William Crownover: </Box >Full-Stack Web Developer and Digital Production Artist focused on user experience and data visualizations.</Typography>
 
-                        <p><b>Joseph Pruitt:</b> Math nerd turned developer. I love learning, puzzles and efficiency. Sometimes I code okay.</p>
+                        <Typography sx={{pb:1}}><Box component='span' color='#703ADD' fontWeight="600">Joseph Pruitt: </Box >Math nerd turned developer. I love learning, puzzles and efficiency. Sometimes I code okay.</Typography>
                     </Typography>
                 </Grid>
                 <Grid sx={{ mt: 3, padding: 2 }} item xs={12}>
