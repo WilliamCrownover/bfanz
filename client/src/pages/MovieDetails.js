@@ -39,20 +39,22 @@ const MovieDetails = () => {
 				alignItems='center'
 				spacing={{ xs: 2, md: 3 }}
 			>
-				{!movieData ? (
-					<Grid item>
-						<Typography variant="h5" component="div">
-							There's no movie with that ID here. Please view our collection to choose one.
-						</Typography>
-					</Grid>
+				{loading ? (
+												<Grid item>
+												<Typography variant="h5" component="div">
+													LOADING...
+												</Typography>
+											</Grid>
+				
 				) : (
 					<>
-						{loading ? (
-							<Grid item>
-								<Typography variant="h5" component="div">
-									LOADING...
-								</Typography>
-							</Grid>
+						{!movieData ? (
+												<Grid item>
+												<Typography variant="h5" component="div">
+													There's no movie with that ID here. Please view our collection to choose one.
+												</Typography>
+											</Grid>
+						
 						) : (
 							<>
 								<Grid xs={12} item key={movieData._id}>
