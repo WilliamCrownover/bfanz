@@ -33,6 +33,7 @@ import AddMovie from '../../pages/AddMovie';
 
 import Auth from '../../utils/auth';
 import MovieDetails from '../../pages/MovieDetails';
+import { client } from '../../App';
 
 const drawerWidth = 240;
 
@@ -42,6 +43,12 @@ function ResponsiveDrawer(props) {
 			numberOfMovies: 1
 		}
 	});
+
+  const getNewSurprise = async () => {
+        await client.refetchQueries({
+            include: [GET_RANDOM_HOOK_QUESTIONS]
+        });
+  }
  	const movieData = randomHook.data?.getRandomMovies || {}
 
   const { window } = props;
@@ -81,7 +88,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List sx={{ mt: 6 }}>
         {buttonSet1.map((navButton, index) => (
-          <Link to={navButton.link} key={navButton.text} style={{ textDecoration: 'none' }}>
+          <Link to={navButton.link} key={navButton.text} style={{ textDecoration: 'none' }} onClick={getNewSurprise}>
             <ListItem button >
               <ListItemIcon>
                 {navButton.icon}

@@ -10,12 +10,6 @@ import { useEffect } from 'react';
 
 const MovieDetails = () => {
 
-	const getNewSurprise = async () => {
-        await client.refetchQueries({
-            include: [GET_RANDOM_HOOK_QUESTIONS]
-        });
-    }
-
 	const { movieId } = useParams();
 
 	const { loading, data } = useQuery(GET_MOVIE_BY_ID, {
@@ -25,10 +19,6 @@ const MovieDetails = () => {
 	});
 
 	const movieData = data?.getMovieById || null;
-
-	useEffect(() => {
-		getNewSurprise();
-	},[movieData]);
 
 	return (
 		<Container sx={{ mt: 3 }}>
